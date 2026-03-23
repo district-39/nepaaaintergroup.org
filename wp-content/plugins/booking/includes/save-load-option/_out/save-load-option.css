@@ -1,0 +1,9 @@
+.wpbc-is-busy {
+  opacity: .85;
+  pointer-events: none
+}
+.wpbc-btn__spinner.spinner {
+  float: none;
+  margin: 0 0 0 6px;
+  vertical-align: middle
+}

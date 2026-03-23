@@ -1,0 +1,49 @@
+/* Showing correctly Option groups (radio/checkbox lists) */
+/* In one row !  add css CLASS '.inline_group' */
+.wpdev-form-control-wrap.group_inline [role="radiogroup"], /* :: BFB :: 4 Booking Form Builder */
+.wpdev-form-control-wrap.group_inline [role="checkboxgroup"], /* :: BFB :: 4 Booking Form Builder */
+.wpdev-form-control-wrap .wpdev-radio.group_inline,
+.wpdev-form-control-wrap .wpdev-checkbox.group_inline {
+	display: inline-flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 2em;
+	row-gap: 0.5em;
+}
+/* In Column ! */
+.wpdev-form-control-wrap [role="radiogroup"], /* :: BFB :: 4 Booking Form Builder */
+.wpdev-form-control-wrap [role="checkboxgroup"], /* :: BFB :: 4 Booking Form Builder */
+.wpdev-form-control-wrap .wpdev-radio,
+.wpdev-form-control-wrap .wpdev-checkbox {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: .5em;
+}
+.wpbc_container_booking_form .wpdev-form-control-wrap [role="radiogroup"] > label, /* :: BFB :: 4 Booking Form Builder */
+.wpbc_container_booking_form .wpdev-form-control-wrap [role="checkboxgroup"] > label, /* :: BFB :: 4 Booking Form Builder */
+.wpdev-form-control-wrap .wpdev-radio > .wpdev-list-item,
+.wpdev-form-control-wrap .wpdev-checkbox > .wpdev-list-item {
+	display: inline;
+	line-height: 1.74;
+	font-weight: 400;
+}
+div.wpbc_container.wpbc_form .wpdev-form-control-wrap .wpdev-radio > .wpdev-list-item,
+div.wpbc_container.wpbc_form .wpdev-form-control-wrap .wpdev-checkbox > .wpdev-list-item {
+	margin-right: 0;
+}
+.wpbc_container_booking_form .wpdev-form-control-wrap [role="radiogroup"] > label input[type="radio"], /* :: BFB :: 4 Booking Form Builder */
+.wpbc_container_booking_form .wpdev-form-control-wrap [role="checkboxgroup"] > label input[type="checkbox"], /* :: BFB :: 4 Booking Form Builder */
+.wpdev-form-control-wrap .wpdev-radio > .wpdev-list-item input[type="radio"],
+.wpdev-form-control-wrap .wpdev-checkbox > .wpdev-list-item input[type="checkbox"] {
+	vertical-align: middle;
+	margin-block-start: -.25em;
+	margin-inline-end: .3em;
+}
+.wpdev-form-control-wrap .wpdev-radio > .wpdev-list-item label,
+.wpdev-form-control-wrap .wpdev-checkbox > .wpdev-list-item label {
+	line-height: 1.74;
+	font-weight: 400;
+}

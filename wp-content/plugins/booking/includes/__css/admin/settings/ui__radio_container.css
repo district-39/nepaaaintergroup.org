@@ -1,0 +1,103 @@
+/**
+ * == Structure of Radio Container ==
+	<div class="wpbc_ui_radio_section">
+		<div class="wpbc_ui_radio_container">
+			<div class="wpbc_ui_radio_choice">
+				<input class="wpbc_ui_radio_choice_input" type="radio" />
+				<label class="wpbc_ui_radio_choice_title" for="..." >Full Day(s) Bookings</label>
+				<p class="wpbc_ui_radio_choice_description">Receive bookings for full date(s). No times selection.</p>
+			</div>
+		</div>
+		<div class="wpbc_ui_radio_container" data-selected="true" tabindex="0">
+		...
+		</div>
+	</div>
+*/
+/* -------------------------------------------------------------------------------------------------------------------- */
+/* Containers */
+/* -------------------------------------------------------------------------------------------------------------------- */
+.wpbc_ui_radio_section {
+	flex: 1 1 100%;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+}
+.wpbc_ui_radio_section.wpbc_ui_radio_section_as_row{
+	flex-flow: row wrap;
+	align-items: flex-start;
+	justify-content: center;
+}
+.wpbc_ui_radio_container {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: flex-start;
+	padding: 0;
+	border: 0px solid #e0e0e0;
+	box-shadow: 0 0 1px 1px #cccccc78;
+	border-radius: 2px;
+	width: 100%;
+	cursor: pointer;
+	background: #fff;
+	max-width: 420px;
+	margin: 10px 1em 10px 0;
+}
+.wpbc_ui_radio_container[data-selected] {
+	border: 0px solid var(--wp-admin-theme-color, #007cba);
+	box-shadow: 0 0 0px 2px var(--wp-admin-theme-color, #007cba);
+	border-radius: 4px;
+}
+/* -------------------------------------------------------------------------------------------------------------------- */
+/* Disabled */
+/* -------------------------------------------------------------------------------------------------------------------- */
+.wpbc_ui_radio_container.disabled{
+	cursor: default;
+}
+.wpbc_ui_radio_container.disabled a{
+	cursor: pointer;
+}
+
+.wpbc_ui_radio_container.disabled input.wpbc_ui_radio_choice_input {
+	pointer-events: none;
+	cursor: default !important;
+}
+.wpbc_ui_radio_container.disabled label.wpbc_ui_radio_choice_title{
+	color:#aaa;
+	cursor: default !important;
+}
+/* -------------------------------------------------------------------------------------------------------------------- */
+div.wpbc_ui_radio_choice{
+	padding: 16px;
+}
+
+input.wpbc_ui_radio_choice_input{
+
+}
+label.wpbc_ui_radio_choice_title{
+
+}
+.wpbc_ui_radio_text_right {
+  float: right;
+  /*display: inline;*/
+  position: relative;
+  /*padding-inline-start: var(--wpbc_form-padding-between-label-checkbox-radio);*/
+  /*font-size: var(--wpbc_form-label-size-font-size);*/
+  /*vertical-align: middle;*/
+  margin: 3px 0 0;
+  color: #529933;
+}
+p.wpbc_ui_radio_choice_description{
+
+}
+/* -------------------------------------------------------------------------------------------------------------------- */
+/* Footer */
+/* -------------------------------------------------------------------------------------------------------------------- */
+div.wpbc_ui_radio_footer {
+	padding: 0 16px;
+	border-top: 1px solid #e8e8e8;
+}
+div.wpbc_ui_radio_footer p.wpbc_ui_radio_choice_description{
+	padding: 0 0 6px;
+	font-size: 13px;
+}

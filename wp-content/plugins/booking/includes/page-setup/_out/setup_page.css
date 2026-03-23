@@ -1,0 +1,314 @@
+.wpbc_top_tabs_sub_menu {
+  display: none
+}
+.wpbc_header_news {
+  display: none!important
+}
+.wpbc_calendar_loading {
+  width: 95%;
+  text-align: center;
+  margin: 2em 0;
+  font-size: 1.2em;
+  font-weight: 600
+}
+.wpbc_calendar_loading .wpbc_icn_autorenew::before {
+  font-size: 1.2em
+}
+.wpbc_ajx_page__container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  margin: 5px 0 0
+}
+.wpbc_ajx_page__container .wpbc_ajx_page__section_left {
+  -ms-flex: 0 1 200px;
+  flex: 0 1 200px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  margin: 0 30px 10px 0
+}
+.wpbc_ajx_page__container .wpbc_ajx_page__section_main {
+  -ms-flex: 1 1 50%;
+  flex: 1 1 50%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  margin: 0 0 10px
+}
+.wpbc_ajx_page__container .wpbc_ajx_page__section_right {
+  -ms-flex: 0 0 280px;
+  flex: 0 0 280px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  margin: 0 0 10px 30px
+}
+.wpbc_ajx_page__container .wpbc_ajx_page__section_footer {
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  margin: 10px 0
+}
+@media screen and (max-width:960px) {
+  .wpbc_ajx_page__container .wpbc_setup_wizard_page__section_left {
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+    margin: 20px 0;
+    -ms-flex-order: 3;
+    order: 3
+  }
+}
+@media (max-width:782px) {
+  .wpbc_ajx_page__container .wpbc_ajx_page__section {
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+    margin: 0 0 20px
+  }
+  .wpbc_ajx_page__container .wpbc_setup_wizard_page__section_right {
+    -ms-flex-order: 1;
+    order: 1
+  }
+  .wpbc_ajx_page__container .wpbc_setup_wizard_page__section_main {
+    -ms-flex-order: 2;
+    order: 2
+  }
+  .wpbc_ajx_page__container .wpbc_setup_wizard_page__section_left {
+    -ms-flex-order: 3;
+    order: 3
+  }
+  .wpbc_ajx_page__container .wpbc_setup_wizard_page__section_footer {
+    -ms-flex-order: 99;
+    order: 99
+  }
+}
+.wpbc__container_place__footer_buttons,
+.wpbc_page_main_section.wpbc_container_booking_form {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex: 0 1 85%;
+  flex: 0 1 85%;
+  margin: -15px auto 0;
+  font-size: 15px;
+  line-height: 175%
+}
+.wpbc__container_place__footer_buttons {
+  margin-top: 10px
+}
+.wpbc__container_place__footer_buttons .wpbc__form__div {
+  width: 100%
+}
+.wpbc_setup_wizard_page__section_footer .wpbc_container .wpbc_button_light,
+.wpbc_setup_wizard_page__section_footer .wpbc_container.wpbc_container_booking_form .wpbc_button_light {
+  padding: 0 1em;
+  line-height: 2.21;
+  -ms-flex-align: first baseline;
+  align-items: first baseline
+}
+.wpbc_setup_wizard_page__section_footer .wpbc_container .wpbc_button_light .wpbc_spin {
+  line-height: 50%;
+  -ms-flex-item-align: center;
+  align-self: center
+}
+@media screen and (max-width:782px) {
+  .wpbc__container_place__footer_buttons.wpbc_container.wpbc_container_booking_form {
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%
+  }
+}
+.wpbc_exit_link_small {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center
+}
+.wpbc_exit_link_small a {
+  font-size: 14px;
+  color: #888;
+  text-decoration: underline
+}
+.wpbc_exit_link_small a:active,
+.wpbc_exit_link_small a:hover {
+  color: #555;
+  text-decoration: underline
+}
+.wpbc_exit_link_small a.wpbc_button_danger {
+  color: #c18e8e
+}
+.wpbc_exit_link_small a.wpbc_button_danger:active,
+.wpbc_exit_link_small a.wpbc_button_danger:hover {
+  color: #e65d59
+}
+.wpbc_swp_section h1.wpbc_swp_section_header {
+  font-weight: 600;
+  font-size: 26px;
+  margin-bottom: 0;
+  width: 100%
+}
+.wpbc_swp_section p.wpbc_swp_section_header_description {
+  font-size: 12px;
+  margin-top: 0
+}
+.wpbc_swp_section__welcome h1.wpbc_swp_section_header {
+  text-align: center;
+  margin: 0 auto 10px
+}
+div.wpbc_container.wpbc_form .wpbc_swp_section label {
+  margin: 15px 0 8px
+}
+.wpbc_widgets {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start
+}
+.wpbc_widgets .wpbc_widget {
+  margin: 0 0 20px;
+  width: 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  border: 1px solid #ccc;
+  border-radius: 0 0 2px 2px
+}
+.wpbc_widget .wpbc_widget_header {
+  width: 100%;
+  height: 44px;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+  font-weight: 600;
+  text-shadow: none;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: center;
+  align-items: center
+}
+.wpbc_widget .wpbc_widget_header .wpbc_widget_header_text {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 0 15px
+}
+.wpbc_widget .wpbc_widget_header .wpbc_widget_header_settings_link {
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin-left: auto;
+  border-left: 1px solid #ccc;
+  padding: 5px 10px;
+  color: #0e70b7
+}
+.wpbc_widget .wpbc_widget_content {
+  padding: 10px 15px
+}
+.wpbc_widget_preview_booking_form.wpbc_widget .wpbc_widget_content {
+  padding-bottom: 70px
+}
+.wpbc_shortcode_container {
+  width: 100%;
+  max-width: 880px;
+  min-width: 341px;
+  margin: auto
+}
+.wpbc_widget_preview_booking_form .wpbc_widget_content {
+  background: repeating-linear-gradient(-45deg,#f9f9f8 0 3px,#fff 3px 5px)
+}
+.wpbc_section_preview_mobile_btn_bar .wpbc_preview_a {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: none;
+  margin: 0 5px;
+  color: #6b96ce
+}
+.wpbc_section_preview_mobile_btn_bar .wpbc_preview_a.active,
+.wpbc_section_preview_mobile_btn_bar .wpbc_preview_a.active:focus {
+  color: #52595f
+}
+.wpbc_section_preview_mobile_btn_bar .wpbc_preview_a:focus,
+.wpbc_section_preview_mobile_btn_bar .wpbc_preview_a:hover {
+  color: #2f76d3;
+  text-decoration: none;
+  outline: 0;
+  box-shadow: none
+}
+.wpbc_section_preview_mobile_btn_bar .wpbc_preview_icon::before {
+  font-size: 20px
+}
+.wpbc_section_preview_mobile_btn_bar .wpbc_preview_icon.wpbc-bi-display::before,
+.wpbc_section_preview_mobile_btn_bar .wpbc_preview_icon.wpbc_icn_computer::before {
+  font-size: 21px
+}
+.wpbc_center_preview.wpbc_theme_dark_1,
+.wpbc_widget_preview_booking_form .wpbc_widget_content.wpbc_theme_dark_1 {
+  background: #272727;
+  background: repeating-linear-gradient(-45deg,#383838 0 3px,#2f2f2f 3px 5px);
+  color: #fff
+}
+.wpbc_widget_preview_booking_form .wpbc_widget_content.wpbc_theme_dark_1 .wpbc-settings-notice {
+  color: #d7d7ca;
+  background: #595959;
+  box-shadow: 0 1px 3px #313131;
+  border: 0;
+  border-left: 4px solid #9580aa
+}
+.wpbc_container_booking_form .wpbc__field .wpbc_ui_booking_timeslot_picker__get_on_off__div {
+  padding-left: 15px
+}
+.wpbc_container_booking_form .wpbc__field .booking_appointments_type__get_on_off label.wpbc-form-radio,
+.wpbc_container_booking_form .wpbc__field .booking_appointments_type__get_on_off label.wpbc-form-radio:hover {
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 10px 0;
+  font-weight: 400
+}
+.wpbc_container_booking_form .wpbc__field .booking_appointments_type__get_on_off .wpbc-form-radio input {
+  margin: 0 10px 0 5px
+}

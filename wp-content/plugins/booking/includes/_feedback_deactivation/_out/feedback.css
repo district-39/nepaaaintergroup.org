@@ -1,0 +1,177 @@
+#wpbc_deactivate-feedback-popup-wrapper {
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(0,0,0,.5);
+  bottom: 0;
+  display: none;
+  -ms-flex-pack: center;
+  justify-content: center;
+  left: 0;
+  padding: 1rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 999999
+}
+#wpbc_deactivate-feedback-popup-wrapper.active {
+  display: -ms-flexbox;
+  display: flex
+}
+#wpbc_deactivate-feedback-popup-wrapper .wpbc_deactivate-feedback-popup-inner {
+  animation: .3s modalFadeIn;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  max-height: 550px;
+  max-width: calc(100vw - 145px);
+  overflow: auto;
+  padding: 14px;
+  scrollbar-width: thin;
+  width: 600px
+}
+#wpbc_deactivate-feedback-popup-wrapper .wpbc_deactivate-feedback-popup-inner .wpbc_deactivate-feedback-popup-header {
+  border-bottom: 1px solid #cdd0d8;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 0 10px
+}
+#wpbc_deactivate-feedback-popup-wrapper .wpbc_deactivate-feedback-popup-inner .wpbc_deactivate-feedback-popup-header__logo-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center
+}
+#wpbc_deactivate-feedback-popup-wrapper .wpbc_deactivate-feedback-popup-inner .wpbc_deactivate-feedback-popup-header__logo-wrap .wpbc_deactivate-feedback-popup-header__logo-icon {
+  margin-right: 16px
+}
+#wpbc_deactivate-feedback-popup-wrapper .wpbc_deactivate-feedback-popup-inner .wpbc_deactivate-feedback-popup-header__logo-wrap .wpbc_deactivate-feedback-popup-header-title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0
+}
+#wpbc_deactivate-feedback-popup-wrapper .wpbc_deactivate-feedback-popup-inner .close-deactivate-feedback-popup {
+  background: 0 0;
+  border: none;
+  color: #718096;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 1;
+  padding: 0
+}
+#wpbc_deactivate-feedback-popup-wrapper .wpbc_deactivate-feedback-popup-inner .wpbc_deactivate-feedback-popup-form-caption {
+  color: #4a5568;
+  font-size: 17px;
+  font-weight: 500;
+  margin: 15px 0
+}
+#wpbc_deactivate-feedback-popup-wrapper .wpbc_deactivate-feedback-popup-inner .wpbc_deactivate-feedback-form {
+  padding: 0 10px;
+  text-align: left;
+  font-size: 15px;
+  color: #495157;
+  line-height: 2
+}
+#wpbc_deactivate-feedback-popup-wrapper .wpbc_deactivate-feedback-popup-inner .wpbc_deactivate-feedback-popup-form-questions {
+  display: grid;
+  gap: 6px;
+  grid-template-columns: 1fr 1fr;
+  margin: 16px 0
+}
+#wpbc_deactivate-feedback-popup-wrapper .wpbc_deactivate-feedback-popup-inner .wpbc_deactivate-feedback-popup-form-more-details {
+  display: none
+}
+.wpbc_deactivate-feedback-popup-input-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 5px
+}
+.wpbc_deactivate-feedback-popup-input-wrapper input {
+  line-height: 2.3;
+  margin-top: 1px
+}
+#wpbc_deactivate-feedback-popup-wrapper .wpbc_deactivate-feedback-popup-inner .wpbc_deactivate-feedback-popup-form-footer {
+  overflow: hidden;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 14px;
+  border-top: 1px solid #ccc;
+  padding: 10px 0 0;
+  margin: 15px 0 0;
+  gap: 25px
+}
+#wpbc_deactivate-feedback-popup-wrapper .wpbc_deactivate-feedback-popup-inner .wpbc_deactivate-feedback-popup-form-footer .feedback-textarea {
+  width: 100%;
+  margin: 5px 0 10px
+}
+#wpbc_deactivate-feedback-popup-wrapper .wpbc_deactivate-feedback-popup-inner .wpbc_deactivate-feedback-popup-form-footer .feedback-textarea:-ms-input-placeholder {
+  color: #ccc
+}
+#wpbc_deactivate-feedback-popup-wrapper .wpbc_deactivate-feedback-popup-inner .wpbc_deactivate-feedback-popup-form-footer .feedback-textarea::placeholder {
+  color: #ccc
+}
+#wpbc_deactivate-feedback-popup-wrapper .wpbc_deactivate-feedback-popup-inner .wpbc_deactivate-feedback-popup-form-footer button.submit {
+  background-color: #475bb2;
+  color: #fff;
+  padding: 0 16px;
+  border-radius: 6px;
+  border: none;
+  float: right;
+  cursor: pointer;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  -ms-flex-pack: center;
+  justify-content: center;
+  transition: .2s;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -ms-flex-item-align: center;
+  align-self: center
+}
+#wpbc_deactivate-feedback-popup-wrapper .wpbc_deactivate-feedback-popup-inner .wpbc_deactivate-feedback-popup-form-footer button.submit:hover {
+  background-color: #38488e
+}
+#wpbc_deactivate-feedback-popup-wrapper .wpbc_deactivate-feedback-popup-inner .wpbc_deactivate-feedback-popup-form-footer a.skip {
+  color: #a4afb7;
+  background: 0 0;
+  float: left;
+  width: auto;
+  border: none;
+  cursor: pointer
+}
+#wpbc_deactivate-feedback-popup-wrapper .wpbc_deactivate-feedback-popup-inner .consent {
+  font-size: 10px;
+  color: #8f8f8f;
+  background: 0 0;
+  width: auto;
+  border: none
+}
+@keyframes modalFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px)
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}

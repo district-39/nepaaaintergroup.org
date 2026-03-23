@@ -1,0 +1,267 @@
+/*! = Drop Down Menu = */
+.wpbc_admin {
+	--wpbc_ui_dropdown__ul-background-color: var(--wpbc_ui__gen__panel_background-color);
+	--wpbc_ui_dropdown__ul-font-size: var(--wpbc_ui__gen__font-size);
+	--wpbc_ui_dropdown__ul-border-radius: var(--wpbc_ui__gen__border-radius);
+	--wpbc_ui_dropdown__ul-padding: 6px;
+
+	--wpbc_ui_dropdown__a-color: var(--wpbc_ui__gen__text-color);
+	--wpbc_ui_dropdown__a-font-size: var(--wpbc_ui_dropdown__ul-font-size);
+	--wpbc_ui_dropdown__a-padding: 5px 15px;
+
+	--wpbc_ui_dropdown__active-a-border-radius: var(--wpbc_ui__gen__border-radius);
+	/** --wpbc_ui_dropdown__active-a-background: #08c; */
+	--wpbc_ui_dropdown__active-a-background: var(--wpbc_ui__gen__active-background-color);
+	--wpbc_ui_dropdown__active-a-color: var(--wpbc_ui__gen__active-text-color);
+}
+.wpbc_ui_el__dropdown {
+	position: relative;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: flex-start;
+}
+.wpbc_ui_el__dropdown.open > .ul_dropdown_menu {
+	display: block;
+}
+.wpbc_ui_el__dropdown.open > a {
+	outline: 0;
+}
+/* The SVG is arrow-down-alt2 from Dashicons. -  it is \/   symbol in selectboxes in native wp. Basically  used for .btn-toolbar */
+.wpbc_ui_el_container.wpbc_ui_el__dropdown .ul_dropdown_menu_toggle,
+.wpbc_ui_el_container.wpbc_ui_el__dropdown .ul_dropdown_menu_toggle:hover,
+.wpbc_ui_el_container.wpbc_ui_el__dropdown .ul_dropdown_menu_toggle:focus,
+.wpbc_ui_el_container.wpbc_ui_el__dropdown .ul_dropdown_menu_toggle:active{
+	cursor: pointer;
+	vertical-align: middle;
+	text-decoration: none;
+	outline: 0;
+
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+
+	align-self: stretch;
+}
+/* The SVG is arrow-down-alt2 from Dashicons. -  it is \/   symbol in selectboxes in native wp. Basically  used for .btn-toolbar */
+.wpbc_ui_el_container.wpbc_ui_el__dropdown .ul_dropdown_menu_toggle.has_down_arrow,
+.wpbc_ui_el_container.wpbc_ui_el__dropdown .ul_dropdown_menu_toggle.has_down_arrow:hover,
+.wpbc_ui_el_container.wpbc_ui_el__dropdown .ul_dropdown_menu_toggle.has_down_arrow:focus,
+.wpbc_ui_el_container.wpbc_ui_el__dropdown .ul_dropdown_menu_toggle.has_down_arrow:active {
+	background: transparent url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E') no-repeat right 5px top 53%;
+	padding-right: Min(2.2em, 30px);
+	background-size: Min(1em, 16px) Min(1em, 16px);
+}
+.wpbc_ui_el_container.wpbc_ui_el__dropdown.open .ul_dropdown_menu_toggle:focus{
+	box-shadow: none;
+}
+/* Dropdown with border, like selectbox */
+.wpbc_ui_el_container.wpbc_ui_el__dropdown .ul_dropdown_menu_toggle.has_border {
+	border: 1px solid #00000030;
+	border-radius: 3px;
+	padding-left: 0.7em;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+}
+/* Icon plus Text padding */
+.wpbc_ui_el_container.wpbc_ui_el__dropdown .ul_dropdown_menu_toggle .menu_icon + .nav-tab-text {
+	padding: 0 0 0 0.7em;
+}
+@media (max-width: 782px) {
+	.wpbc_ui_el_container.wpbc_ui_el__dropdown .ul_dropdown_menu_toggle .nav-tab-text.hide_in_mobile,
+	.wpbc_ui_el_container.wpbc_ui_el__dropdown .ul_dropdown_menu_toggle .menu_icon + .nav-tab-text {
+		display: none;
+	}
+}
+/*.wpbc_ui_el__dropdown .ul_dropdown_menu_toggle:focus { outline: 0; }*/
+.wpbc_ui_el__dropdown .ul_dropdown_menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 99998;
+	display: none;
+	float: left;
+	min-width: 160px;
+	padding: 5px 0;
+	padding: var(--wpbc_ui_dropdown__ul-padding);
+	margin: 0;
+	list-style: none;
+	font-size: var(--wpbc_ui_dropdown__ul-font-size);
+	text-align: left;
+	background-color: var(--wpbc_ui_dropdown__ul-background-color);
+	border: 1px solid rgba(0, 0, 0, .1);
+	border-radius: var(--wpbc_ui_dropdown__ul-border-radius);
+	box-shadow: 0 2px 4px rgba(0,0,0,.2);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+	background-clip: padding-box;
+	max-height: calc(-8em + 100vh);
+	overflow-y: auto;
+	max-width: calc(-2em + 100vw);
+	overflow-x: auto;
+	scrollbar-width: thin;
+	box-sizing: content-box;
+}
+.wpbc_ui_el__dropdown .ul_dropdown_menu .divider {
+	height: 0px;
+	margin: 9px 0;
+	overflow: hidden;
+	background-color: #e5e5e5;
+	border: 0;
+	border-top: 1px solid #dcdcde;
+	border-bottom: 1px solid #f6f7f7;
+}
+.wpbc_ui_el__dropdown .ul_dropdown_menu > li > a {
+	color: var(--wpbc_ui_dropdown__a-color);
+	clear: both;
+	display: block;
+	font-weight: 400;
+	padding: var(--wpbc_ui_dropdown__a-padding);
+	white-space: nowrap;
+	font-size: var(--wpbc_ui_dropdown__a-font-size);
+	line-height: 1.7;
+	text-decoration: none;
+}
+.wpbc_ui_el__dropdown .ul_dropdown_menu > li > a:focus,
+.wpbc_ui_el__dropdown .ul_dropdown_menu > li > a:hover {
+	text-decoration: none;
+	background: var(--wpbc_ui_dropdown__active-a-background);
+	color: var(--wpbc_ui_dropdown__active-a-color);
+	text-decoration-line: none;
+	text-decoration-style: solid;
+	outline: 0;
+	box-shadow: none;
+	border-radius: var(--wpbc_ui_dropdown__active-a-border-radius);
+}
+.wpbc_ui_el__dropdown .ul_dropdown_menu > li > a:focus *,
+.wpbc_ui_el__dropdown .ul_dropdown_menu > li > a:hover * {
+	color: var(--wpbc_ui_dropdown__active-a-color);
+}
+.wpbc_ui_el__dropdown .ul_dropdown_menu > .disabled > a,
+.wpbc_ui_el__dropdown .ul_dropdown_menu > .disabled > a:focus,
+.wpbc_ui_el__dropdown .ul_dropdown_menu > .disabled > a:hover {
+	text-decoration: none;
+	background-color: transparent;
+	background-image: none;
+	cursor: not-allowed;
+	color: #ccc;
+}
+.wpbc_ui_el__dropdown .dropdown-header {
+	display: block;
+	padding: 3px 20px;
+	font-size: 12px;
+	line-height: 1.42857143;
+	color: #777;
+	white-space: nowrap;
+}
+.wpbc_ui_el__dropdown .dropdown-backdrop {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	z-index: 990;
+}
+.wpbc_ui_el__dropdown .ul_dropdown_menu-right {
+	left: auto;
+	right: 0;
+}
+.wpbc_ui_el__dropdown .ul_dropdown_menu-left {
+	left: 0;
+	right: auto;
+}
+.wpbc_ui_el__dropdown .ul_dropdown_menu.pull-right {
+	right: 0;
+	left: auto;
+}
+.wpbc_ui_el__dropdown .pull-right > .ul_dropdown_menu {
+	right: 0;
+	left: auto;
+}
+.wpbc_ui_el__dropdown .nav-tabs .ul_dropdown_menu {
+	margin-top: -1px;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0
+}
+.wpbc_ui_el__dropdown .ul_dropdown_menu li {
+	padding: 0;
+	margin: 0;
+}
+.wpbc_ui_el__dropdown .ul_dropdown_menu li.dropdown-header {
+	padding: 4px 10px 4px;
+	color: #aaa;
+	font-size: 0.7em;
+	font-style: italic;
+	font-weight: 600;
+}
+/* Display Flex View of options and icons at  right side */
+.wpbc_ui_el__dropdown .ul_dropdown_menu > li > a.ul_dropdown_menu_li_action {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+.wpbc_ui_el__dropdown .ul_dropdown_menu > li > a.ul_dropdown_menu_li_action > .menu_icon:last-child {
+	margin-left: auto;
+	padding-left: 1em;
+}
+/* ---------------------------- Animation Menu Start --------------------------------------- */
+.wpbc_ui_el__dropdown .ul_dropdown_menu {
+	animation: wpbc_ui_el__dropdown_menu__anim__grow_down 200ms ease-in-out forwards;
+	transform-origin: top center;
+}
+@keyframes wpbc_ui_el__dropdown_menu__anim__grow_down {
+	0% {
+		transform: scaleY(0)
+	}
+	50% {
+		transform: scaleY(0.9)
+	}
+	100% {
+		transform: scaleY(1)
+	}
+}
+@keyframes wpbc_ui_el__slide_to_left {
+	0% {
+		transform: translateX(-100%);
+	}
+	50% {
+		transform: translateX(-50%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+@keyframes wpbc_ui_el__dropdown_menu__anim__pop_up_animation {
+	0% {
+		transform: scale(0);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+@keyframes wpbc_ui_el__dropdown_menu__anim__fade_in {
+	0% {
+		opacity: 0;
+	}
+	33% {
+		opacity: 0.1;
+	}
+	66% {
+		opacity: 0.2;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+/* ---------------------------- Animation End --------------------------------------- */
+/* -- H  E I G H T  -  DropDown in different Places ----------------------------------------------------------------- */
+/* == Header in Booking Lsting == */
+.wpbc__list__table .wpbc__list__head .ul_dropdown_menu_toggle.has_border {
+	height: 30px;
+}

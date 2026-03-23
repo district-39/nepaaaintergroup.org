@@ -1,0 +1,75 @@
+/*!   ==  Align Form Elements  ======================================================================================  */
+/*!   ==  Right  ==  */
+.wpbc_aling_right,
+.wpbc_aling_right .wpbc_times_selector {
+	justify-content: flex-end !important;
+}
+@media (max-width: 400px) {
+	.wpbc_aling_right .wpbc_times_selector div {
+		margin: 7px 0 0 0;
+	}
+}
+/*!   ==  Center  ==  */
+.wpbc_aling_center,
+.wpbc_aling_center .wpbc_times_selector {
+	justify-content: center !important;
+}
+/*!   ==  Simple booking form - Center ==  */
+.wpbc_container_booking_form .wpbc_booking_form_simple .wpbc_aling_center .wpbc__field {
+	justify-content: center !important;
+}
+.wpbc_container_booking_form .wpbc_booking_form_simple .wpbc_aling_center .wpbc__field label{
+	 text-align: center !important;
+}
+/*!   ==  Center Calendar ? ==  */
+.wpbc_aling_center .wpbc_calendar_wraper{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 400px) {
+	.wpbc_aling_center .wpbc_times_selector div {
+		margin: 7px 0;
+	}
+}
+/*!   ==  Wizard Form Tmeplate - Bordered Well Padding  ============================================================  */
+.wpbc_wizard__border_container {
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 6px 0px;
+	border: 1px solid rgb(204, 204, 204);
+	border-radius: 2px;
+	background: #FFF;
+	padding: 10px 30px;
+	box-sizing: border-box;
+	margin: auto;
+	max-width: 100%;
+	width: 100%;
+	max-width: Min(900px, 100%);
+}
+.wpbc_wizard__border_container,
+.wpbc_wizard__border_container p {
+	font-size: 16px;
+	font-weight: 400;
+}
+.wpbc_times_selector div,
+.wpbc_wizard__border_container .wpbc_times_selector div {
+	flex: 1 1 auto;
+	/*max-width: Min(260px, 100%);*/
+	min-width: Min(90px, 100%);
+	white-space: wrap;
+	word-break: normal;
+}
+.wpbc_theme_dark_1 .wpbc_wizard__border_container {
+	border: 1px solid rgb(0, 0, 0);
+	background: #626262;
+	color: #999;
+	color: #bbb;
+	box-shadow: 0 0px 3px #3b3b3b;
+}
+/* Exclude calendar elements. */
+.wpbc_theme_dark_1 .wpbc_wizard__border_container div:not(.datepick-inline *),
+.wpbc_theme_dark_1 .wpbc_wizard__border_container span:not(.datepick-inline *),
+.wpbc_theme_dark_1 .wpbc_wizard__border_container p,
+.wpbc_theme_dark_1 .wpbc_wizard__border_container label {
+	color: #fff;
+}

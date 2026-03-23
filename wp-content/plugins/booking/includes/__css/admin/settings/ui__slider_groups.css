@@ -1,0 +1,28 @@
+.wpbc_slider_range_group.wpbc_inline_inputs,
+.inspector__row .wpbc_slider_range_group.wpbc_inline_inputs {
+	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 15px;
+}
+.wpbc_slider_len_group {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 10px;
+}
+.wpbc_slider_len_group .wpbc_inline_inputs {
+	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 15px;
+}
+.wpbc_slider_len_group .wpbc_inline_inputs,
+.wpbc_slider_len_group label {
+	margin: 5px 0;
+}

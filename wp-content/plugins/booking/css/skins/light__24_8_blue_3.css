@@ -1,0 +1,21 @@
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Child calendar theme    of    "/css/skins/light__24_8.css"                          C O L O R    S K I N           */
+/* ------------------------------------------------------------------------------------------------------------------ */
+@import url("light__24_8.css");
+/* Color Scheme: - Blue 3  - Greyed */
+:root {
+  --wpbc_cal-unavailable-day-color: #FFF;
+  --wpbc_cal-unavailable-text-color: #d4d4d4c7;
+  --wpbc_cal-available-day-color: #FFF;
+  --wpbc_cal-available-text-color: #000;
+  --wpbc_cal-approved-day-color: #e5e7e9;
+  --wpbc_cal-approved-text-color: #848688;
+  --wpbc_cal-pending-day-color: #f5f6f7;
+  --wpbc_cal-pending-text-color: #c5c5c5;
+  --wpbc_cal-selected-day-color: #6b96ce;
+  --wpbc_cal-selected-text-color: #fff;
+  --wpbc_cal-hover-day-color: #6b96ce6e;
+  --wpbc_cal-hover-text-color: #fff;
+  --wpbc_cal-timespartly-day-color: #f4f4f4;
+  --wpbc_cal-timespartly-text-color: #000;
+}

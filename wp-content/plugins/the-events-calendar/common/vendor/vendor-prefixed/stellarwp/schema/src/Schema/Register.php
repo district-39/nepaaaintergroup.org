@@ -1,0 +1,91 @@
+<?php
+
+namespace TEC\Common\StellarWP\Schema;
+
+use TEC\Common\StellarWP\Schema\Builder;
+use TEC\Common\StellarWP\Schema\Config;
+use TEC\Common\StellarWP\Schema\Tables;
+use TEC\Common\StellarWP\Schema\Tables\Contracts\Table_Interface;
+use TEC\Common\StellarWP\Schema\Tables\Collection;
+
+/**
+ * A helper class for registering StellarWP Schema resources.
+ */
+class Register {
+	/**
+	 * Removes a table from the register.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string|Table_Interface $table Table Schema class.
+	 *
+	 * @throws \TEC\Common\StellarWP\DB\Database\Exceptions\DatabaseQueryException If the query fails.
+	 *
+	 * @return Table_Interface
+	 */
+	public static function remove_table( $table ): Table_Interface {
+		Schema::init();
+
+		if ( is_string( $table ) ) {
+			$table = new $table();
+		}
+
+		// If we've already executed plugins_loaded, automatically remove the field.
+		if ( did_action( 'plugins_loaded' ) ) {
+			$table->drop();
+		}
+
+		Schema::tables()->remove( $table::base_table_name() );
+
+		return $table;
+	}
+
+	/**
+	 * Register a table schema.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string|Tables\Contracts\Table $table Table class.
+	 *
+	 * @throws \TEC\Common\StellarWP\DB\Database\Exceptions\DatabaseQueryException If the query fails.
+	 *
+	 * @return Table_Interface
+	 */
+	public static function table( $table ): Table_Interface {
+		Schema::init();
+
+		if ( is_string( $table ) ) {
+			$table = new $table();
+		}
+
+		$container = Config::get_container();
+
+		Schema::tables()->add( $table );
+
+		// If we've already executed plugins_loaded, automatically add the table.
+		if ( did_action( 'plugins_loaded' ) ) {
+			$container->get( Builder::class )->up();
+		}
+
+		return $table;
+	}
+
+	/**
+	 * Register multiple table schemas.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array<mixed> $tables Tables to register.
+	 *
+	 * @throws \TEC\Common\StellarWP\DB\Database\Exceptions\DatabaseQueryException If the query fails.
+	 *
+	 * @return Collection
+	 */
+	public static function tables( array $tables ): Collection {
+		foreach ( $tables as $table ) {
+			static::table( $table );
+		}
+
+		return Schema::tables();
+	}
+}

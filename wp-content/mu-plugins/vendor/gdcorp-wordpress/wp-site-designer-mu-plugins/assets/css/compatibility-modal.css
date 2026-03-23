@@ -1,0 +1,276 @@
+/**
+ * Site Designer Compatibility Modal Styles
+ *
+ * @package wp-site-designer-mu-plugins
+ */
+
+/* Modal backdrop and container */
+.gdmu-modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 100100;
+	align-items: center;
+	justify-content: center;
+}
+
+.gdmu-modal.is-visible {
+	display: flex;
+}
+
+.gdmu-modal-backdrop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.7);
+}
+
+.gdmu-modal-container {
+	position: relative;
+	background: #fff;
+	border-radius: 8px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+	max-width: 340px;
+	width: 90%;
+	max-height: 90vh;
+	overflow: auto;
+	animation: gdmu-modal-appear 0.2s ease-out;
+}
+
+@keyframes gdmu-modal-appear {
+	from {
+		opacity: 0;
+		transform: scale(0.95) translateY(-10px);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1) translateY(0);
+	}
+}
+
+/* Modal header */
+.gdmu-modal-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 24px 24px 12px;
+	text-align: center;
+}
+
+.gdmu-modal-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 12px;
+}
+
+.gdmu-modal-icon-warning svg {
+	width: 24px;
+	height: 22px;
+}
+
+.gdmu-modal-title {
+	margin: 0;
+	font-size: 16px;
+	font-weight: 600;
+	color: #1e1e1e;
+	line-height: 1.4;
+}
+
+/* Modal body */
+.gdmu-modal-body {
+	padding: 0 24px 20px;
+	text-align: left;
+}
+
+.gdmu-modal-message {
+	font-size: 13px;
+	color: #646970;
+	margin: 0;
+	line-height: 1.5;
+}
+
+.gdmu-modal-note {
+	font-size: 12px;
+	color: #787c82;
+	margin: 12px 0 0;
+	padding: 10px;
+	background: #f0f6fc;
+	border-radius: 4px;
+	border-left: 3px solid #72aee6;
+}
+
+/* Dismiss option checkbox */
+.gdmu-modal-dismiss-option {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-top: 16px;
+	cursor: pointer;
+	font-size: 13px;
+	color: #646970;
+}
+
+.gdmu-modal-dismiss-checkbox {
+	width: 16px;
+	height: 16px;
+	margin: 0;
+	cursor: pointer;
+	accent-color: #3858E9;
+}
+
+.gdmu-modal-dismiss-label {
+	user-select: none;
+}
+
+/* Modal footer */
+.gdmu-modal-footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 16px;
+	padding: 0 24px 24px;
+}
+
+/* Continue Anyway - red text link style */
+.gdmu-modal-link {
+	background: none;
+	border: none;
+	color: #CC1818;
+	font-size: 13px;
+	font-weight: 400;
+	cursor: pointer;
+	padding: 8px 12px;
+	transition: color 0.15s ease;
+}
+
+.gdmu-modal-link:hover,
+.gdmu-modal-link:focus {
+	color: #a31313;
+	text-decoration: underline;
+	outline: none;
+}
+
+/* Cancel Activation - blue solid button */
+.gdmu-modal-cancel-btn {
+	background: #3858E9;
+	border: 1px solid #3858E9;
+	color: #fff;
+	font-size: 13px;
+	font-weight: 500;
+	padding: 8px 16px;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 0.15s ease;
+}
+
+.gdmu-modal-cancel-btn:hover,
+.gdmu-modal-cancel-btn:focus {
+	background: #2d47ba;
+	border-color: #2d47ba;
+	color: #fff;
+	outline: none;
+}
+
+.gdmu-modal-cancel-btn:disabled,
+.gdmu-modal-link:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.gdmu-modal-link.is-loading,
+.gdmu-modal-cancel-btn.is-loading {
+	position: relative;
+	pointer-events: none;
+}
+
+.gdmu-modal-link.is-loading .gdmu-btn-text,
+.gdmu-modal-cancel-btn.is-loading .gdmu-btn-text {
+	visibility: hidden;
+}
+
+.gdmu-modal-link.is-loading::after,
+.gdmu-modal-cancel-btn.is-loading::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -7px;
+	margin-left: -7px;
+	width: 14px;
+	height: 14px;
+	border: 2px solid transparent;
+	border-top-color: #CC1818;
+	border-radius: 50%;
+	animation: gdmu-spin 0.8s linear infinite;
+}
+
+.gdmu-modal-cancel-btn.is-loading::after {
+	border-top-color: #fff;
+}
+
+@keyframes gdmu-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* Body class when modal is open */
+body.gdmu-modal-open {
+	overflow: hidden;
+}
+
+/* Admin notice styles */
+.gdmu-compatibility-notice {
+	border-left-color: #dba617;
+}
+
+.gdmu-compatibility-notice .dashicons-warning {
+	vertical-align: text-bottom;
+}
+
+.gdmu-notice-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	align-items: center;
+}
+
+.gdmu-notice-actions .button-link {
+	color: #787c82;
+	text-decoration: none;
+}
+
+.gdmu-notice-actions .button-link:hover {
+	color: #135e96;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+	.gdmu-modal-container {
+		width: 95%;
+		margin: 16px;
+	}
+
+	.gdmu-modal-header,
+	.gdmu-modal-body,
+	.gdmu-modal-footer {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.gdmu-notice-actions {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+

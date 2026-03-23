@@ -1,0 +1,21 @@
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Child calendar theme    of    "/css/skins/light__24_8.css"                          C O L O R    S K I N           */
+/* ------------------------------------------------------------------------------------------------------------------ */
+@import url("light__24_8.css");
+/* Color Scheme: - Red 2 */
+:root {
+  --wpbc_cal-unavailable-day-color: #FFF;
+  --wpbc_cal-unavailable-text-color: #d4d4d4c7;
+  --wpbc_cal-available-day-color: #FFF;
+  --wpbc_cal-available-text-color: #000;
+  --wpbc_cal-approved-day-color: #ca8578;
+  --wpbc_cal-approved-text-color: #6b433b;
+  --wpbc_cal-pending-day-color: #e6d0cc;
+  --wpbc_cal-pending-text-color: #93716b;
+  --wpbc_cal-selected-day-color: #729978;
+  --wpbc_cal-selected-text-color: #f0f0f0;
+  --wpbc_cal-hover-day-color: #7299783b;
+  --wpbc_cal-hover-text-color: #4b4b4b;
+  --wpbc_cal-timespartly-day-color: #b2a8b8;
+  --wpbc_cal-timespartly-text-color: #656168;
+}

@@ -1,0 +1,55 @@
+/*! = Settings Page Structure = */
+.wpbc_settings_page_wrapper {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+
+	margin-top: calc(var(--wpbc_ui_top_nav__height) - 1px);
+}
+.wp-toolbar .wpbc_admin_full_screen .wpbc_settings_page_wrapper {
+	margin-top: calc(var(--wpbc_ui_top_nav__height) - 1px - 32px);
+}
+.wpbc_settings_page_content {
+	/*flex: 1 1 auto;*/
+	/*max-width: calc( 100% - var(--wpbc_ui_left_vert_nav__width_max) );*/
+	flex: 1 1 1%;
+	overflow: hidden;
+}
+/* ??? */
+.wpbc_settings_flex_container_right {
+	max-width:100%;
+}
+/* Header Title */
+.wpbc_settings_page_content .wpbc_settings_page_header_title {
+	font-size: 25px;
+	font-weight: 600;
+	margin: 0;
+	padding: 0;
+	line-height: 1.8;
+	min-width: 300px;
+}
+/* Header Title Description*/
+.wpbc_settings_page_content .wpbc_settings_page_header_title_description {
+	font-size: 13px;
+	line-height: 1.5;
+	margin: 0 0 20px;
+	min-width: 300px;
+}
+
+/* Wrap padding */
+body[class*="page_wpbc"] #wpcontent .wpbc_settings_page_content .wrap.wpbc_page {
+	padding: 0;
+	margin: 2px 20px 2px 25px;
+}
+
+.wpbc_settings_page_content .wpbc_settings_path {
+	margin:0 0 5px;
+	min-width:300px;
+}
+.wpbc_settings_page_content .wpbc_settings_path .wpbc_settings_path_el{
+	font-size: 11px;
+}
+.wpbc_settings_page_content .wpbc_settings_path .wpbc_settings_path_el .wpbc_icn_navigate_next::before{
+	font-size: 13px;
+}

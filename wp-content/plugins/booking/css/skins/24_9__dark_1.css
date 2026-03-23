@@ -1,0 +1,44 @@
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Child calendar theme    of    "/css/skins/light__24_8.css"                          C O L O R    S K I N           */
+/* ------------------------------------------------------------------------------------------------------------------ */
+@import url("24_9__light.css");
+/* Color Scheme: - Red 1 */
+:root {
+  --wpbc_cal-day-cell-border-radius: 15%;
+  --wpbc_cal-day-cell-border-width: 2px;
+  --wpbc_cal-day-bg-color-opacity: 35%;
+  --wpbc_cal-selected-day-bg-color-opacity: 32%;
+  --wpbc_cal-text-general-size: 13px;
+  --wpbc_cal-text-cost-size: 50%;
+  --wpbc_cal-text-header-size: 13px;
+  --wpbc_cal-text-weekdays-size: 10px;
+  --wpbc_cal-text-prev-next-links-size: 25px;
+  --wpbc_cal-main-background-color: #1d2327;
+  --wpbc_cal-header-text-color: #9ba2a6;
+  --wpbc_cal-text-prev-next-links-color: #f0f0f1;
+  --wpbc_cal-text-weekdays-color: #6b6b6b;
+  --wpbc_cal-unavailable-day-color: var(--wpbc_cal-main-background-color);
+  --wpbc_cal-unavailable-text-color: #717171c7;
+  --wpbc_cal-available-day-color: #1D2327;
+  --wpbc_cal-available-text-color: #fff;
+  --wpbc_cal-approved-day-color: #aa4a4a;
+  --wpbc_cal-approved-text-color: #c9a1a1;
+  --wpbc_cal-pending-day-color: #7f5b22;
+  --wpbc_cal-pending-text-color: #d19c49;
+  --wpbc_cal-selected-day-color: #6b96ce;
+  --wpbc_cal-selected-text-color: #fff;
+  --wpbc_cal-hover-day-color: #4c5c6e;
+  --wpbc_cal-hover-text-color: #d8d8d8;
+  --wpbc_cal-timespartly-day-color: #736bce;
+  --wpbc_cal-timespartly-text-color: #8785db;
+  --wpbc_cal-day-cells-padding: 3px;
+}
+
+
+/* Unavailable Days at  the WP Booking Calendar > Availability > Days Availability page */
+.wpbc_ajx_availability_container .datepick-inline .datepick .resource_unavailable:not(.datepick-unselectable,.datepick-current-day,.datepick-days-cell-over) .wpbc-cell-box {
+  background: repeating-linear-gradient(-45deg, #595959 0 3px, var( --wpbc_cal-main-background-color ) 3px 8px);
+}
+.datepick-inline{
+	box-shadow: 0 1px 5px 1px #0000006e;
+}

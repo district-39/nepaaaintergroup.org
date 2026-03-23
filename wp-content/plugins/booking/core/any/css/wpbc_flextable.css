@@ -1,0 +1,897 @@
+/*
+    Document   : admin-booking resources-table
+    Created on : 2024-01-13
+    Author     : wpdevelop
+    Description: Resource FlexTable CSS 		// FixIn: 9.9.0.7.
+*/
+
+/**
+ * General Structure
+ *
+ *	.wpbc_selectable_table						( .wpbc_resources_flextable  - by default exist  this CSS class for the booking resources page,  in other pages, can  be different class)
+ *		.wpbc_flextable
+ *			.wpbc_selectable_head
+ *				.wpbc_flextable_row
+ *					.wpbc_flextable_col
+ * 					...
+ *
+ *			.wpbc_selectable_body
+ *				.wpbc_flextable_row
+ *					.wpbc_flextable_col
+ * 					...
+ *
+ *			.wpbc_selectable_foot
+ *				.wpbc_flextable_row
+ *					.wpbc_flextable_col
+ * 					...
+ */
+.wpbc_flextable {
+	display:flex;
+	flex-flow:column nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+}
+
+.wpbc_flextable .wpbc_selectable_head,
+.wpbc_flextable .wpbc_selectable_body,
+.wpbc_flextable .wpbc_selectable_foot {
+	flex:1 1 100%;
+
+	display:flex;
+	flex-flow:column nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+}
+
+.wpbc_flextable .wpbc_flextable_row{
+	flex: 1 1 auto;
+
+	display:flex;
+	flex-flow:row wrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+.wpbc_flextable .wpbc_flextable_row .wpbc_flextable_col{
+	flex: 1 1 auto;
+}
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* 1st column - Checkbox */
+.wpbc_flextable .wpbc_flextable_row .wpbc_flextable_col.wpbc_flextable_col_check{
+	flex: 0 0 25px;
+}
+.wpbc_flextable .wpbc_selectable_body .wpbc_flextable_row .wpbc_flextable_col.wpbc_flextable_col_check{
+	margin: -5px 0 0;				/* show checkbox centered in a row*/
+}
+	@media screen and (max-width: 782px) {
+		.wpbc_flextable .wpbc_selectable_body .wpbc_flextable_row .wpbc_flextable_col.wpbc_flextable_col_check{
+			margin: -2px 0 0;		/* MOBILE: show checkbox centered in a row*/
+		}
+	}
+/* 2nd column - ID */
+.wpbc_flextable .wpbc_flextable_row .wpbc_flextable_col.wpbc_flextable_col_id{
+	flex: 0 1 35px;
+	width:35px;
+	padding-right:0;
+	padding-left:0;
+}
+/* 3rd column - Title */
+.wpbc_flextable .wpbc_flextable_row .wpbc_flextable_col.wpbc_resource_name{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 0 !important;
+	margin: 0;
+	align-self: stretch;
+	min-width: Min(350px,100%);
+}
+	.wpbc_flextable .wpbc_selectable_head .wpbc_flextable_row .wpbc_flextable_col.wpbc_flextable_col_title{
+		flex: 1 1 30%;
+		flex: 1 1 10em;
+		border-right: 1px solid #ccc;
+	}
+	.wpbc_flextable .wpbc_selectable_body .wpbc_flextable_row .wpbc_flextable_col.wpbc_flextable_col_title{
+		/*flex: 1 1 31%;*/
+		flex: 1 1 12em;
+	}
+	.wpbc_flextable .wpbc_selectable_body .wpbc_flextable_row .wpbc_flextable_col.wpbc_flextable_col_title input[type="text"]{
+		width: 99% !important;
+	}
+/* 4th column - Labels */
+.wpbc_flextable .wpbc_selectable_body .wpbc_flextable_row .wpbc_flextable_col.wpbc_flextable_labels{
+	flex: 1 1 10%;
+	flex: 1 1 10em;
+	display:none;
+}
+.wpbc_flextable .wpbc_selectable_head .wpbc_flextable_row .wpbc_flextable_col.wpbc_flextable_col_other{
+	flex: 1 1 auto;
+}
+.wpbc_flextable .wpbc_flextable_row .wpbc_flextable_col.wpbc_flextable_col_other{
+	flex: 1 1 auto;
+	flex: 1 1 40%;
+}
+@media screen and (max-width: 845px) {
+	.wpbc_flextable .wpbc_flextable_row .wpbc_flextable_col.wpbc_flextable_col_other{
+		flex: 1 1 98%;
+	}
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* C O L O R S 																										  */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.wpbc_flextable {
+	background: #fff;
+	border:0px solid #bbb;
+	margin-bottom: 20px;
+}
+/* STRIPED Table */
+.wpbc_flextable .wpbc_flextable_row{
+	background-color: #fefefe;
+	border-left: 4px solid #fefefe;
+	border-bottom: 1px solid #dddddd;
+}
+.wpbc_flextable .wpbc_flextable_row:nth-of-type(2n+1){
+	background-color: var(--wpbc_ui_listing__back_alt_color);
+	border-left: 4px solid var(--wpbc_ui_listing__back_alt_color);
+}
+.wpbc_flextable .wpbc_selectable_head .wpbc_flextable_row,
+.wpbc_flextable .wpbc_selectable_foot .wpbc_flextable_row{
+	background-color: #fff;
+	border-left: 4px solid #fff;
+}
+.wpbc_flextable .wpbc_flextable_row.wpbc_flextable_row_selected{
+	border-left-color: #08a;
+}
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* TEXT | LINKS 																									  */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.wpbc_flextable .wpbc_flextable_row .wpbc_flextable_col_head {
+  font-weight: 600;
+  text-align: left;
+}
+.wpbc_flextable .wpbc_flextable_row .wpbc_flextable_col_head a,
+.wpbc_flextable .wpbc_flextable_row .wpbc_flextable_col_head a:hover,
+.wpbc_flextable .wpbc_flextable_row .wpbc_flextable_col_head a:focus {
+    text-decoration: none;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* M O D E R N    S K I N    C O L O R S 																			  */
+/* ------------------------------------------------------------------------------------------------------------------ */
+/**  Resource Tables */
+.wpbc_flextable {
+    box-shadow: 0 0 1px #aaa;
+}
+.wpbc_flextable .wpbc_flextable_row .wpbc_flextable_col {
+  padding: 10px 7px;
+}
+.wpbc_flextable .wpbc_selectable_head .wpbc_flextable_row .wpbc_flextable_col {
+  padding: 0px 7px;
+	line-height: 3;
+}
+.wpbc_flextable .wpbc_flextable_row .wpbc_flextable_col_head{
+	font-size: 14px;
+}
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Fieldset - mainly  for Booking > Settings > Sync > "Export - .ics" page. 						  FixIn: 9.8.0.6  */
+/* ------------------------------------------------------------------------------------------------------------------ */
+				.wpbc_selectable_body .wpbc_flextable_row fieldset{
+					display: flex;
+					flex-flow: row wrap;
+					justify-content: flex-start;
+					align-items: center;
+				}
+				.wpbc_selectable_body .wpbc_flextable_row fieldset > *{
+					/*margin: 0 10px 10px 0;*/
+					margin: 5px 10px 5px 0;
+				}
+				.wpbc_selectable_body .wpbc_flextable_row fieldset > a{
+					margin-left:auto;
+				}
+				.wpbc_selectable_body .wpbc_flextable_row fieldset .put-in:active,
+				.wpbc_selectable_body .wpbc_flextable_row fieldset .put-in:focus,
+				.wpbc_selectable_body .wpbc_flextable_row fieldset .put-in{
+					flex:1 0 100%;
+					border:none;
+					outline: none;
+					box-shadow: none;
+					background: transparent;
+					cursor: pointer;
+					padding: 0;
+				}
+				.wpbc_selectable_body .wpbc_flextable_row fieldset > code {
+				  font-size: 12px;
+				  line-height: 22px !important;
+				  background: #ddd;
+				  color: #000;
+				}
+/* End Fieldset - mainly  for Booking > Settings > Sync > "Export - .ics" page */
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Error - No rows 																									  */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.wpbc_flextable .wpbc_flextable_row.wpbc_no_results_row .wpbc_flextable_col {
+	text-align: center;
+	font-weight: 600;
+	font-size: 1.2em;
+}
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Other																											  */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.wpbc_flextable .check-column {
+	position: initial;
+}
+.wpbc_flextable .wpbc_selectable_head .wpbc_flextable_row .wpbc_flextable_col.wpbc_flextable_col_other{
+	text-align:center;
+}
+	@media screen and (max-width: 1155px) {
+		.wpbc_flextable .wpbc_selectable_head .wpbc_flextable_row .wpbc_flextable_col.wpbc_flextable_col_other{
+			border-left: 0;		/* MOBILE: show checkbox centered in a row*/
+		}
+	}
+/* Pagination  button  color */
+.wpbc-pagination .button.active,
+.wpbc-pagination .button.active:hover {
+	color:#23282d;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Tabs in Flex Table  for switching view of Table content															  */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.wpbc_flextable_header_tabs .wpdvlp-top-tabs {
+	z-index: 7;
+	background: transparent;
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+}
+.wpbc_flextable_header_tabs .wpdvlp-top-tabs .nav-tab-active,
+.wpbc_flextable_header_tabs .wpdvlp-top-tabs a.nav-tab-active:focus {
+	border-bottom-color: #707980;
+}
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* RESOURCE    ID --------------- */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.wpbc_flextable .wpbc_label_resource_id_container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.wpbc_flextable .wpbc_label_resource_id_container .wpbc_label_resource_id {
+    padding: 0px 9px;
+    line-height: 2em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    border-radius: 12px;
+}
+/* END RESOURCE   ID --------------- */
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Show | Hide sections		-  in SWITCHABLE flex table ROW */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.wpbc_resource_field__switchable{
+	display:none;
+}
+/*.wpbc_resource_field__switchable.wpbc_resource_field__publish*/
+.wpbc_booking_resource_table:not(.wpbc_booking_resource_prices_table) .wpbc_resource_field__switchable.wpbc_resource_field__extra__labels {
+	display:flex;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/*  T o o l b a r   in   Table   R O W s																			  */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.wpbc_flextable_col .wpbc_ajx_toolbar {
+	flex: 1;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+}
+.wpbc_flextable_col .wpbc_ajx_toolbar .ui_container{
+    border: none;
+    background: none;
+    padding: 0;
+    justify-content: space-between;
+    flex: 1;
+}
+/* Elements Height  ------------------------------------------------------------------------------------------------- */
+.wpbc_flextable_col .wpbc_ajx_toolbar .ui_container.ui_container_small *{
+    font-size:13px;
+}
+.wpbc_flextable_col .wpbc_ajx_toolbar .ui_container.ui_container_small .ui_group .ui_element > *{
+    height: 28px;
+    line-height: 28px;
+	min-height: 28px;
+}
+.wpbc_flextable_col .wpbc_ajx_toolbar .ui_container.ui_container_small .ui_group .ui_element > :not(input,select) {
+	padding: 0 10px;
+}
+@media (max-width: 782px) {
+    .wpbc_flextable_col .wpbc_ajx_toolbar .ui_container.ui_container_small .ui_group .ui_element > *{
+        height: 34px;
+        min-height: 28px;
+        line-height: 34px;
+    }
+	.wpbc_flextable_col .wpbc_ajx_toolbar .ui_container.ui_container_small .ui_group .ui_element > input,
+	.wpbc_flextable_col .wpbc_ajx_toolbar .ui_container.ui_container_small .ui_group .ui_element > select {
+		line-height: 1;
+	}
+}
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* SIZEs in a ROWs              																					  */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.wpbc_flextable_col .wpbc_ajx_toolbar .ui_container .ui_group.ui_group__size_100{
+	justify-content: stretch;
+	flex: 1;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Publish Elements in toolbar ROW 																					  */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.wpbc_flextable_col .wpbc_ajx_toolbar .ui_container .ui_group.ui_group__labels{
+	min-width:110px;
+}
+.wpbc_flextable_col .wpbc_ajx_toolbar .ui_container .ui_group.ui_group__shortcode{
+	justify-content: stretch !important;
+	flex: 1;
+	flex-flow: row nowrap;
+}
+/* ShortCode  :: Text  Input*/
+.wpbc_flextable_col .wpbc_ajx_toolbar .ui_container .ui_group .ui_element .shortcode_text_field {
+	width: 100%;
+	min-width: 22em;
+	text-align: left;
+	cursor: pointer;
+	background-color: #f0f0f0;
+	color: #7a7a7a;
+	font-weight: 600;
+	font-size: 0.92em !important;
+	border: 1px solid #fff !important;
+	box-shadow: 0 0px 2px #cdcdcd;
+}
+.wpbc_flextable_col .wpbc_ajx_toolbar .ui_container .ui_group .ui_element div.shortcode_text_field{
+	cursor: text;
+	overflow: hidden;
+	height: auto;
+	line-height: 2.4;
+	/*background: #fff;*/
+	border-radius: 4px;
+}
+/* Custom  Default Form */
+.wpbc_flextable_col .wpbc_ajx_toolbar .ui_container .ui_group.ui_group__customform_field,
+.wpbc_flextable_col .wpbc_ajx_toolbar .ui_container .ui_group.ui_group__customform_field .ui_element{
+	flex: 1;
+}
+/* Parent | Child | Priority */
+.wpbc_flextable_col .wpbc_ajx_toolbar .ui_container .ui_group.ui_group__parent_field,
+.wpbc_flextable_col .wpbc_ajx_toolbar .ui_container .ui_group.ui_group__parent_field .ui_element{
+	flex: 1;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+.wpbc_flextable_col .wpbc_ajx_toolbar .ui_container .ui_group.ui_group__parent_field .ui_element select{
+	flex: 1;
+  	margin: 0 10px;
+	width: Min(10em, 100%);
+  	min-width: 18em;
+}
+.wpbc_flextable_col .wpbc_ajx_toolbar .ui_container .ui_group.ui_group__parent_field .ui_element input[type="text"]{
+	flex: 0 0 5em;
+	margin: 0 10px;
+	font-weight: 400;
+}
+/* Cost  Field */
+.ui_element.ui_cost_field {
+	flex: 0 1 auto;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: first baseline;
+}
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* L A B E L S    -   C O L O R S		  																			  */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.wpbc_flextable_labels a.wpbc_label {
+	text-decoration: none;
+}
+.wpbc_flextable_labels .wpbc_label_cost,
+.wpbc_flextable_labels .wpbc_label_cost:focus,
+.wpbc_flextable_labels .wpbc_label_cost:active,
+.wpbc_flextable_labels .wpbc_label_cost:hover{
+	background-color: #64aa45;
+ 	color: #eaffe1;;
+}
+.wpbc_flextable_labels .wpbc_label_resource_single,
+.wpbc_flextable_labels .wpbc_label_resource_single:focus,
+.wpbc_flextable_labels .wpbc_label_resource_single:active,
+.wpbc_flextable_labels .wpbc_label_resource_single:hover{
+	font-weight:600;
+	background-color: #79b;
+	color:#fff;
+}
+.wpbc_flextable_labels .wpbc_label_resource_parent,
+.wpbc_flextable_labels .wpbc_label_resource_parent:focus,
+.wpbc_flextable_labels .wpbc_label_resource_parent:active,
+.wpbc_flextable_labels .wpbc_label_resource_parent:hover{
+	font-weight:600;
+	background-color: #e80;
+	color:#fff;
+}
+.wpbc_flextable_labels .wpbc_label_capacity_number,
+.wpbc_flextable_labels .wpbc_label_capacity_number:focus,
+.wpbc_flextable_labels .wpbc_label_capacity_number:active,
+.wpbc_flextable_labels .wpbc_label_capacity_number:hover {
+	background: #8faa45;
+  	color: #fff;
+	font-size: 70%;
+	padding: 1px 6px 2px;
+	border-radius: 3px;
+	margin: 0;
+}
+.wpbc_flextable_labels .wpbc_label_resource_child,
+.wpbc_flextable_labels .wpbc_label_resource_child:focus,
+.wpbc_flextable_labels .wpbc_label_resource_child:active,
+.wpbc_flextable_labels .wpbc_label_resource_child:hover{
+	font-weight: 400;
+	background-color: #39d;
+	color:#fff;
+}
+.ui_element .wpbc_label_user,
+.ui_element .wpbc_label_user:focus,
+.ui_element .wpbc_label_user:active,
+.ui_element .wpbc_label_user:hover{
+	font-weight: 400;
+	color: #fdfdfd;
+	background-color: #a67b99;
+}
+.wpbc_flextable_col .wpbc_ajx_toolbar .ui_container.ui_container_small .wpbc_label.wpbc_label_user_owner strong{
+	font-size:0.8em;
+}
+.wpbc_flextable_labels .wpbc_label_resource_default_form,
+.wpbc_flextable_labels .wpbc_label_resource_default_form:focus,
+.wpbc_flextable_labels .wpbc_label_resource_default_form:active,
+.wpbc_flextable_labels .wpbc_label_resource_default_form:hover{
+	background-color: #89a;
+	font-weight: 400;
+	color: #fdfdfd;
+	background-color: #e7e7e7;
+  	color: #7c7c7c;
+}
+.wpbc_flextable_labels .wpbc_label_resource_lost {
+	background: #ff6c00;
+	color: #6d4223;
+}
+.wpbc_flextable_labels .wpbc_label_user_owner,
+.wpbc_flextable_labels .wpbc_label_user_owner:focus,
+.wpbc_flextable_labels .wpbc_label_user_owner:active,
+.wpbc_flextable_labels .wpbc_label_user_owner:hover{
+	background-color: #89a;
+	font-weight: 400;
+	color: #fdfdfd;
+	background-color: #766cba;
+}
+@media screen and (max-width: 845px) {
+	.wpbc_flextable_col_folder_structure,
+	.wpbc_show_hide_children_icon {
+		display: none !important;
+	}
+}
+
+/* ================================================================================================================== */
+/* Folders											                                                                  */
+/* ================================================================================================================== */
+.wpbc_flextable_col_folder_structure,
+.wpbc_flextable .wpbc_flextable_row .wpbc_flextable_col.wpbc_flextable_col_folder_structure {
+	flex: 0 0 30px;
+	align-self: stretch;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+	align-items: center;
+}
+.wpbc_flextable_col_folder_structure .wpbc_flextable_col_folder_line_vertical {
+	border-right: 2px solid #7a7a7a;
+	width: 2px;
+	display: inline-block;
+	margin: 0;
+	align-self: flex-start;
+	height: 100%;
+}
+.wpbc_flextable_col_folder_structure .wpbc_flextable_col_folder_line_vertical__last{
+	height: 50%;
+}
+.wpbc_flextable_col_folder_structure .wpbc_flextable_col_folder_line_horizontal {
+	border-bottom: 2px solid #7a7a7a;
+	border-right: 2px solid #7a7a7a;
+	width: 20px;
+	display: inline-block;
+	margin: 0;
+}
+
+/* ================================================================================================================== */
+/* WP Booking Calendar > Prices > Daily Costs page                                                                    */
+/* ================================================================================================================== */
+
+/* Fields - Pricing Buttons - VISIBLE by  default  -  in SWITCHABLE flex table ROW */
+.wpbc_booking_resource_prices_table .wpbc_resource_field__switchable.wpbc_resource_field__extra__pricing_buttons{
+	display:flex;
+}
+
+/* Set  - Pricing Buttons - Centered in the table */
+.wpbc_booking_resource_prices_table .wpbc_flextable_col .wpbc_ajx_toolbar .ui_container .ui_group.ui_group__pricing_buttons{
+	flex-flow: row wrap;
+	justify-content: center;
+	flex: 1;
+}
+.wpbc_booking_resource_prices_table .wpbc_flextable_col .wpbc_ajx_toolbar .ui_container .ui_group.ui_group__labels{
+	margin-left: 5%;
+}
+
+.wpbc_booking_resource_prices_table .wpbc_flextable .wpbc_flextable_row .wpbc_flextable_col.wpbc_resource_cost {
+	flex: 0 1 12em;
+	flex: 0 1 5em;
+	margin-right: 1em;
+	margin-left: 1px;
+}
+.wpbc_booking_resource_prices_table .wpbc_flextable .wpbc_flextable_row .wpbc_flextable_col.wpbc_resource_cost .wpbc_ajx_toolbar .ui_container .ui_group .ui_element {
+	flex-flow: row nowrap;
+}
+/* It is for cost per night/days  "/"  separator */
+.wpbc_booking_resource_prices_table .wpbc_flextable .wpbc_flextable_row .wpbc_flextable_col.wpbc_resource_cost .wpbc_ajx_toolbar .ui_container .ui_group .ui_element.ui_cost_field span {
+	padding: 0 3px 0 5px;
+}
+.wpbc_booking_resource_prices_table .wpbc_flextable .wpbc_flextable_row .wpbc_flextable_col.wpbc_resource_cost .wpbc_ajx_toolbar .ui_container .ui_group .ui_element input[type="text"] {
+	width: 75px !important;
+	margin-left: 10px !important;
+	font-weight: 600;
+}
+.wpbc_booking_resource_prices_table .wpbc_flextable .wpbc_flextable_row .wpbc_flextable_col.wpbc_resource_name {
+	flex: 1 1 10em;
+	min-width: Min(19em, 99%);
+	flex: 1 1 12em;
+	min-width: Min(15em, 99%);
+}
+.wpbc_booking_resource_prices_table .wpbc_flextable_col.wpbc_flextable_col_other.wpbc_other_resource_fields {
+	padding: 0;
+	flex: 1 1 50%;
+	flex: 1 1 54%;
+}
+
+/* Container depends size ! */
+    .wpbc_other_resource_fields {
+        container:  wpbc_c__other_resource_fields / inline-size;
+    }
+    @container wpbc_c__other_resource_fields (inline-size < 720px) {
+		.wpbc_other_resource_fields .ui_element:nth-last-child(1) .in-button-text {
+			display: none;
+		}
+	}
+    @container wpbc_c__other_resource_fields (inline-size < 560px) {
+		.wpbc_other_resource_fields .ui_element:nth-last-child(2) .in-button-text {
+			display: none;
+		}
+	}
+    @container wpbc_c__other_resource_fields (inline-size < 450px) {
+		.wpbc_other_resource_fields .ui_element:nth-last-child(3) .in-button-text {
+			display: none;
+		}
+	}
+    @container wpbc_c__other_resource_fields (inline-size < 350px) {
+		.wpbc_other_resource_fields .ui_element:nth-last-child(4) .in-button-text {
+			display: none;
+		}
+	}
+    /* For less than 707px of Other Fields Section */
+    @container wpbc_c__other_resource_fields (inline-size < 727px) {
+			.wpbc_other_resource_fields .ui_element:nth-last-child(1) .in-button-text {
+				display:none;
+			}
+			 /*.wpbc_other_resource_fields.wpbc_flextable_col .wpbc_ajx_toolbar .ui_container.ui_container_small .ui_group .ui_element > * {
+				height: 34px;
+				min-height: 28px;
+				line-height: 34px;
+			}*/
+    }
+
+/* ================================================================================================================== */
+/* WP Booking Calendar > Resources > Searchable Resources page                                                        */
+/* ================================================================================================================== */
+/* Disable show LEFT BLUE BORDER in table selected ROWS */
+.wpbc_searchable_resources_table .wpbc_flextable .wpbc_flextable_row.wpbc_flextable_row_selected {
+	border-left: 4px solid #fefefe;
+	border-bottom: 1px solid #dddddd;
+}
+.wpbc_searchable_resources_table .wpbc_flextable .wpbc_flextable_row.wpbc_flextable_row_selected:nth-of-type(2n+1){
+	border-left: 4px solid #f9f9fa;
+}
+/*  ::  H e a d e r s  ::  */
+.wpbc_searchable_resources_table .wpbc_flextable .wpbc_selectable_head .wpbc_flextable_row .wpbc_flextable_col.wpbc_flextable_col_title {
+	flex: 1 1 auto;
+	padding-left: 0px;
+}
+.wpbc_searchable_resources_table .wpbc_flextable .wpbc_selectable_head .wpbc_flextable_row .wpbc_flextable_col.wpbc_flextable_col_other{
+	border-left: 0;
+	flex: 1 1 auto;
+}
+.wpbc_searchable_resources_table .wpbc_flextable .wpbc_selectable_head .wpbc_flextable_row .wpbc_flextable_col.wpbc_flextable_col_id{
+	width:5em;
+}
+/* Header On|Off column */
+.wpbc_searchable_resources_table .wpbc_flextable .wpbc_selectable_head .wpbc_flextable_row .wpbc_flextable_col.wpbc_searchable_on_off {
+	flex: 0 1 150px;
+	margin-right: 5px;
+	margin-left: 0;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+@media (max-width: 825px){
+	.wpbc_searchable_resources_table .wpbc_flextable .wpbc_selectable_head .wpbc_flextable_row .wpbc_flextable_col.wpbc_flextable_col_other{
+		order: 5
+	}
+	.wpbc_searchable_resources_table .wpbc_flextable .wpbc_selectable_head .wpbc_flextable_row .wpbc_flextable_col.wpbc_searchable_on_off{
+		flex: 0 1 70px;
+	}
+	#flextable_header_tab__labels {
+		display: none;
+	}
+}
+/* ------------------------------------------------------------------------------------------------------------------ */
+/*  ::  B o d y  ::  */
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Resource Name / Title Column  : it is not input text fields  */
+.wpbc_searchable_resources_table .wpbc_flextable .wpbc_flextable_row .wpbc_flextable_col.wpbc_resource_name {
+	flex: 1 1 7em;
+  	min-width: Min(19em, 99%);
+	padding: 10px 7px !important;
+}
+.wpbc_flextable_resource_title {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	flex: 1 1 100%;
+	font-size: 14px;
+	font-weight: 600;
+}
+.wpbc_flextable_resource_title .wpbc_show_hide_children_icon {
+	flex:0 1 auto;
+	margin-right: 1em;
+}
+.wpbc_flextable_resource_title .wpbc_flextable_resource_title_text{
+	flex:1 1 0;
+	line-height: 1.8;
+}
+
+	/* Vertical Align :: Top :: if delete these sections, then nice center align */
+	.wpbc_searchable_resources_table .wpbc_flextable .wpbc_flextable_row {
+		align-items: flex-start;
+	}
+	.wpbc_searchable_resources_table .wpbc_flextable .wpbc_flextable_row .wpbc_flextable_col.wpbc_resource_name {
+		align-items: flex-start;
+	}
+	.wpbc_resource_name .wpbc_flextable_resource_title {
+		min-height: 28px;
+	}
+	.wpbc_resource_name .wpbc_flextable_resource_title .wpbc_flextable_resource_title_text {
+		line-height: 1;
+	}
+	.wpbc_flextable .wpbc_label_resource_id_container {
+	  min-height: 28px;
+	}
+	.wpbc_searchable_resources_table .wpbc_flextable .wpbc_selectable_body .wpbc_flextable_row .wpbc_flextable_col.wpbc_flextable_col_other{
+		padding: 10px 7px;
+	}
+	.wpbc_searchable_resources_table .wpbc_flextable .wpbc_selectable_body .wpbc_flextable_row .wpbc_flextable_col.wpbc_flextable_col_other .wpbc_ajx_toolbar .ui_container .ui_group.ui_group__thumbnail .ui_element > *{
+		margin: 0 0 10px;
+	}
+	.wpbc_searchable_resources_table .wpbc_flextable .wpbc_selectable_body .wpbc_flextable_row .wpbc_flextable_col.wpbc_flextable_col_other .wpbc_ajx_toolbar .ui_container .ui_group .ui_element > * {
+		margin: 0;
+	}
+	.wpbc_searchable_resources_table .wpbc_flextable .wpbc_flextable_col_other .wpbc_extra__excerpt_img .ui_group__excerpt .ui_group__size_100 {
+		margin: 0 0 10px;
+	}
+	.wpbc_searchable_resources_table .wpbc_flextable .wpbc_flextable_col_other .wpbc_extra__excerpt_img .ui_group__excerpt .ui_group__size_100:last-child{
+		margin:0;
+	}
+	/* Vertical Align End */
+/* Size for On|Off column */
+.wpbc_searchable_resources_table .wpbc_flextable .wpbc_flextable_row .wpbc_flextable_col.wpbc_searchable_on_off {
+	flex: 0 1 150px;
+	/*width: 30px;*/
+  	/*margin-right: 1em;*/
+ 	/*margin-left: 1px;*/
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+/* ID last column */
+.wpbc_searchable_resources_table .wpbc_flextable .wpbc_flextable_row .wpbc_flextable_col.wpbc_flextable_col_id {
+  flex: 0 1 40px;
+  width: auto;
+}
+/* ------------------------------------------------------------------------------------------------------------------ */
+/*  ::  O t h e r  ::  */
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Other fields Column */
+.wpbc_searchable_resources_table .wpbc_flextable .wpbc_flextable_row .wpbc_flextable_col.wpbc_flextable_col_other{
+	padding-top:0;
+	padding-bottom:0;
+	flex: 1 1 50%;
+}
+/* :: Text  Input :: */
+.wpbc_searchable_resources_table .wpbc_flextable_col_other .wpbc_ajx_toolbar .ui_text_field_100{
+	flex: 1 1 100%;
+}
+/* URL Field - VISIBLE by  default  -  in SWITCHABLE flex table ROW */
+.wpbc_searchable_resources_table .wpbc_resource_field__switchable.wpbc_extra__search_url{
+	display:flex;
+}
+.wpbc_searchable_resources_table .wpbc_flextable_col_other .wpbc_ajx_toolbar .ui_group__search_url {
+	flex-flow: row nowrap;
+	justify-content: stretch;
+	flex: 1;
+}
+.wpbc_searchable_resources_table .wpbc_flextable_col_other .wpbc_ajx_toolbar .ui_group__search_url .ui_element__search_url {
+	flex: 1 1 auto;
+	/*margin: 0 0 0 2em;*/
+}
+.wpbc_searchable_resources_table .wpbc_flextable_col_other .wpbc_ajx_toolbar .ui_group__search_url .ui_element__search_url_link {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* :: IMG | Excerpt | Title :: */
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Thumbnail */
+.wpbc_searchable_resources_table .wpbc_flextable_col_other .wpbc_extra__excerpt_img .ui_container{
+	flex-flow: row nowrap;
+}
+.wpbc_searchable_resources_table .wpbc_flextable_col_other .wpbc_extra__excerpt_img .ui_container .ui_group__thumbnail .ui_element{
+	align-items: flex-start;
+}
+.wpbc_searchable_resources_table .wpbc_flextable_col_other .wpbc_extra__excerpt_img .ui_container .ui_group__thumbnail div.search_thumbnail_img,
+.wpbc_searchable_resources_table .wpbc_flextable_col_other .wpbc_extra__excerpt_img .ui_container .ui_group__thumbnail img.search_thumbnail_img {
+	width: 100px;
+	height: auto;
+	min-height: auto;
+	line-height: normal;
+	padding: 3px;
+	background: #fff;
+	border: 1px solid #a5a8ab;
+	border-radius: 2px;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+}
+.wpbc_searchable_resources_table .wpbc_flextable_col_other .wpbc_extra__excerpt_img .ui_container .ui_group__thumbnail div.search_thumbnail_img {
+	height:100px;
+}
+.wpbc_searchable_resources_table .wpbc_flextable_col_other .wpbc_extra__excerpt_img .ui_container .ui_group__thumbnail .ui_element a{
+	text-decoration: none;
+	height: auto;
+  	padding: 0px;
+}
+.wpbc_searchable_resources_table .wpbc_flextable_col_other .wpbc_extra__excerpt_img .ui_container .ui_group__thumbnail div.search_thumbnail_img a:hover{
+	text-decoration: underline;
+}
+/* Title | Excerpt | Img URL */
+.wpbc_searchable_resources_table .wpbc_flextable_col_other .wpbc_extra__excerpt_img .ui_group__excerpt{
+	flex-flow: row wrap;
+	flex: 1 1 100%;
+	margin: 0;
+}
+.wpbc_searchable_resources_table .wpbc_flextable_col_other .wpbc_extra__excerpt_img .ui_group__excerpt .ui_group__size_100{
+	flex-flow: row wrap;
+	flex: 1 1 100%;
+	margin: 0;
+}
+.wpbc_searchable_resources_table .wpbc_flextable_col_other .wpbc_extra__excerpt_img .ui_group__excerpt .ui_group__size_100 .ui_element_text{
+	flex: 1 1 auto;
+	margin: 0;
+}
+.wpbc_searchable_resources_table .wpbc_flextable_col_other .wpbc_extra__excerpt_img .ui_group__excerpt .ui_group__size_100 .ui_element_icon,
+.wpbc_searchable_resources_table .wpbc_flextable_col_other .wpbc_extra__excerpt_img .ui_group__excerpt .ui_group__size_100 .ui_element_button{
+	margin: 0 0 0 5px;
+  	flex: 0 1 38px;
+  	justify-content: center;
+}
+.wpbc_searchable_resources_table .wpbc_flextable_col_other .wpbc_extra__excerpt_img .ui_group__excerpt .ui_group__size_100 .ui_element_text .ui_field_title {
+	font-weight: 600;
+}
+.wpbc_searchable_resources_table .wpbc_flextable_col_other .wpbc_extra__excerpt_img .ui_group__excerpt .ui_group__size_100 .ui_element_text textarea {
+	width: 100%;
+	height: 5em;
+}
+/* Mobile */
+@media (max-width: 782px){
+	.wpbc_searchable_resources_table .wpbc_flextable_col_other.wpbc_other_resource_fields.wpbc_flextable_col {
+		order:5;
+	}
+	.wpbc_searchable_resources_table .wpbc_flextable_col_other .wpbc_extra__excerpt_img .ui_container{
+		flex-flow: row wrap;
+	}
+}
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* :: Filter Options :: */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.wpbc_searchable_resources_table .wpbc_flextable_col_other .wpbc_extra__search_filters .ui_group__search_options{
+	flex-flow: row nowrap;
+}
+.wpbc_searchable_resources_table .wpbc_flextable_col_other .wpbc_extra__search_filters .ui_group__search_options .ui_element_text{
+	flex: 1 1 auto;
+	margin: 0;
+}
+.wpbc_searchable_resources_table .wpbc_flextable_col_other .wpbc_extra__search_filters .ui_group__search_options .ui_element_button{
+	margin: 0 0 0 10px;
+}
+.wpbc_searchable_resources_table .wpbc_flextable_col_other .wpbc_extra__search_filters .ui_group__search_options textarea{
+	display:none;
+	width: 100%;
+	height: 5em;
+}
+.wpbc_searchable_resources_table .wpbc_flextable_col_other .wpbc_extra__search_filters .ui_group__search_options .in_shortcode_help_text {
+	margin-left: auto;
+	color: #727272;
+	font-size: 0.8em;
+	line-height: 28px;
+	font-weight: 400;
+}
+	/** Searchable Filters - Nice Filters Display in Table*/
+	.wpbc_searchable_resources_table .search_filters__display{
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+	.wpbc_searchable_resources_table .search_filters__display .search_filter__row{
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		align-items: flex-start;
+		flex:1 1 100%;
+	}
+	.wpbc_searchable_resources_table .search_filters__display .search_filter__row .search_filter__col__name{
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		align-items: flex-start;
+		flex:0 1 100px;
+	}
+	.wpbc_searchable_resources_table .search_filters__display .search_filter__row .search_filter__col__values{
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		align-items: flex-start;
+		flex:1;
+	}
+	.wpbc_searchable_resources_table .search_filters__display .search_filter__row .search_filter__col__values .search_filter__value_pairs {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		align-items: flex-start;
+		flex:1 1 100%;
+	}
+	.wpbc_searchable_resources_table .search_filters__display .search_filter__row .search_filter__col__values .search_filter__value_pairs .search_filter__operation{
+		flex: 0 1 30px;
+		text-align: left;
+		padding:0 10px;
+	}
+	.wpbc_searchable_resources_table .search_filters__display .search_filter__row .search_filter__col__values .search_filter__value_pairs .search_filter__value{
+		flex:1;
+	}
+/* ------------------------------------------------------------------------------------------------------------------ */

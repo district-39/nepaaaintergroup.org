@@ -1,0 +1,41 @@
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Child calendar theme    of    "/css/skins/24_9__light.css"              Based on color scheme of  'traditional-light'          C O L O R    S K I N           */
+/* ------------------------------------------------------------------------------------------------------------------ */
+@import url("24_9__light.css");
+/* Color Scheme: - Red 1 */
+:root {
+	--wpbc_cal-day-cell-border-radius: 50%;
+	--wpbc_cal-day-cell-border-width: 2px;
+	--wpbc_cal-day-bg-color-opacity: 2%;
+	--wpbc_cal-selected-day-bg-color-opacity: 90%;
+	--wpbc_cal-text-general-size: 14px;
+	--wpbc_cal-text-cost-size: 50%;
+	--wpbc_cal-text-header-size: 13px;
+	--wpbc_cal-text-weekdays-size: 10px;
+	--wpbc_cal-text-prev-next-links-size: 25px;
+	--wpbc_cal-main-background-color: #fff;
+	--wpbc_cal-header-text-color: #000;
+	--wpbc_cal-text-prev-next-links-color: #555;
+	--wpbc_cal-text-weekdays-color: #555;
+	--wpbc_cal-unavailable-day-color: var(--wpbc_cal-main-background-color);
+	--wpbc_cal-unavailable-text-color: #d4d4d4c7;
+	--wpbc_cal-available-day-color: #399F00;
+	--wpbc_cal-available-text-color: #287200;
+	--wpbc_cal-approved-day-color: #D33131;
+	--wpbc_cal-approved-text-color: #000;
+	--wpbc_cal-pending-day-color: #FFC64A;
+	--wpbc_cal-pending-text-color: #000;
+	--wpbc_cal-selected-day-color: #6b96ce;
+	--wpbc_cal-selected-text-color: #fff;
+	--wpbc_cal-hover-day-color: #6b96ce;
+	--wpbc_cal-hover-text-color: #65778d;
+	--wpbc_cal-timespartly-day-color: #a8973c;
+	--wpbc_cal-timespartly-text-color: #807745;
+	--wpbc_cal-day-cells-padding: 2px;
+}
+
+/* Fix for change over days in this calendar skin */
+.datepick-inline td.datepick-days-cell.check_in_time .wpbc-cell-box,
+.datepick-inline td.datepick-days-cell.check_out_time .wpbc-cell-box {
+	color: #000;
+}

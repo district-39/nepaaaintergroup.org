@@ -1,0 +1,6 @@
+.wpbc_bfb__form_setting_save.is-hidden {
+	display: none !important;
+}
+.inspector__row label:has(input[type="radio"]) {
+	cursor: pointer;
+}

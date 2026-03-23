@@ -1,0 +1,110 @@
+/*! ----------------------------------------------------------------------------------------------------------------- */
+/*! Timeline Steps: */
+/*! ----------------------------------------------------------------------------------------------------------------- */
+.wpbc__container_place__steps_for_timeline,
+.wpbc_page_top__header_tabs .wpdvlp-top-tabs .nav-tab.wpbc__container_place__steps_for_timeline {
+    flex: 1 1 400px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin: 0 auto 35px;
+    padding: 0;
+    border: 0;
+}
+.wpbc_page_top__header_tabs .wpdvlp-top-tabs .nav-tab.wpbc__container_place__steps_for_timeline{
+    display: none;
+}
+    /**   // This Code for showing  'Timeline Steps' in the TOP menu bar   **
+
+         .wpbc__container_place__steps_for_timeline{
+            display: none;
+         }
+        .wpbc_page_top__header_tabs .wpdvlp-top-tabs .nav-tab.wpbc__container_place__steps_for_timeline{
+            display: flex;
+            margin: 0 30px auto;
+        }
+
+        @media screen and (max-width: 600px) {
+            .wpbc_page_top__header_tabs .wpdvlp-top-tabs .nav-tab.wpbc__container_place__steps_for_timeline {
+                display: none;
+            }
+            .wpbc_setup_wizard_page_container .wpbc__container_place__steps_for_timeline {
+                display: flex;
+            }
+        }
+    */
+
+
+.wpbc_steps_for_timeline_container {
+    max-width: Min(400px, 100%);
+    min-width: 200px;
+    margin: 3px 0 0;
+    width: 100%;
+    --wpbc_steps_for_timeline_step_color: #d6d6d6;
+    --wpbc_steps_for_timeline_active_color: #64aa45;
+    --wpbc_steps_for_timeline_failed_color: #e76a39;
+    --wpbc_steps_for_timeline_checkbox_color: #fff;
+}
+.booking_form_div .wpbc_steps_for_timeline_container {
+    --wpbc_steps_for_timeline_active_color: var(--wpbc_timepicker-selected-bg-color, #6b96ce);
+}
+.wpbc_steps_for_timeline {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.wpbc_steps_for_timeline .wpbc_steps_for_timeline_step_line {
+    background: var(--wpbc_steps_for_timeline_step_color);
+    height: 2px;
+    margin: 0 7px;
+    width: 100%;
+}
+
+.wpbc_steps_for_timeline .wpbc_steps_for_timeline_step_line.wpbc_steps_for_timeline_line_active {
+  background:var(--wpbc_steps_for_timeline_active_color);
+}
+.wpbc_steps_for_timeline .wpbc_steps_for_timeline_step {
+  border:none;
+  background-color: var(--wpbc_steps_for_timeline_step_color);
+  border-radius:50%;
+  flex-shrink:0;
+  height:16px;
+  width:16px
+}
+.wpbc_steps_for_timeline .wpbc_steps_for_timeline_step .icon {
+  display:none;
+}
+.wpbc_steps_for_timeline .wpbc_steps_for_timeline_step.wpbc_steps_for_timeline_step_active,
+.wpbc_steps_for_timeline .wpbc_steps_for_timeline_step.wpbc_steps_for_timeline_step_completed {
+  background-color:var(--wpbc_steps_for_timeline_active_color);
+  position:relative
+}
+.wpbc_steps_for_timeline .wpbc_steps_for_timeline_step.wpbc_steps_for_timeline_step_failed {
+  background-color:var(--wpbc_steps_for_timeline_active_color);
+  position:relative
+}
+.wpbc_steps_for_timeline .wpbc_steps_for_timeline_step.wpbc_steps_for_timeline_step_completed .icon-success,
+.wpbc_steps_for_timeline .wpbc_steps_for_timeline_step.wpbc_steps_for_timeline_step_failed .icon-failed {
+    color: var(--wpbc_steps_for_timeline_checkbox_color, #fff);
+    display: block;
+    position: absolute;
+    left: 3px;
+    top: 3px
+}
+.wpbc_steps_for_timeline .wpbc_steps_for_timeline_step.wpbc_steps_for_timeline_step_failed .icon-failed {
+    left: 4px;
+    top: 2px
+}
+/*! Timeline Steps: Front-End align */
+.wpbc_bfb__container .wpbc_steps_for_timeline_container,
+.booking_form_div .wpbc_steps_for_timeline_container {
+    margin: 20px auto 25px;
+}
+.bfb_element [class^="wpbc_steps_for_timeline__steps_timeline"] {
+	flex: 1;
+}

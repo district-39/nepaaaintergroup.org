@@ -1,0 +1,115 @@
+<?php
+
+declare (strict_types=1);
+namespace GoDaddy\WordPress\MWC\Common\Vendor\Sentry;
+
+use GoDaddy\WordPress\MWC\Common\Vendor\Psr\Log\LoggerInterface;
+use GoDaddy\WordPress\MWC\Common\Vendor\Sentry\HttpClient\HttpClient;
+use GoDaddy\WordPress\MWC\Common\Vendor\Sentry\HttpClient\HttpClientInterface;
+use GoDaddy\WordPress\MWC\Common\Vendor\Sentry\Serializer\PayloadSerializer;
+use GoDaddy\WordPress\MWC\Common\Vendor\Sentry\Serializer\RepresentationSerializerInterface;
+use GoDaddy\WordPress\MWC\Common\Vendor\Sentry\Transport\HttpTransport;
+use GoDaddy\WordPress\MWC\Common\Vendor\Sentry\Transport\TransportInterface;
+/**
+ * A configurable builder for Client objects.
+ */
+final class ClientBuilder
+{
+    /**
+     * @var Options The client options
+     */
+    private $options;
+    /**
+     * @var TransportInterface The transport
+     */
+    private $transport;
+    /**
+     * @var HttpClientInterface The HTTP client
+     */
+    private $httpClient;
+    /**
+     * @var RepresentationSerializerInterface|null The representation serializer to be injected in the client
+     */
+    private $representationSerializer;
+    /**
+     * @var LoggerInterface|null A PSR-3 logger to log internal errors and debug messages
+     */
+    private $logger;
+    /**
+     * @var string The SDK identifier, to be used in {@see Event} and {@see SentryAuth}
+     */
+    private $sdkIdentifier = Client::SDK_IDENTIFIER;
+    /**
+     * @var string The SDK version of the Client
+     */
+    private $sdkVersion = Client::SDK_VERSION;
+    /**
+     * Class constructor.
+     *
+     * @param Options|null $options The client options
+     */
+    public function __construct(?Options $options = null)
+    {
+        $this->options = $options ?? new Options();
+        $this->logger = $this->options->getLogger() ?? null;
+        $this->httpClient = $this->options->getHttpClient() ?? new HttpClient($this->sdkIdentifier, $this->sdkVersion);
+        $this->transport = $this->options->getTransport() ?? new HttpTransport($this->options, $this->httpClient, new PayloadSerializer($this->options), $this->logger);
+    }
+    /**
+     * @param array<string, mixed> $options The client options, in naked array form
+     */
+    public static function create(array $options = []): self
+    {
+        return new self(new Options($options));
+    }
+    public function getOptions(): Options
+    {
+        return $this->options;
+    }
+    public function setRepresentationSerializer(RepresentationSerializerInterface $representationSerializer): self
+    {
+        $this->representationSerializer = $representationSerializer;
+        return $this;
+    }
+    public function getLogger(): ?LoggerInterface
+    {
+        return $this->logger;
+    }
+    public function setLogger(LoggerInterface $logger): self
+    {
+        $this->logger = $logger;
+        return $this;
+    }
+    public function setSdkIdentifier(string $sdkIdentifier): self
+    {
+        $this->sdkIdentifier = $sdkIdentifier;
+        return $this;
+    }
+    public function setSdkVersion(string $sdkVersion): self
+    {
+        $this->sdkVersion = $sdkVersion;
+        return $this;
+    }
+    public function getTransport(): TransportInterface
+    {
+        return $this->transport;
+    }
+    public function setTransport(TransportInterface $transport): self
+    {
+        $this->transport = $transport;
+        return $this;
+    }
+    public function getHttpClient(): HttpClientInterface
+    {
+        return $this->httpClient;
+    }
+    public function setHttpClient(HttpClientInterface $httpClient): self
+    {
+        $this->httpClient = $httpClient;
+        return $this;
+    }
+    public function getClient(): ClientInterface
+    {
+        return new Client($this->options, $this->transport, $this->sdkIdentifier, $this->sdkVersion, $this->representationSerializer, $this->logger);
+    }
+}

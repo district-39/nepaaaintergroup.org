@@ -1,0 +1,208 @@
+# Copyright (c) GoDaddy Operating Company, LLC. All Rights Reserved.
+msgid ""
+msgstr ""
+"Project-Id-Version: MWC URL Coupons 2.16.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mwc-url-coupons\n"
+"Last-Translator: plugins@godaddy.com\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-06-20T09:54:25+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: woocommerce-url-coupons\n"
+
+#. Plugin Name of the plugin
+#: woocommerce-url-coupons.php
+#: class-wc-url-coupons.php:319
+msgid "WooCommerce URL Coupons"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: woocommerce-url-coupons.php
+msgid "http://www.woocommerce.com/products/url-coupons/"
+msgstr ""
+
+#. Description of the plugin
+#: woocommerce-url-coupons.php
+msgid "Create a unique URL that applies a discount and optionally adds one or more products to the customer's cart."
+msgstr ""
+
+#. Author of the plugin
+#: woocommerce-url-coupons.php
+msgid "SkyVerge"
+msgstr ""
+
+#. Author URI of the plugin
+#: woocommerce-url-coupons.php
+msgid "http://www.woocommerce.com"
+msgstr ""
+
+#. translators: Placeholders: %1$s - opening <a> HTML link tag, %2$s - closing </a> HTML link tag
+#: class-wc-url-coupons.php:118
+#, php-format
+msgid "Heads up! WooCommerce URL Coupons works best when pretty permalinks have been enabled. %1$sLearn more%2$s"
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:97
+msgid "Discount links"
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:136
+#: src/class-wc-url-coupons-import-export-handler.php:78
+#: src/class-wc-url-coupons-import-export-handler.php:168
+msgid "Page Redirect"
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:149
+msgid "Select the page to redirect the customer to after visiting the unique URL."
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:162
+msgid "Choose Page"
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:175
+msgid "Select the page that a customer can visit to have this coupon / product added to their cart."
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:270
+msgid "Apply via URL"
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:279
+msgid "Apply coupon when"
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:281
+msgid "User visits an existing page"
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:282
+msgid "User visits a unique URL"
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:323
+#: src/class-wc-url-coupons-import-export-handler.php:76
+#: src/class-wc-url-coupons-import-export-handler.php:166
+msgid "Unique URL"
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:324
+msgid "The URL that a customer can visit to have this coupon / product added to their cart."
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:370
+#: src/class-wc-url-coupons-import-export-handler.php:77
+#: src/class-wc-url-coupons-import-export-handler.php:167
+msgid "Products to Add to Cart"
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:376
+msgid "Search for a product&hellip;"
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:386
+msgid "Add these products to the customers cart when they visit the URL."
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:393
+#: src/class-wc-url-coupons-import-export-handler.php:80
+#: src/class-wc-url-coupons-import-export-handler.php:169
+msgid "Defer Apply"
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:394
+msgid "Check this box to defer applying the coupon until the customer's cart meets the coupon's requirements."
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:425
+#: src/admin/class-wc-url-coupons-admin.php:570
+msgid "Homepage"
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:650
+msgid "Pages"
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:651
+msgid "Posts"
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:652
+msgid "Products"
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:653
+msgid "Categories"
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:654
+msgid "Tags"
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:655
+msgid "Product Categories"
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:656
+msgid "Product Tags"
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:916
+msgid "Coupon URL prefix"
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:917
+msgid "Optionally add an automated prefix to all URL coupons. You can then exclude links with this prefix from your host's caching for reliable coupon performance."
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:918
+msgid "Enter a coupon prefix"
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:925
+msgid "Hide coupon code field"
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:926
+msgid "Hide on cart page."
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:927
+msgid "Enable to hide the coupon code field on the cart page."
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:935
+msgid "Hide on checkout page."
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:936
+msgid "Enable to hide the coupon code field on the checkout page."
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:946
+msgctxt "Placeholder for the unique coupon URL slug"
+msgid "[coupon-url]"
+msgstr ""
+
+#: src/admin/class-wc-url-coupons-admin.php:986
+msgid "URL Slug"
+msgstr ""
+
+#: src/class-wc-url-coupons-import-export-handler.php:79
+msgid "Page Redirect Type"
+msgstr ""
+
+#: src/frontend/class-wc-url-coupons-frontend.php:309
+msgid "Coupon added but not yet applied:"
+msgstr ""
+
+#: src/frontend/class-wc-url-coupons-frontend.php:310
+msgid "Coupon already added but not yet applied:"
+msgstr ""
+
+#: src/frontend/class-wc-url-coupons-frontend.php:312
+msgid "Discount will be applied when a valid product is added to the cart."
+msgstr ""

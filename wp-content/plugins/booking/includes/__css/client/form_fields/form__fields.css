@@ -1,0 +1,715 @@
+/*!
+ * Booking Form Fields  
+ *   
+ * // FixIn: 10.1.5.7.
+ */
+:root {
+    --wpbc_form-field-border-radius: 3px;
+    --wpbc_form-field-border-style: solid;
+    --wpbc_form-field-border-size: 1px;
+    --wpbc_form-field-background-color: #ffffff;
+    --wpbc_form-field-border-color: rgba(0, 0, 0, 0.25);
+    --wpbc_form-field-border-color-spare: rgba(0, 0, 0, 0.25);
+    --wpbc_form-field-text-color: rgba(0, 0, 0, 0.7);
+    --wpbc_form-field-disabled-color: rgba(0, 0, 0, 0.2);
+--wpbc_form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    --wpbc_form-field-menu-color: #ffffff;
+    --wpbc_form-label-color: rgba(0, 0, 0, 0.85);
+    --wpbc_form-label-sublabel-color: rgba(0, 0, 0, 0.55);
+    --wpbc_form-label-error-color: #d63637;
+    --wpbc_form-button-border-radius: 3px;
+    --wpbc_form-button-border-style: none;
+    --wpbc_form-button-border-size: 1px;
+    --wpbc_form-button-background-color: #066aab;
+--wpbc_form-button-background-color-alt: #066aab;
+    --wpbc_form-button-border-color: #066aab;
+    --wpbc_form-button-text-color: #ffffff;
+--wpbc_form-button-text-color-alt: #fff;
+    --wpbc_form-page-break-color: #066aab;
+    --wpbc_form-background-image: none;
+    --wpbc_form-background-position: center center;
+    --wpbc_form-background-repeat: no-repeat;
+    --wpbc_form-background-size: cover;
+    --wpbc_form-background-width: 100px;
+    --wpbc_form-background-height: 100px;
+    --wpbc_form-background-color: rgba(0, 0, 0, 0);
+    --wpbc_form-background-url: none;
+    --wpbc_form-container-padding: 0px;
+    --wpbc_form-container-border-style: none;
+    --wpbc_form-container-border-width: 1px;
+    --wpbc_form-container-border-color: #000000;
+    --wpbc_form-container-border-radius: 3px;
+    --wpbc_form-field-size-input-height: 43px;
+    --wpbc_form-field-size-input-spacing: 15px;
+    --wpbc_form-field-size-font-size: 16px;
+    --wpbc_form-field-size-line-height: 19px;
+    --wpbc_form-field-size-padding-h: 14px;
+    --wpbc_form-field-size-checkbox-size: 16px;
+    --wpbc_form-field-size-sublabel-spacing: 5px;
+    --wpbc_form-field-size-icon-size: 1;
+    --wpbc_form-label-size-font-size: 16px;
+    --wpbc_form-label-size-line-height: 19px;
+    --wpbc_form-label-size-sublabel-font-size: 14px;
+    --wpbc_form-label-size-sublabel-line-height: 17px;
+    --wpbc_form-button-size-font-size: 17px;
+    --wpbc_form-button-size-height: 41px;
+    --wpbc_form-button-size-padding-h: 15px;
+    --wpbc_form-button-size-margin-top: 10px;
+    --wpbc_form-container-shadow-size-box-shadow: none;
+--wpbc_form-marging-between-several-checkbox-radio: 30px;
+--wpbc_form-padding-between-label-checkbox-radio: 8px;
+}
+
+/*! --------------------------------------------------------------------------------------------------------------------
+ *  General Fields
+ * ------------------------------------------------------------------------------------------------------------------ */
+div.wpbc_container.wpbc_form input,
+div.wpbc_container.wpbc_form label,
+div.wpbc_container.wpbc_form select,
+div.wpbc_container.wpbc_form button,
+div.wpbc_container.wpbc_form textarea {
+  margin:0;
+  border:0;
+  padding:0;
+  vertical-align:middle;
+  background:none;
+  height:auto;
+  box-sizing:border-box
+}
+
+div.wpbc_container.wpbc_form input[type=date],
+div.wpbc_container.wpbc_form input[type=datetime],
+div.wpbc_container.wpbc_form input[type=datetime-local],
+div.wpbc_container.wpbc_form input[type=email],
+div.wpbc_container.wpbc_form input[type=month],
+div.wpbc_container.wpbc_form input[type=number],
+div.wpbc_container.wpbc_form input[type=password],
+div.wpbc_container.wpbc_form input[type=range],
+div.wpbc_container.wpbc_form input[type=search],
+div.wpbc_container.wpbc_form input[type=tel],
+div.wpbc_container.wpbc_form input[type=text],
+div.wpbc_container.wpbc_form input[type=time],
+div.wpbc_container.wpbc_form input[type=url],
+div.wpbc_container.wpbc_form input[type=week],
+div.wpbc_container.wpbc_form select,
+div.wpbc_container.wpbc_form textarea,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=date],
+.wp-core-ui div.wpbc_container.wpbc_form input[type=datetime],
+.wp-core-ui div.wpbc_container.wpbc_form input[type=datetime-local],
+.wp-core-ui div.wpbc_container.wpbc_form input[type=email],
+.wp-core-ui div.wpbc_container.wpbc_form input[type=month],
+.wp-core-ui div.wpbc_container.wpbc_form input[type=number],
+.wp-core-ui div.wpbc_container.wpbc_form input[type=password],
+.wp-core-ui div.wpbc_container.wpbc_form input[type=range],
+.wp-core-ui div.wpbc_container.wpbc_form input[type=search],
+.wp-core-ui div.wpbc_container.wpbc_form input[type=tel],
+.wp-core-ui div.wpbc_container.wpbc_form input[type=text],
+.wp-core-ui div.wpbc_container.wpbc_form input[type=time],
+.wp-core-ui div.wpbc_container.wpbc_form input[type=url],
+.wp-core-ui div.wpbc_container.wpbc_form input[type=week],
+.wp-core-ui div.wpbc_container.wpbc_form select,
+.wp-core-ui div.wpbc_container.wpbc_form textarea {
+  background-color: var(--wpbc_form-field-background-color);
+  background-clip: padding-box;
+  border-radius: var(--wpbc_form-field-border-radius);
+  color: var(--wpbc_form-field-text-color);
+  border-width: var(--wpbc_form-field-border-size);
+  border-style: var(--wpbc_form-field-border-style);
+  border-color: var(--wpbc_form-field-border-color);
+  padding: 0 var(--wpbc_form-field-size-padding-h);
+  font-size: var(--wpbc_form-field-size-font-size);
+  line-height: 100%;
+  box-shadow: none;
+  transition: border 0.15s, box-shadow 0.15s;
+}
+
+div.wpbc_container.wpbc_form input[type=date]:focus,
+div.wpbc_container.wpbc_form input[type=datetime]:focus,
+div.wpbc_container.wpbc_form input[type=datetime-local]:focus,
+div.wpbc_container.wpbc_form input[type=email]:focus,
+div.wpbc_container.wpbc_form input[type=month]:focus,
+div.wpbc_container.wpbc_form input[type=number]:focus,
+div.wpbc_container.wpbc_form input[type=password]:focus,
+div.wpbc_container.wpbc_form input[type=range]:focus,
+div.wpbc_container.wpbc_form input[type=search]:focus,
+div.wpbc_container.wpbc_form input[type=tel]:focus,
+div.wpbc_container.wpbc_form input[type=text]:focus,
+div.wpbc_container.wpbc_form input[type=time]:focus,
+div.wpbc_container.wpbc_form input[type=url]:focus,
+div.wpbc_container.wpbc_form input[type=week]:focus,
+div.wpbc_container.wpbc_form select:focus,
+div.wpbc_container.wpbc_form textarea:focus,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=date]:focus,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=datetime]:focus,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=datetime-local]:focus,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=email]:focus,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=month]:focus,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=number]:focus,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=password]:focus,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=range]:focus,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=search]:focus,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=tel]:focus,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=text]:focus,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=time]:focus,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=url]:focus,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=week]:focus,
+.wp-core-ui div.wpbc_container.wpbc_form select:focus,
+.wp-core-ui div.wpbc_container.wpbc_form textarea:focus {
+  border-width: var(--wpbc_form-field-border-size);
+  border-style: solid;
+  border-color: var(--wpbc_form-button-background-color);
+  box-shadow: 0 0 0 1.2px var(--wpbc_form-button-background-color), 0px 1px 2px rgba(0, 0, 0, 0.15);
+  outline: none;
+}
+
+div.wpbc_container.wpbc_form input[type=date]:focus:invalid,
+div.wpbc_container.wpbc_form input[type=datetime]:focus:invalid,
+div.wpbc_container.wpbc_form input[type=datetime-local]:focus:invalid,
+div.wpbc_container.wpbc_form input[type=email]:focus:invalid,
+div.wpbc_container.wpbc_form input[type=month]:focus:invalid,
+div.wpbc_container.wpbc_form input[type=number]:focus:invalid,
+div.wpbc_container.wpbc_form input[type=password]:focus:invalid,
+div.wpbc_container.wpbc_form input[type=range]:focus:invalid,
+div.wpbc_container.wpbc_form input[type=search]:focus:invalid,
+div.wpbc_container.wpbc_form input[type=tel]:focus:invalid,
+div.wpbc_container.wpbc_form input[type=text]:focus:invalid,
+div.wpbc_container.wpbc_form input[type=time]:focus:invalid,
+div.wpbc_container.wpbc_form input[type=url]:focus:invalid,
+div.wpbc_container.wpbc_form input[type=week]:focus:invalid,
+div.wpbc_container.wpbc_form select:focus:invalid,
+div.wpbc_container.wpbc_form textarea:focus:invalid,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=date]:focus:invalid,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=datetime]:focus:invalid,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=datetime-local]:focus:invalid,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=email]:focus:invalid,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=month]:focus:invalid,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=number]:focus:invalid,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=password]:focus:invalid,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=range]:focus:invalid,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=search]:focus:invalid,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=tel]:focus:invalid,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=text]:focus:invalid,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=time]:focus:invalid,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=url]:focus:invalid,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=week]:focus:invalid,
+.wp-core-ui div.wpbc_container.wpbc_form select:focus:invalid,
+.wp-core-ui div.wpbc_container.wpbc_form textarea:focus:invalid {
+  border-width: var(--wpbc_form-field-border-size);
+  border-style: solid;
+  border-color: var(--wpbc_form-button-background-color);
+  box-shadow: 0 0 0 1.2px var(--wpbc_form-button-background-color), 0px 1px 2px rgba(0, 0, 0, 0.15);
+  outline: none;
+  color: var(--wpbc_form-field-text-color);
+}
+
+div.wpbc_container.wpbc_form input[type=date]::-webkit-input-placeholder,
+div.wpbc_container.wpbc_form input[type=datetime]::-webkit-input-placeholder,
+div.wpbc_container.wpbc_form input[type=datetime-local]::-webkit-input-placeholder,
+div.wpbc_container.wpbc_form input[type=email]::-webkit-input-placeholder,
+div.wpbc_container.wpbc_form input[type=month]::-webkit-input-placeholder,
+div.wpbc_container.wpbc_form input[type=number]::-webkit-input-placeholder,
+div.wpbc_container.wpbc_form input[type=password]::-webkit-input-placeholder,
+div.wpbc_container.wpbc_form input[type=range]::-webkit-input-placeholder,
+div.wpbc_container.wpbc_form input[type=search]::-webkit-input-placeholder,
+div.wpbc_container.wpbc_form input[type=tel]::-webkit-input-placeholder,
+div.wpbc_container.wpbc_form input[type=text]::-webkit-input-placeholder,
+div.wpbc_container.wpbc_form input[type=time]::-webkit-input-placeholder,
+div.wpbc_container.wpbc_form input[type=url]::-webkit-input-placeholder,
+div.wpbc_container.wpbc_form input[type=week]::-webkit-input-placeholder,
+div.wpbc_container.wpbc_form select::-webkit-input-placeholder,
+div.wpbc_container.wpbc_form textarea::-webkit-input-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=date]::-webkit-input-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=datetime]::-webkit-input-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=datetime-local]::-webkit-input-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=email]::-webkit-input-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=month]::-webkit-input-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=number]::-webkit-input-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=password]::-webkit-input-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=range]::-webkit-input-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=search]::-webkit-input-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=tel]::-webkit-input-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=text]::-webkit-input-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=time]::-webkit-input-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=url]::-webkit-input-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=week]::-webkit-input-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form select::-webkit-input-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form textarea::-webkit-input-placeholder {
+  color: var(--wpbc_form-field-text-color);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+div.wpbc_container.wpbc_form input[type=date]::-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=datetime]::-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=datetime-local]::-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=email]::-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=month]::-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=number]::-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=password]::-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=range]::-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=search]::-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=tel]::-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=text]::-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=time]::-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=url]::-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=week]::-moz-placeholder,
+div.wpbc_container.wpbc_form select::-moz-placeholder,
+div.wpbc_container.wpbc_form textarea::-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=date]::-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=datetime]::-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=datetime-local]::-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=email]::-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=month]::-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=number]::-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=password]::-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=range]::-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=search]::-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=tel]::-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=text]::-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=time]::-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=url]::-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=week]::-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form select::-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form textarea::-moz-placeholder {
+  color: var(--wpbc_form-field-text-color);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+div.wpbc_container.wpbc_form input[type=date]:-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=datetime]:-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=datetime-local]:-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=email]:-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=month]:-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=number]:-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=password]:-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=range]:-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=search]:-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=tel]:-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=text]:-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=time]:-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=url]:-moz-placeholder,
+div.wpbc_container.wpbc_form input[type=week]:-moz-placeholder,
+div.wpbc_container.wpbc_form select:-moz-placeholder,
+div.wpbc_container.wpbc_form textarea:-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=date]:-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=datetime]:-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=datetime-local]:-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=email]:-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=month]:-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=number]:-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=password]:-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=range]:-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=search]:-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=tel]:-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=text]:-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=time]:-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=url]:-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=week]:-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form select:-moz-placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form textarea:-moz-placeholder {
+  color: var(--wpbc_form-field-text-color);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/*! --------------------------------------------------------------------------------------------------------------------
+ *  Textarea
+ * ------------------------------------------------------------------------------------------------------------------ */
+div.wpbc_container.wpbc_form textarea,
+.wp-core-ui div.wpbc_container.wpbc_form textarea {
+  width: 100%;
+}
+div.wpbc_container.wpbc_form textarea ,
+.wp-core-ui div.wpbc_container.wpbc_form textarea {
+  line-height: 1.3;
+  min-height: var(--wpbc_form-field-size-input-height);
+  padding: var(--wpbc_form-field-size-padding-h);
+  resize: vertical;
+}
+
+/*! --------------------------------------------------------------------------------------------------------------------
+ *  General Height
+ * ------------------------------------------------------------------------------------------------------------------ */
+div.wpbc_container.wpbc_form input,
+div.wpbc_container.wpbc_form select,
+.wp-core-ui div.wpbc_container.wpbc_form input,
+.wp-core-ui div.wpbc_container.wpbc_form select {
+  height: var(--wpbc_form-field-size-input-height);
+}
+
+/*! --------------------------------------------------------------------------------------------------------------------
+ *  Select
+ * ------------------------------------------------------------------------------------------------------------------ */
+div.wpbc_container.wpbc_form select,
+.wp-core-ui div.wpbc_container.wpbc_form select {
+  appearance: none;
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  text-transform: none;
+  text-shadow: none;
+  white-space: nowrap;
+  line-height: unset;
+  padding-block: 0;
+  padding-inline-end: 24px;
+  padding-inline-start: 12px;
+  min-height: var(--wpbc_form-field-size-input-height);
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+div.wpbc_container.wpbc_form select, div.wpbc_container.wpbc_form select:disabled,
+.wp-core-ui div.wpbc_container.wpbc_form select,
+.wp-core-ui div.wpbc_container.wpbc_form select:disabled {
+/*
+  background-image: linear-gradient(45deg, transparent 50%, var(--wpbc_form-field-border-color-spare) 50%), linear-gradient(135deg, var(--wpbc_form-field-border-color-spare) 50%, transparent 50%);
+  background-position: calc( 100% - 17px) 50%, calc( 100% - 12px) 50%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+*/
+  background-image: var(--wpbc_form-select-bg-img),none;
+  background-repeat: no-repeat;
+  background-position: calc( 100% - 11px) 50%, calc( 100% - 12px) 50%;
+  background-size: 16px 12px;
+}
+
+.rtl div.wpbc_container.wpbc_form select, .rtl div.wpbc_container.wpbc_form select:disabled, .rtl
+.wp-core-ui div.wpbc_container.wpbc_form select, .rtl
+.wp-core-ui div.wpbc_container.wpbc_form select:disabled {
+  background-position: 12px 50%, 17px 50%;
+}
+
+div.wpbc_container.wpbc_form select > option,
+.wp-core-ui div.wpbc_container.wpbc_form select > option {
+  color: var(--wpbc_form-field-text-color);
+}
+
+div.wpbc_container.wpbc_form select > option.placeholder,
+div.wpbc_container.wpbc_form select > option[disabled],
+.wp-core-ui div.wpbc_container.wpbc_form select > option.placeholder,
+.wp-core-ui div.wpbc_container.wpbc_form select > option[disabled] {
+  color: var(--wpbc_form-field-disabled-color);                     /*FixIn: 10.2.3.1 */
+  opacity: 0.5;
+}
+
+div.wpbc_container.wpbc_form select:not([multiple]) > option,
+.wp-core-ui div.wpbc_container.wpbc_form select:not([multiple]) > option {
+  background: var(--wpbc_form-field-menu-color);
+}
+
+div.wpbc_container.wpbc_form select:not([multiple]) > option:not(.placeholder):checked,
+.wp-core-ui div.wpbc_container.wpbc_form select:not([multiple]) > option:not(.placeholder):checked {
+  font-weight: bold;
+}
+
+div.wpbc_container.wpbc_form select[multiple],
+.wp-core-ui div.wpbc_container.wpbc_form select[multiple] {
+  height: auto;
+  overflow-y: scroll;
+  background-image: none;
+}
+
+div.wpbc_container.wpbc_form select[multiple] > option:not(.placeholder):checked,
+.wp-core-ui div.wpbc_container.wpbc_form select[multiple] > option:not(.placeholder):checked {
+  background: var(--wpbc_form-button-background-color);
+  color: var(--wpbc_form-button-text-color-alt, var(--wpbc_form-button-text-color));
+}
+
+div.wpbc_container.wpbc_form input[type=number]:read-only,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=number]:read-only {
+  appearance: textfield;
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+}
+
+div.wpbc_container.wpbc_form input[type=number]:read-only::-webkit-inner-spin-button,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=number]:read-only::-webkit-inner-spin-button {
+  visibility: hidden;
+}
+
+/*! --------------------------------------------------------------------------------------------------------------------
+ *  Submit
+ * ------------------------------------------------------------------------------------------------------------------ */
+div.wpbc_container.wpbc_form input[type=submit]:not(.wpbc_button_light ),
+div.wpbc_container.wpbc_form button[type=submit]:not(.wpbc_button_light ),
+.wp-core-ui div.wpbc_container.wpbc_form input[type=submit]:not(.wpbc_button_light ),
+.wp-core-ui div.wpbc_container.wpbc_form button[type=submit]:not(.wpbc_button_light ) {
+  height: var(--wpbc_form-button-size-height);
+  background-color: var(--wpbc_form-button-background-color-alt, var(--wpbc_form-button-background-color));
+  border-radius: var(--wpbc_form-button-border-radius);
+  border-style: var(--wpbc_form-button-border-style);
+  border-color: var(--wpbc_form-button-border-color);
+  border-width: var(--wpbc_form-button-border-size);
+  box-shadow: none;
+  color: var(--wpbc_form-button-text-color);
+  padding: 0 var(--wpbc_form-button-size-padding-h);
+  font-family: inherit;
+  font-weight: 500;
+  font-size: var(--wpbc_form-button-size-font-size);
+  line-height: 100%;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  position: relative;
+  text-decoration: none;
+}
+
+div.wpbc_container.wpbc_form input[type=submit]:not(.wpbc_button_light ):not(:hover):not(:active),
+div.wpbc_container.wpbc_form button[type=submit]:not(.wpbc_button_light ):not(:hover):not(:active),
+.wp-core-ui div.wpbc_container.wpbc_form input[type=submit]:not(.wpbc_button_light ):not(:hover):not(:active),
+.wp-core-ui div.wpbc_container.wpbc_form button[type=submit]:not(.wpbc_button_light ):not(:hover):not(:active){
+  background-color: var(--wpbc_form-button-background-color-alt, var(--wpbc_form-button-background-color));
+  color: var(--wpbc_form-button-text-color);
+}
+
+div.wpbc_container.wpbc_form input[type=submit]:not(.wpbc_button_light ):hover,
+div.wpbc_container.wpbc_form input[type=submit]:not(.wpbc_button_light ):active,
+div.wpbc_container.wpbc_form button[type=submit]:not(.wpbc_button_light ):hover,
+div.wpbc_container.wpbc_form button[type=submit]:not(.wpbc_button_light ):active,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=submit]:not(.wpbc_button_light ):hover,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=submit]:not(.wpbc_button_light ):active,
+.wp-core-ui div.wpbc_container.wpbc_form button[type=submit]:not(.wpbc_button_light ):hover,
+.wp-core-ui div.wpbc_container.wpbc_form button[type=submit]:not(.wpbc_button_light ):active {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), var(--wpbc_form-button-background-color-alt, var(--wpbc_form-button-background-color));
+}
+
+
+div.wpbc_container.wpbc_form input[type=submit]:not(.wpbc_button_light ):focus,
+div.wpbc_container.wpbc_form button[type=submit]:not(.wpbc_button_light ):focus,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=submit]:not(.wpbc_button_light ):focus,
+.wp-core-ui div.wpbc_container.wpbc_form button[type=submit]:not(.wpbc_button_light ):focus {
+  outline: none;
+}
+
+div.wpbc_container.wpbc_form input[type=submit]:not(.wpbc_button_light ):focus:after,
+div.wpbc_container.wpbc_form button[type=submit]:not(.wpbc_button_light ):focus:after,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=submit]:not(.wpbc_button_light ):focus:after,
+.wp-core-ui div.wpbc_container.wpbc_form button[type=submit]:not(.wpbc_button_light ):focus:after{
+  content: "";
+  position: absolute;
+  border: 2px solid var(--wpbc_form-button-background-color);
+  border-radius: calc( var( --wpbc_form-button-border-radius ) + 2px);
+  top: calc( -4px - var( --wpbc_form-button-border-size, 1px ));
+  right: calc( -4px - var( --wpbc_form-button-border-size, 1px ));
+  bottom: calc( -4px - var( --wpbc_form-button-border-size, 1px ));
+  left: calc( -4px - var( --wpbc_form-button-border-size, 1px ));
+}
+
+div.wpbc_container.wpbc_form input[type=submit]:not(.wpbc_button_light ):disabled, div.wpbc_container.wpbc_form input[type=submit]:not(.wpbc_button_light ):disabled:hover,
+div.wpbc_container.wpbc_form button[type=submit]:not(.wpbc_button_light ):disabled,
+div.wpbc_container.wpbc_form button[type=submit]:not(.wpbc_button_light ):disabled:hover,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=submit]:not(.wpbc_button_light ):disabled,
+.wp-core-ui div.wpbc_container.wpbc_form input[type=submit]:not(.wpbc_button_light ):disabled:hover,
+.wp-core-ui div.wpbc_container.wpbc_form button[type=submit]:not(.wpbc_button_light ):disabled,
+.wp-core-ui div.wpbc_container.wpbc_form button[type=submit]:not(.wpbc_button_light ):disabled:hover {
+  background-color: var(--wpbc_form-button-background-color-alt, var(--wpbc_form-button-background-color));
+  cursor: default;
+}
+
+/*! --------------------------------------------------------------------------------------------------------------------
+ *   Radio and Checkboxes
+ * ------------------------------------------------------------------------------------------------------------------ */
+div.wpbc_container.wpbc_form input[type=checkbox],
+div.wpbc_container.wpbc_form input[type=radio] {
+  position: relative;
+  display: inline-block;
+  background: none;
+  height: calc( var( --wpbc_form-field-size-checkbox-size ) - 2px + calc( var( --wpbc_form-field-border-size, 1px ) * 2 ));
+  width: calc( var( --wpbc_form-field-size-checkbox-size ) - 2px + calc( var( --wpbc_form-field-border-size, 1px ) * 2 ));
+  margin: 0 0 0 2px;
+  border: none;
+  box-shadow: none;
+  vertical-align: middle;
+  opacity: 1;
+  appearance: none;
+}
+
+div.wpbc_container.wpbc_form input[type=checkbox]:before,
+div.wpbc_container.wpbc_form input[type=checkbox]:after,
+div.wpbc_container.wpbc_form input[type=radio]:before,
+div.wpbc_container.wpbc_form input[type=radio]:after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: 0;
+  width: var(--wpbc_form-field-size-checkbox-size);
+  height: var(--wpbc_form-field-size-checkbox-size);
+  box-sizing: content-box;
+  cursor: pointer;
+}
+
+div.wpbc_container.wpbc_form input[type=checkbox]:before,
+div.wpbc_container.wpbc_form input[type=radio]:before {
+  border-width: var(--wpbc_form-field-border-size);
+  border-style: var(--wpbc_form-field-border-style);
+  border-color: var(--wpbc_form-field-border-color);
+  background-color: var(--wpbc_form-field-background-color);
+  background-clip: padding-box;
+  background-image: none;
+  border-radius: 3px;
+}
+/* //FixIn: 2025-01-17 12:10 */
+div.wpbc_container.wpbc_form input[type=checkbox] + label,
+div.wpbc_container.wpbc_form input[type=radio] + label,
+div.wpbc_container.wpbc_form .wpdev-list-item > input[type=checkbox] + .wpdev-list-item-label,
+div.wpbc_container.wpbc_form .wpdev-list-item > input[type=radio] + .wpdev-list-item-label,
+div.wpbc_container.wpbc_form .wpbc_wrap_checkbox + a {
+    display: inline;
+    position: relative;
+    padding-inline-start: var(--wpbc_form-padding-between-label-checkbox-radio);
+    font-size: var(--wpbc_form-label-size-font-size);
+    vertical-align: middle;
+    cursor: pointer;
+}
+div.wpbc_container.wpbc_form .wpbc_wrap_checkbox + a {
+    padding-top: 3px;
+}
+div.wpbc_container.wpbc_form input[type=checkbox] + label,
+div.wpbc_container.wpbc_form input[type=radio] + label{
+    cursor: pointer;
+}
+div.wpbc_container.wpbc_form .wpdev-list-item > .wpdev-list-item-label:first-child{
+  display: inline;
+  position: relative;
+  padding-inline-end: var(--wpbc_form-padding-between-label-checkbox-radio);
+  font-size: var(--wpbc_form-label-size-font-size);
+  vertical-align: middle;
+}
+div.wpbc_container.wpbc_form .wpdev-list-item > label.wpdev-list-item-label:first-child{
+    cursor: pointer;
+}
+div.wpbc_container.wpbc_form .wpdev-list-item > .wpdev-list-item-label >input[type=checkbox],
+div.wpbc_container.wpbc_form .wpdev-list-item > .wpdev-list-item-label >input[type=radio] {
+    margin-left:var(--wpbc_form-padding-between-label-checkbox-radio);
+    margin-right:var(--wpbc_form-padding-between-label-checkbox-radio);
+}
+div.wpbc_container.wpbc_form .wpdev-checkbox .wpdev-list-item,
+div.wpbc_container.wpbc_form .wpdev-radio .wpdev-list-item{
+    margin-right: var(--wpbc_form-marging-between-several-checkbox-radio);
+}
+div.wpbc_container.wpbc_form .wpdev-checkbox .wpdev-list-item:last-child,
+div.wpbc_container.wpbc_form .wpdev-radio .wpdev-list-item:last-child{
+    margin-right: 0;
+}
+.rtl div.wpbc_container.wpbc_form .wpdev-checkbox .wpdev-list-item,
+.rtl div.wpbc_container.wpbc_form .wpdev-radio .wpdev-list-item{
+    margin-left: var(--wpbc_form-marging-between-several-checkbox-radio);
+}
+.rtl div.wpbc_container.wpbc_form .wpdev-checkbox .wpdev-list-item:first-child,
+.rtl div.wpbc_container.wpbc_form .wpdev-radio .wpdev-list-item:first-child{
+    margin-left: 0;
+}
+div.wpbc_container.wpbc_form input[type=checkbox]:checked:before,
+div.wpbc_container.wpbc_form input[type=radio]:checked:before {
+  margin: 0;
+  border-width: var(--wpbc_form-field-border-size);
+  border-style: solid;
+    border-color: var(--wpbc_form-field-border-color);
+    /*border-color: var(--wpbc_form-button-background-color);*/
+    /*box-shadow: 0 0 0 1.2px var(--wpbc_form-button-background-color), 0px 1px 2px rgba(0, 0, 0, 0.15);*/
+  outline: none;
+}
+div.wpbc_container.wpbc_form input[type=checkbox]:checked:before:focus,
+div.wpbc_container.wpbc_form input[type=radio]:checked:before:focus {
+    border-color: var(--wpbc_form-button-background-color);
+    box-shadow: 0 0 0 1.2px var(--wpbc_form-button-background-color), 0px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+div.wpbc_container.wpbc_form input[type=checkbox]:focus,
+div.wpbc_container.wpbc_form input[type=radio]:focus {
+  outline: none;
+}
+
+div.wpbc_container.wpbc_form input[type=checkbox]:focus:before,
+div.wpbc_container.wpbc_form input[type=radio]:focus:before {
+  border-width: var(--wpbc_form-field-border-size);
+  border-style: solid;
+  border-color: var(--wpbc_form-button-background-color);
+  box-shadow: 0 0 0 1.2px var(--wpbc_form-button-background-color), 0px 1px 2px rgba(0, 0, 0, 0.15);
+  outline: none;
+}
+
+div.wpbc_container.wpbc_form input[type=checkbox]:checked:after {
+  border-top: none;
+  border-right: none;
+  height: calc( var( --wpbc_form-field-size-checkbox-size ) * 0.6);
+  border-left: 4px solid var(--wpbc_form-button-background-color);
+  border-bottom: 4px solid var(--wpbc_form-button-background-color);
+  background-color: transparent;
+  transform: translate(0, 1px) scale(0.5) rotate(-45deg);
+  left: calc( -4px + var( --wpbc_form-field-border-size, 1px ));
+  top: calc( -1px + var( --wpbc_form-field-border-size, 1px ));
+}
+
+div.wpbc_container.wpbc_form input[type=radio] {
+  border-radius: 50%;
+}
+
+div.wpbc_container.wpbc_form input[type=radio]:before {
+  border-radius: 50%;
+}
+
+div.wpbc_container.wpbc_form input[type=radio]:checked:after {
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background-color: var(--wpbc_form-button-background-color);
+  transform: scale(0.5);
+  -moz-transform: scale(0.47);
+  left: calc( -3px + var( --wpbc_form-field-border-size, 1px ));
+  top: calc( -1px + var( --wpbc_form-field-border-size, 1px ));
+}
+
+
+/*! --------------------------------------------------------------------------------------------------------------------
+ *   Errors
+ * ------------------------------------------------------------------------------------------------------------------ */
+div.wpbc_container.wpbc_form.wpbc_container_booking_form label.wpbc_form_field_error,
+div.wpbc_container.wpbc_form.wpbc_container_booking_form span.wpbc_form_field_error {
+  font-weight: 400;
+  font-size: var(--wpbc_form-label-size-sublabel-font-size);
+  line-height: var(--wpbc_form-label-size-sublabel-line-height);
+  margin-top: var(--wpbc_form-field-size-input-spacing);
+  color: var(--wpbc_form-label-error-color);
+  padding: 0 0 0 5px;
+  position: relative;
+}
+
+div.wpbc_container.wpbc_form.wpbc_container_booking_form input.wpbc_form_field_error,
+div.wpbc_container.wpbc_form.wpbc_container_booking_form textarea.wpbc_form_field_error,
+div.wpbc_container.wpbc_form.wpbc_container_booking_form select.wpbc_form_field_error{
+  border-width: var(--wpbc_form-field-border-size);
+  border-style: solid;
+  border-color: var(--wpbc_form-label-error-color);
+}
+
+div.wpbc_container.wpbc_form.wpbc_container_booking_form input.wpbc_form_field_error:hover,
+div.wpbc_container.wpbc_form.wpbc_container_booking_form textarea.wpbc_form_field_error:hover,
+div.wpbc_container.wpbc_form.wpbc_container_booking_form select.wpbc_form_field_error:hover{
+  border-width: var(--wpbc_form-field-border-size);
+  border-style: solid;
+  border-color: var(--wpbc_form-label-error-color);
+  box-shadow: 0 0 2px 0 var(--wpbc_form-label-error-color);
+}
+
+div.wpbc_container.wpbc_form.wpbc_container_booking_form input.wpbc_form_field_error:focus,
+div.wpbc_container.wpbc_form.wpbc_container_booking_form textarea.wpbc_form_field_error:focus,
+div.wpbc_container.wpbc_form.wpbc_container_booking_form select.wpbc_form_field_error:focus{
+  border-width: var(--wpbc_form-field-border-size);
+  border-style: solid;
+  border-color: var(--wpbc_form-label-error-color);
+  box-shadow: 0 0 0 1.2px var(--wpbc_form-label-error-color);
+}
+
+div.wpbc_container.wpbc_form.wpbc_container_booking_form input[type=checkbox].wpbc_form_field_error,
+div.wpbc_container.wpbc_form.wpbc_container_booking_form input[type=radio].wpbc_form_field_error{
+  border: none;
+  box-shadow: none;
+}
+
+div.wpbc_container.wpbc_form.wpbc_container_booking_form input[type=checkbox].wpbc_form_field_error:hover,
+div.wpbc_container.wpbc_form.wpbc_container_booking_form input[type=checkbox].wpbc_form_field_error:focus,
+div.wpbc_container.wpbc_form.wpbc_container_booking_form input[type=radio].wpbc_form_field_error:hover,
+div.wpbc_container.wpbc_form.wpbc_container_booking_form input[type=radio].wpbc_form_field_error:focus{
+  border: none;
+  box-shadow: none;
+}

@@ -1,0 +1,88 @@
+# WordPress core files
+/wp-admin/
+/wp-includes/
+/wp-content/index.php
+/index.php
+/license.txt
+/readme.html
+/wp-activate.php
+/wp-blog-header.php
+/wp-comments-post.php
+/wp-config.php
+/wp-config-sample.php
+/wp-cron.php
+/wp-links-opml.php
+/wp-load.php
+/wp-login.php
+/wp-mail.php
+/wp-settings.php
+/wp-signup.php
+/wp-trackback.php
+/xmlrpc.php
+
+# wp-content: ignore everything except themes and plugins you customize
+/wp-content/uploads/
+/wp-content/upgrade/
+/wp-content/cache/
+/wp-content/backups/
+/wp-content/advanced-cache.php
+/wp-content/object-cache.php
+/wp-content/wp-cache-config.php
+/wp-content/db.php
+
+# Misplaced uploads directory
+/wp-contentuploads/
+
+# Database
+*.sql
+*.sql.gz
+
+# Config backups
+*.bak
+wp-config.php
+1702406350.wp-config.php
+.wp-config.php.*
+
+# Environment / hosting
+.htaccess
+.htaccess.log
+.user.ini
+.user.ini.log
+.well-known/
+gd-preload-cli.php
+plat-cron.php
+wp-cli.yml
+robots.txt
+
+# Security plugins
+wordfence-waf.php
+.sucuriquarantine/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Node (if using build tools for theme dev)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Logs
+*.log
+error_log
+debug.log
+
+# Misc
+*.bak
+*.tmp
+*.orig

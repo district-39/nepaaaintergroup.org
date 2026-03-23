@@ -1,0 +1,62 @@
+{
+  "local": {
+    "iframe_origins": [
+      "https://airo-sentinel.dev-godaddy.com",
+      "https://dev-airo.ai",
+      "https://www.dev-airo.ai"
+    ],
+    "api_origins": [
+      "https://site-designer-api.local.dev-godaddy.com",
+      "https://site-designer-api.local.dev-godaddy.com:3000"
+    ],
+    "sso_url": "https://sso.dev-godaddy.com",
+    "wp_public_api_url": "https://wp-api.wpsecurity.dev-godaddy.com/api/v1"
+  },
+  "development": {
+    "iframe_origins": [
+      "https://airo-sentinel.dev-godaddy.com",
+      "https://dev-airo.ai",
+      "https://www.dev-airo.ai"
+    ],
+    "api_origins": [
+      "https://site-designer-api.dev-godaddy.com",
+      "https://site-designer-api.local.dev-godaddy.com:3000"
+    ],
+    "sso_url": "https://sso.dev-godaddy.com",
+    "wp_public_api_url": "https://wp-api.wpsecurity.dev-godaddy.com/api/v1"
+  },
+  "test": {
+    "iframe_origins": [
+      "https://airo-sentinel.test-godaddy.com",
+      "https://test-airo.ai",
+      "https://www.test-airo.ai"
+    ],
+    "api_origins": [
+      "https://site-designer-api.test-godaddy.com"
+    ],
+    "sso_url": "https://sso.test-godaddy.com",
+    "wp_public_api_url": "https://wp-api.wpsecurity.test-godaddy.com/api/v1"
+  },
+  "production": {
+    "iframe_origins": [
+      "https://airo-sentinel.godaddy.com",
+      "https://airo.ai",
+      "https://www.airo.ai",
+      "https://prod.airo.ai",
+      "https://godaddy.com",
+      "https://www.godaddy.com",
+      "https://hub.godaddy.com",
+      "https://host.godaddy.com",
+      "https://account.godaddy.com",
+      "https://sec.godaddy.com",
+      "https://dcc.godaddy.com",
+      "https://start.godaddy.com",
+      "https://dashboard.godaddy.com"
+    ],
+    "api_origins": [
+      "https://site-designer-api.godaddy.com"
+    ],
+    "sso_url": "https://sso.godaddy.com",
+    "wp_public_api_url": "https://wp-api.wpsecurity.godaddy.com/api/v1"
+  }
+}

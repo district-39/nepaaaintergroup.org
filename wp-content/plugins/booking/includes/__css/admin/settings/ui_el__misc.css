@@ -1,0 +1,169 @@
+/* Pull to  right side */
+.wpbc_ui_el__flex_right {
+	margin-left:auto !important;
+}
+/* Hide */
+.wpbc_ui__hide {
+	display:none !important;
+}
+.wpbc_ui__nowrap {
+  flex-wrap: nowrap !important;
+}
+/* Vertical Separator Line*/
+.wpbc_ui_el__divider {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: stretch;
+	justify-content: flex-start;
+	align-self: stretch;
+}
+.wpbc_ui_el__divider .wpbc_ui_el__vertical_space {
+	width: 10px;
+	margin: 0;
+}
+.wpbc_ui_el__divider .wpbc_ui_el__horisontal_space {
+	height: 10px;
+	margin: 0;
+}
+.wpbc_ui_el__divider .wpbc_ui_el__vertical_line {
+	border: none;
+	width: 1px;
+	background: #0000001a;
+	margin: 0 5px;
+}
+.wpbc_ui_el__divider .wpbc_ui_el__horisontal_line {
+	border: none;
+	height: 1px;
+	background: #0000001a;
+	margin: 5px 0;
+	flex: 1 1 100%;
+
+	border-bottom: 1px solid #0000001c;
+	background: transparent;
+}
+.wpbc_ui_el__divider:has(.wpbc_ui_el__horisontal_line) {
+	clear:both;
+	width:100%;
+	min-width:100%;
+	max-width:100%;
+}
+.wpbc_ui_el__level__folder.expanded .wpbc_ui_el__divider:has(.wpbc_ui_el__horisontal_line) {
+	margin-left: 40px;
+}
+.wpbc_settings_page_wrapper.compact .wpbc_ui_el__level__folder.expanded .wpbc_ui_el__divider:has(.wpbc_ui_el__horisontal_line) {
+	margin-left: 15px;
+}
+.wpbc_ui_el__row100 {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: center;
+	width:100%;
+	min-width:100%;
+	max-width:100%;
+}
+/* Vertical  line */
+.wpbc_ui_el__vetical_line {
+  display: inline-block;
+  border-right: 1px solid #848484;
+  margin: 0 7px -1px;
+  width: 0px;
+  background: #7b7b7b;
+  height: 1em;
+  box-sizing: border-box;
+  border-left: 1px solid #555;
+  padding: 0;
+}
+.wpbc_ui_el__make_space {
+	flex: 1;
+}
+/* Top  messages */
+.wpbc_admin .wpbc_page div.wpbc_inner_message {
+	position: fixed;
+	top: calc(var(--wpbc_ui_top_nav__wp_top_menu_height) + 3px);
+	right: 65px;
+	padding: 10px 12px;
+	word-break: break-all;
+	max-width: 50%;
+	z-index: 90001;
+}
+.wpbc_svg_icon_class {
+	display: inline-block;
+	background-position: 0 1px;
+	background-repeat: no-repeat;
+	background-size: 24px auto;
+	width: 24px;
+	height: 24px;
+}
+/* -- Timeline ------------------------------------------------------------------------------------------------------ */
+/* "Emails Sending" toggle at  top  horisontal  bar located at  right side. */
+.wpbc_ui_el__horis_top_bar__content .wpbc_ui__is_send_emails_toggle {
+	font-size: 13px;
+	line-height: 1.4;
+	border-left: 1px solid var(--wpbc_ui_horis_top_nav__normal_color);
+	padding-left: 15px;
+	margin-left: auto;
+	min-height: 30px;
+	align-items: center;
+}
+
+/* -- TODO: Temp fix for "Form Options Costs page"   ---------------------------------------------------------------- */
+#wpbc_settings_advancedcost_metabox tr {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: flex-start;
+}
+#wpbc_settings_advancedcost_metabox tr th {
+	font-size: 1.2em;
+	padding: 10px 0;
+}
+#wpbc_settings_advancedcost_metabox tr td {
+	padding-left: 3em;
+}
+/* -- TODO: Temp fix for "Save button"   ---------------------------------------------------------------------------- */
+.container_for_save_buttons {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: center;
+
+	margin-top:20px;
+	padding: 10px;
+}
+.container_for_save_buttons .sub_right,
+.container_for_save_buttons a:nth-child(2) {
+	margin-left: auto;
+}
+
+/* == Forms Input Focus ============================================================================================= */
+.wpbc_page {
+	--wpbc_form-field-border-size: 1px;
+	--wpbc_form-button-background-color: #066aab;
+	--wpbc_form-field-text-color: rgba(0, 0, 0, 0.7);
+}
+.wp-core-ui .wpbc_page input[type=date]:focus,
+.wp-core-ui .wpbc_page input[type=datetime-local]:focus,
+.wp-core-ui .wpbc_page input[type=datetime]:focus,
+.wp-core-ui .wpbc_page input[type=email]:focus,
+.wp-core-ui .wpbc_page input[type=month]:focus,
+.wp-core-ui .wpbc_page input[type=number]:focus,
+.wp-core-ui .wpbc_page input[type=password]:focus,
+.wp-core-ui .wpbc_page input[type=range]:focus,
+.wp-core-ui .wpbc_page input[type=search]:focus,
+.wp-core-ui .wpbc_page input[type=tel]:focus,
+.wp-core-ui .wpbc_page input[type=text]:focus,
+.wp-core-ui .wpbc_page input[type=time]:focus,
+.wp-core-ui .wpbc_page input[type=url]:focus,
+.wp-core-ui .wpbc_page input[type=week]:focus,
+.wp-core-ui .wpbc_page select:focus,
+.wp-core-ui .wpbc_page textarea:focus,
+.wp-core-ui .wpbc_page input[type=checkbox]:focus,
+.wp-core-ui .wpbc_page input[type=radio]:focus{
+  border-width: var(--wpbc_form-field-border-size);
+  border-style: solid;
+  border-color: var(--wpbc_form-button-background-color);
+  box-shadow: 0 0 0 1.2px var(--wpbc_form-button-background-color),0 1px 2px rgba(0,0,0,.15);
+  outline: 0
+}
+

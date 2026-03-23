@@ -1,0 +1,52 @@
+.elementor-panel .elementor-element .icon:has(.wpbc_logo_in_elementor) {
+  max-height: 43px
+}
+.wpbc_logo_in_elementor {
+  display: inline-block;
+  background-position: 0 1px;
+  background-repeat: no-repeat;
+  background-size: 30px auto;
+  width: 30px;
+  height: 30px;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NTAgNTUwIj48cGF0aCBkPSJNMjc1IDE2Mi4zNmMtOTIuMzIgMC0xNjcuMTUgNzcuODItMTY3LjE1IDE3My44MVMxODIuNjkgNTA5Ljk5IDI3NSA1MDkuOTlzMTY3LjE1LTc3LjgyIDE2Ny4xNS0xNzMuODJTMzY3LjMxIDE2Mi4zNiAyNzUgMTYyLjM2Wm0wIDI2NC41M2MtNTAuMSAwLTkwLjcxLTQwLjYxLTkwLjcxLTkwLjcxczQwLjYxLTkwLjcxIDkwLjcxLTkwLjcxIDkwLjcxIDQwLjYxIDkwLjcxIDkwLjcxLTQwLjYxIDkwLjcxLTkwLjcxIDkwLjcxWiIgc3R5bGU9ImZpbGw6I2U1ZTVlNTsiIGZpbGwtb3BhY2l0eT0iMS4wIiAvPjxwYXRoIGQ9Ik0zNDAuNTMgMzk4LjkxYy0xNC44NSAxNS41MS0zNS4xNiAyNS43Ni01Ny44NCAyNy42Ni01NC44NyA0LjYtMTAxLjY0LTQxLjE0LTk4LjIzLTk2LjEgMi45NC00Ny40NCA0Mi4zNS04NS4wMSA5MC41NC04NS4wMSAyNC44NCAwIDQ3LjM0IDkuOTggNjMuNzIgMjYuMTYgNS44NiA1Ljc4IDE1LjI5IDUuNzMgMjEuMTEtLjA5bDM1LjE0LTM1LjE0YzUuNjktNS42OSA1LjktMTQuODcuNDMtMjAuNzctMzAuNDEtMzIuODMtNzMuMS01My4yNi0xMjAuNC01My4yNi05Mi4zMiAwLTE2Ny4xNSA3Ny44Mi0xNjcuMTUgMTczLjgxUzE4Mi42OSA1MDkuOTkgMjc1IDUwOS45OWM0OC40OSAwIDkyLjE1LTIxLjQ3IDEyMi42OC01NS43NiA1LjI5LTUuOTQgNS4wMi0xNC45Ny0uNi0yMC41OWwtMzUuMDUtMzUuMDVjLTUuOTgtNS45OC0xNS42Ny01Ljc5LTIxLjUxLjMyWiIgIHN0eWxlPSJmaWxsOiM1NTU7Ii8+PHBhdGggZD0iTTExMi41MyAyNjEuMjdjMTIuMzQtMzkuMDcgMzguMzItNzAuMDIgNzcuNzktOTcuMDQuOTItLjYzIDEuNDgtMS42NyAxLjQ4LTIuNzlWMTQuNzZjMC00LjI4LTMuNjgtNy43Ni04LjIyLTcuNzZoLTMuNzZjLTE4LjU2IDAtNzMuMTcgNDAuMy03MS43OSA2MC42MmwtLjE3IDE5Mi45MWMwIDIuNzQgMy44NiAzLjM0IDQuNjguNzNaIiAgc3R5bGU9ImZpbGw6IzU1NTsiLz48L3N2Zz4=)!important
+}
+.elementor-control-type-wpbc_resource_selection .elementor-control-field {
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  gap: 10px
+}
+.elementor-control-type-wpbc_resource_selection .elementor-control-input-wrapper {
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%
+}
+.elementor-control-type-wpbc_resource_selection option.wpbc_parent_resource,
+.elementor-control-type-wpbc_resource_selection option.wpbc_single_resource {
+  font-weight: 600
+}
+.elementor-control-type-wpbc_calendar_skin_selection .elementor-control-content {
+  gap: 10px
+}
+.elementor-control-field.elementor-control-type-save-button {
+  -ms-flex: 0;
+  flex: 0;
+  -ms-flex-item-align: end;
+  align-self: flex-end
+}
+.wpbc_go_button__form_fields {
+  margin: auto
+}
+.elementor-control-type-wpbc_go_button .elementor-control-content {
+  -ms-flex-align: center;
+  align-items: center
+}
+.elementor-panel .elementor-control-type-wpbc_go_button button.elementor-button {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 15px
+}

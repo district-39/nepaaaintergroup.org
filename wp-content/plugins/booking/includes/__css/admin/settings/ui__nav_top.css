@@ -1,0 +1,134 @@
+/*! = Top Navigation Menu = */
+.wpbc_admin {
+	--wpbc_ui_top_nav__background-color: var(--wpbc_ui__gen__panel_background-color);
+	--wpbc_ui_top_nav__font-size: 17px;
+	--wpbc_ui_top_nav__height: 48px;
+	--wpbc_ui_top_nav__a_color: var(--wpbc_ui__gen__text-color);
+	/* Underline red line */
+	--wpbc_ui_top_nav__a_hover_border_width: 3px;
+	--wpbc_ui_top_nav__a_hover_border_color: var(--wpbc_ui__gen__hover-color);
+
+	--wpbc_ui_top_nav__wp_left_menu_width: 160px;
+	--wpbc_ui_top_nav__wp_top_menu_height: 32px;
+}
+/* == Different position of Top Bar,  depends from  the WordPress Left Menu and Top Bar ============================= */
+/* Folded left  WordPress  mennu */
+body.folded .wpbc_admin {
+	--wpbc_ui_top_nav__wp_left_menu_width: 36px;
+}
+/* iPad */
+@media only screen and (max-width: 960px) {
+	div.wpbc_admin {
+		--wpbc_ui_top_nav__wp_left_menu_width: 36px;
+	}
+}
+/* Mobile */
+@media screen and (max-width: 782px) {
+	div.wpbc_admin,
+	body.folded div.wpbc_admin {
+		--wpbc_ui_top_nav__wp_left_menu_width: 0px;
+	}
+	div.wpbc_admin {
+		--wpbc_ui_top_nav__wp_top_menu_height: 46px;
+	}
+}
+/* When in Full Screen */
+body.wpbc_admin_full_screen {
+	div.wpbc_admin,
+	body.folded div.wpbc_admin {
+		--wpbc_ui_top_nav__wp_left_menu_width: 0px;
+	}
+	div.wpbc_admin {
+		--wpbc_ui_top_nav__wp_top_menu_height: 0px;
+	}
+}
+/* Nof Fixed position */
+@media screen and (max-width: 600px) {
+	div.wpbc_ui_el__top_nav {
+		position: absolute;
+	}
+}
+/* == Different position of Top Bar,  depends from  the WordPress Left Menu and Top Bar ============================= */
+.wpbc_ui_el__top_nav {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+
+	font-size: var(--wpbc_ui_top_nav__font-size);
+
+	background: var(--wpbc_ui_top_nav__background-color);
+	border:0;
+	box-shadow: var(--wpbc_ui__gen__panel_box-shadow);
+
+	margin: 0;
+	padding: 0 5px;
+	box-sizing: border-box;
+
+	min-height: var(--wpbc_ui_top_nav__height);
+	max-width: 100%;
+	width: calc( 100% - var(--wpbc_ui_top_nav__wp_left_menu_width) );
+
+	position: fixed;
+	top: var(--wpbc_ui_top_nav__wp_top_menu_height);
+	z-index: 11001;
+	transition: margin .25s ease-out;
+}
+/* Fix for dropdown links to  have FULL height in top  navbar */
+.wpbc_ui_el__top_nav > * {
+	align-items: stretch;
+	margin:0;
+}
+/* Bottom line hovering - Red underline in next coming Element - usualy DIV.wpbc_ui_el_container -------------------- */
+.wpbc_ui_el__top_nav > a,
+.wpbc_ui_el__top_nav > div:has(a) {
+	border-top: var(--wpbc_ui_top_nav__a_hover_border_width) solid transparent;
+	border-bottom: var(--wpbc_ui_top_nav__a_hover_border_width) solid transparent;
+	padding: 0 15px;
+}
+.wpbc_ui_el__top_nav > a:hover,
+.wpbc_ui_el__top_nav > div.wpbc_ui_el_container:has(a:hover) {
+	border-bottom-color: var(--wpbc_ui_top_nav__a_hover_border_color);
+	color:var(--wpbc_ui_top_nav__a_hover_border_color);
+}
+/* Color for all A elements on hovering */
+.wpbc_ui_el__top_nav a:hover *,
+.wpbc_ui_el__top_nav div.wpbc_ui_el_container:has(a:hover) {
+	color:var(--wpbc_ui_top_nav__a_hover_border_color);
+}
+/* Links styles ! Calc Line Height depends from border width -------------------------------------------------------- */
+.wpbc_ui_el__top_nav a {
+	color: var(--wpbc_ui_top_nav__a_color);
+	font-weight: 600;
+	text-decoration:none;
+	line-height: calc( var(--wpbc_ui_top_nav__height) - var(--wpbc_ui_top_nav__a_hover_border_width) - var(--wpbc_ui_top_nav__a_hover_border_width) );
+}
+/** When we click on links in top  menu, we do not highlight with blude box shadow. It highlighted only on Focus. --- */
+.wpbc_ui_el__top_nav a:active {
+	box-shadow: none;
+}
+/* Dropdowns - fix right padding ------------------------------------------------------------------------------------ */
+.wpbc_ui_el__top_nav .wpbc_ui_el__dropdown:has(a.has_down_arrow) {
+	padding: 0 5px 0 15px;
+}
+/* Hamburger Menu --------------------------------------------------------------------------------------------------- */
+.wpbc_ui_el__top_nav .wpbc_icn_menu::before{
+	/*font-size: 22px;*/
+	font-size: calc(1em + 5px);
+}
+/* Top News section ------------------------------------------------------------------------------------------------- */
+.wpbc_ui_el__top_nav .wpbc_message_wrapper {
+  margin-left: auto !important;
+}
+.wpbc_ui_el__top_nav .wpbc_message_wrapper .wpbc_header_news {
+  padding: 0 15px;
+  background: #fff;
+}
+/* Button Group,  like "Save Changes" | "Open" ---------------------------------------------------------------------- */
+.wpbc_ui_el__top_nav .wpbc_ui_el__buttons_group {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 10px;
+}

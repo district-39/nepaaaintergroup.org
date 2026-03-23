@@ -1,0 +1,30 @@
+/* ------------------------------------------------------------------------------------------------------------------ */
+/*   C h i l d     T i m e     P i c k e r     T h e m e     of     "../css/time_picker_skins/light__24_8.css"        */
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* -  BLACK -     C o l o r     S c h e m e                                                                           */
+/* ------------------------------------------------------------------------------------------------------------------ */
+@import url("light__24_8.css");
+/* For best compatibility, please change parameters only in :root { ... } section */
+:root {
+	--wpbc_timepicker-font-size: 15px;
+
+	--wpbc_timepicker-bg-color: #1d2327;
+	--wpbc_timepicker-text-color: #d0d0d0;
+	--wpbc_timepicker-border-color: #1d2327;
+	--wpbc_timepicker-bg-color-opacity: 100%;
+
+	--wpbc_timepicker-hover-bg-color: #425977;
+	--wpbc_timepicker-hover-text-color: #f0f6ff;
+	--wpbc_timepicker-hover-border-color: #6b87aa;
+	--wpbc_timepicker-hover-bg-color-opacity: 75%;
+
+	--wpbc_timepicker-selected-bg-color: #476a99;
+	--wpbc_timepicker-selected-text-color: #f0f6ff;
+	--wpbc_timepicker-selected-border-color: var(--wpbc_timepicker-selected-bg-color);
+	--wpbc_timepicker-selected-bg-color-opacity: 100%;
+
+	--wpbc_timepicker-border-width: 2px;
+	--wpbc_timepicker-border-radius: 5px;
+	--wpbc_timepicker-padding: 0.25em 1em;
+	--wpbc_timepicker-margin:  0.1em 0;
+}

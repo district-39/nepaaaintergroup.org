@@ -1,0 +1,973 @@
+/* ==  V A R s  == */
+.wpbc_admin {
+	--wpbc_ui_listing__back_color: #fff;
+	--wpbc_ui_listing__back_alt_color: #fbfbfc;
+	--wpbc_ui_listing__table_border_color: #d6d6d6;
+	--wpbc_ui_listing__row_border_color: #e4e4e4;
+
+	--wpbc_ui_listing__border_radius: var(--wpbc_ui__gen__border-radius);
+
+	--wpbc_ui_listing__header_height: 44px;
+
+	--wpbc_ui_listing__pending_color: #ed9f0a;
+	--wpbc_ui_listing__approved_color: #64AA45;
+	--wpbc_ui_listing__trash_color: #d94a48;
+	--wpbc_ui_listing__restore_color: #1e9220;
+	--wpbc_ui_listing__resource_color: #6b96ce;
+	--wpbc_ui_listing__selected_row_color: #08a;
+
+	--wpbc_ui_listing__colapsed_height: 80px;
+}
+
+/** ====================================================================================================================
+.wpbc__wrap__booking_listing{
+	.wpbc__list__table {
+		.wpbc__list__head {
+			.wpbc__list__row {
+				.wpbc__list__col {
+
+				}
+			}
+		}
+		.wpbc__list__body {
+			.wpbc__list__row {
+				.wpbc__list__col {
+
+				}
+			}
+		}
+	}
+}
+*/
+/* ================================================================================================================== */
+/* ==  S t r u c u t u r e  == */
+/* ================================================================================================================== */
+.wpbc__wrap__booking_listing {
+	margin: 15px 0;
+}
+.wpbc__list__table,
+.wpbc__list__table .wpbc__list__head,
+.wpbc__list__table .wpbc__list__foot,
+.wpbc__list__table .wpbc__list__body {
+	flex: 1 1 100%;
+	width: 100%;
+
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+
+	margin: 0;
+	padding: 0;
+}
+.wpbc__list__table .wpbc__list__row{
+	flex: 1 1 100%;
+	width: 100%;
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+.wpbc__list__table .wpbc__list__col {
+	/*flex: 1 1 1px;*/
+	flex: 0 1 auto;
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-content: normal;
+}
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* ==  S t y l e s  == */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.wpbc__list__table {
+	border-radius: var(--wpbc_ui_listing__border_radius);
+	background: transparent;
+
+}
+/* ==  H E A D E R  == */
+.wpbc__list__table .wpbc__list__head,
+.wpbc__list__table .wpbc__list__foot{
+	background: var(--wpbc_ui_listing__back_color);
+	border-radius: var(--wpbc_ui_listing__border_radius)  var(--wpbc_ui_listing__border_radius) 0 0;
+	border-bottom: 1px solid var(--wpbc_ui_listing__row_border_color);
+	min-height: var(--wpbc_ui_listing__header_height);
+	line-height: var(--wpbc_ui_listing__header_height);
+	/* left padding: 8px = because usual row has: 4px padding & 4px border */
+	padding:0 4px 0 8px;
+	box-sizing: border-box;
+}
+/* ==  F O O T E R  == */
+.wpbc__list__table .wpbc__list__foot {
+	border-radius: 0 0 var(--wpbc_ui_listing__border_radius) var(--wpbc_ui_listing__border_radius);
+	border: 0;
+	border-top: 1px solid var(--wpbc_ui_listing__row_border_color);
+	padding: 5px 15px;
+}
+.wpbc__list__table .wpbc__list__foot *{
+	font-size: 1em;
+}
+.wpbc__list__table .wpbc__list__head .wpbc__list__col,
+.wpbc__list__table .wpbc__list__foot .wpbc__list__col{
+	align-items: center;
+}
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* ==  Elements  == */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.wpbc__list__table .wpbc__list__head .wpbc__list__row,
+.wpbc__list__table .wpbc__list__foot .wpbc__list__row {
+	align-items: stretch;
+}
+.wpbc__list__table .wpbc__list__head .wpbc__list__col.check-column,
+.wpbc__list__table .wpbc__list__foot .wpbc__list__col.check-column {
+	flex: 0 0 40px;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+}
+/* ==  LINKS  == */
+.wpbc__list__table .wpbc__list__head a,
+.wpbc__list__table .wpbc__list__head a:hover,
+.wpbc__list__table .wpbc__list__head a:focus,
+.wpbc__list__table .wpbc__list__foot a,
+.wpbc__list__table .wpbc__list__foot a:hover,
+.wpbc__list__table .wpbc__list__foot a:focus {
+	text-decoration: none;
+}
+.wpbc__list__table .wpbc__list__head .wpbc_ui_el__a,
+.wpbc__list__table .wpbc__list__foot .wpbc_ui_el__a,
+.wpbc__list__table .wpbc__list__head .ul_dropdown_menu_toggle,
+.wpbc__list__table .wpbc__list__foot .ul_dropdown_menu_toggle {
+	color: var(--wpbc_ui__gen__text-color);
+}
+.wpbc__list__table .wpbc__list__head .wpbc_ui_el__a.disabled,
+.wpbc__list__table .wpbc__list__foot .wpbc_ui_el__a.disabled {
+	color:#d8d8d8;
+	cursor: not-allowed;
+}
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* ==  Pagination in Booking Listing  == */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.wpbc_pagination_el {
+	flex: 0 1 auto;
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+.wpbc_pagination__prev_next .wpbc_ui_el:first-child,
+.wpbc_pagination_active_page_in_selectbox {
+	margin-right: 10px;
+}
+.wpbc_pagination__prev_next .wpbc_ui_el__a {
+	margin: 0;
+	padding: 0 5px;
+}
+.wpbc__list__head .wpbc_ui_el__a .menu_icon::before {
+	font-size: 28px;
+	line-height: var(--wpbc_ui_listing__header_height);
+	vertical-align: middle;
+}
+.wpbc__list__head .wpbc_ui_el__divider .wpbc_ui_el__vertical_line,
+.wpbc__list__foot .wpbc_ui_el__divider .wpbc_ui_el__vertical_line{
+	margin: 5px 15px;
+}
+/* ================================================================================================================== */
+/* ==  G e n e r a l  -  R O W  -  C O L  == */
+/* ================================================================================================================== */
+.wpbc__list__col.col__right {
+	margin-left: auto;
+}
+
+.wpbc_a_row {
+	flex: 1 1 100%;
+	width: 100%;
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+.wpbc_a_col {
+	flex: 1 1 1px;
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-content: normal;
+}
+.wpbc_a_overflow_hide{
+	overflow: hidden;
+}
+.wpbc_a_row_nowrap{
+	flex-flow: row nowrap;
+}
+
+/* ================================================================================================================== */
+/* ==  C O N T A I N E R  == */
+/* ================================================================================================================== */
+.wpbc__list__table {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+
+	margin: 0;
+	padding: 0;
+	box-shadow: 0 0 1px #aaa;
+}
+.wpbc__list__table:has(.wpbc_spins_loading_container) {
+	box-shadow: none;
+}
+	/* B O D Y */
+	.wpbc__list__table .wpbc_selectable_body {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: flex-start;
+		align-items: stretch;
+
+		margin: 0;
+		padding:0;
+		background: var(--wpbc_ui_listing__back_color);
+		border: 0;
+	}
+		/* R O W */
+		.wpbc_listing_usual_row {
+			flex: 1 1 100%;
+
+			display: flex;
+			flex-flow:row nowrap;
+			justify-content: flex-start;
+			align-items: flex-start;
+			border-bottom: 1px solid var(--wpbc_ui_listing__row_border_color);
+			border-left: 4px solid transparent;
+		}
+		.wpbc_listing_usual_row:last-child {
+			border-bottom: 0;
+		}
+			/* C O L */
+			.wpbc_listing_col {
+				flex: 0 1 auto;
+			}
+			.wpbc_listing_col .booking_details_simple,
+			.wpbc_listing_col .booking_details_simple * {
+				font-size: var(--wpbc_ui__gen__font-size);
+			}
+		/* Booking Row */
+		.wpbc__list__table .wpbc_selectable_body > .wpbc_listing_usual_row {
+			padding: 4px 0 4px 4px;
+			line-height: 2.4;
+			flex-flow: row wrap;
+		}
+		.wpbc_row_wrap{
+			flex: 1 1 100%;
+			display: flex;
+			flex-flow:row nowrap;
+			justify-content: flex-start;
+			align-items: flex-start;
+			transition: all .25s ease-in-out;
+		}
+
+/* ================================================================================================================== */
+/* ==  Max Colapsed row height  == */
+/* ================================================================================================================== */
+/* ==  Colpased  == */
+.wpbc_row_wrap.max_height_a {
+	max-height: var(--wpbc_ui_listing__colapsed_height);
+	height: var(--wpbc_ui_listing__colapsed_height);
+	overflow: hidden;
+}
+.wpbc_row_wrap.max_height_a:has(.wpbc_btn_expand_down_a:hover){
+	/*--wpbc_ui_listing__colapsed_height: 82px;*/
+	/*height: var(--wpbc_ui_listing__colapsed_height);*/
+	--wpbc_ui_listing__colapsed_height: auto;
+	min-height: 82px;
+}
+.wpbc_row_wrap .wpbc_btn_expand_down_a:hover i::before {
+	transform: rotateZ(45deg);
+	transition: all .4s ease-in-out;
+}
+.wpbc_row_wrap.max_height_a .wpbc_btn_expand_down_a:hover i::before {
+	transform: rotateZ(-45deg);
+}
+	.wpbc_row_wrap.max_height_a .booking_details_full{
+		display: none;
+	}
+/* ==  Expanded  == */
+.wpbc_row_wrap:not(.max_height_a){
+	--wpbc_ui_listing__colapsed_height: 82px;
+	min-height: var(--wpbc_ui_listing__colapsed_height);
+}
+	.wpbc_row_wrap:not(.max_height_a) .booking_details_simple{
+		display: none;
+	}
+.wpbc_row_wrap.max_height_a .booking_dates_expand_section {
+	/*max-height: 56px;  80px - 24px (wpbc_btn_expand_down height) - 4px (highlighting) */
+	max-height: calc(var(--wpbc_ui_listing__colapsed_height) - 1px);
+	overflow: hidden;
+}
+.wpbc_col_data .booking_details_simple__expand,
+.wpbc_col_data a.booking_details_simple__expand:hover{
+	color: var(--wpbc_ui__gen__text-color);
+	text-decoration: none;
+	outline: none;
+	box-shadow: none;
+}
+.wpbc_col_data a.booking_details_simple__expand,
+.wpbc_col_data a.booking_details_simple__expand:hover {
+	cursor: pointer;
+}
+/* ================================================================================================================== */
+/* == S p e c i f ic   .  R o w s  .  C o l u m n s == */
+/* ================================================================================================================== */
+/* -- CHECKBOX -- */
+.wpbc_a_col__check {
+	flex: 0 0 40px;
+	align-self: stretch;
+
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: flex-start;
+}
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* -- DATES -- */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.wpbc_a_col__dates{
+	flex: 0 0 170px;
+	align-self: stretch;
+
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+	/* == Dates . Border Color == */
+	.wpbc_a_col__dates {
+		border-right: 4px solid var(--wpbc_ui_listing__pending_color);
+	}
+	.wpbc_listing_usual_row.wpbc_row_booking_approved .wpbc_a_col__dates {
+		border-right-color: var(--wpbc_ui_listing__approved_color);
+	}
+	.wpbc_listing_usual_row.wpbc_row_booking_trash .wpbc_a_col__dates {
+		border-right-color: var(--wpbc_ui_listing__trash_color);
+	}
+	/* --  Dates . Colapsed row -- Short Dates -- */
+	.wpbc_row_wrap.max_height_a .wpbc_a_col__dates .booking_dates_small{
+		display: flex;
+	}
+	.wpbc_row_wrap.max_height_a .wpbc_a_col__dates .booking_dates_full{
+		display: none;
+	}
+	/* --  Dates . Expanded row -- Full Dates -- */
+	.wpbc_row_wrap:not(.max_height_a) .wpbc_a_col__dates .booking_dates_full {
+		display: flex;
+	}
+	.wpbc_row_wrap:not(.max_height_a) .wpbc_a_col__dates .booking_dates_small {
+		display: none;
+	}
+	/* --  Dates . Expanded row -- show Dates in Row (not column) -- */
+	.wpbc_row_wrap:not(.max_height_a) .wpbc_a_col__dates .content_text{
+		flex-flow: row wrap;
+		justify-content: flex-start;
+	}
+	/* --  Dates . Show internal dates as column centered */
+	.wpbc_a_col__dates .content_text {
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		align-items: center;
+		margin: auto;
+	}
+	/* Dates . Slash */
+	.wpbc_a_col__dates .date_tire {
+		line-height: 10px;
+		margin: 0 5px;
+	}
+.booking_dates_expand_section {
+	flex: 1 1 auto;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: flex-start;
+}
+/* Dates - Expand Down Button */
+.wpbc_btn_expand_down {
+	flex: 0 0 auto;
+	align-self: stretch;
+	width: 20px;
+	display: flex;
+	flex-flow: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-self: flex-start;
+	margin-bottom: 2px;
+}
+.wpbc_btn_expand_down a,
+.wpbc_btn_expand_down a:hover{
+	line-height: 1;
+	text-align: center;
+	color: var(--wpbc_ui__gen__text-color);
+	flex: 0 1 auto;
+	margin: 2px 0 0 -3px;
+}
+.wpbc_btn_expand_down i::before {
+	font-size: 20px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* -- D A T A -- */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.wpbc_a_col__data{
+
+}
+	.wpbc_a_col__details_lables {
+		flex: 1 1 auto;
+		padding-left: 15px;
+		margin-bottom:10px;
+		min-width: 1%;
+	}
+	.wpbc_a_col__cost{
+		flex: 0 0 110px;
+		align-self: stretch;
+	}
+	.wpbc_a_col__action{
+		flex: 0 0 50px;
+		align-self: stretch;
+	}
+/* -- Notes -- */
+.wpbc_a_row__notes .wpbc_col_note_readonly {
+	flex: 1 1 1px;
+	margin: 0 10px 10px 15px;
+}
+/* -- Sys Information -- */
+.wpbc_a_row__system .wpbc_col_sys_info {
+	flex: 1 1 1px;
+	margin: 0 10px 5px 18px;
+}
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* -- M o b i l e  _  V i e w -- */
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* -- Responsive Sizes: < 600px (less top icons), < 782px (no wp left bar), < 960px (wp left bar colapse) ------- */
+@media (max-width: 960px ) {
+	/* -- Rows Separation -- */
+	.wpbc__list__table{
+		box-shadow: none;
+	}
+	.wpbc__list__table .wpbc_selectable_body {
+		background: transparent;
+	}
+	.wpbc__list__table .wpbc__list__head,
+	.wpbc__list__table .wpbc__list__foot,
+	.wpbc__list__table .wpbc_selectable_body > .wpbc_listing_usual_row {
+		margin: 10px 0;
+		background: var(--wpbc_ui_listing__back_color);
+		border-radius: 6px;
+		padding: 6px 0 6px 4px;
+		box-shadow: 0 0 2px 0 #cbcbcb;
+		min-width: 180px;
+	}
+	.wpbc__list__table .wpbc__list__head,
+	.wpbc__list__table .wpbc__list__foot{
+			padding: 6px;
+	}
+	.wpbc_a_col__cost,
+	.wpbc_a_col__action {
+		align-self: flex-start;
+	}
+	.wpbc_a_col__action {
+		margin-top: 22px;
+	}
+}
+@media (max-width: 782px ) {
+	.wpbc_admin {
+		--wpbc_ui_listing__colapsed_height: auto;
+	}
+	/* -- Rows Separation -- */
+	.wpbc_a_col__cost,
+	.wpbc_a_col__action {
+		align-self: stretch;
+		margin:0;
+	}
+	/* -- Main Booking Row -- */
+	.wpbc_a_row__booking {
+		flex-flow: row wrap;
+	}
+	/* all  other details. */
+	.wpbc_listing_col .booking_details_simple,
+	.wpbc_listing_col .booking_details_simple * {
+		font-size: 13px;
+	}
+	/* -- Dates  -- */
+	.wpbc_a_col__dates {
+		flex: 1 1 170px;
+	}
+		.wpbc_a_col__dates .content_text {
+			flex-flow: row wrap;
+			justify-content: flex-start;
+			align-items: flex-start;
+			margin: 0 5px;
+		}
+		.booking_dates_expand_section {
+			align-items: flex-start;
+		}
+		.wpbc_a_col__dates .wpbc_label.wpbc_label_booking_dates {
+			font-size: 16px;
+		}
+		.wpbc_a_col__dates .wpbc_label.wpbc_label_booking_dates .field-booking-time{
+			font-size: 11px;
+			margin-left: 5px;
+		}
+	/* -- Data & Labels  -- */
+	.wpbc_a_col__data {
+		flex: 1 1 100%;
+	}
+		.wpbc_a_col.wpbc_a_col__data.wpbc_a_overflow_hide > .wpbc_a_row.wpbc_a_row_nowrap {
+			flex-flow: row wrap;
+			padding-right: 5px;
+			box-sizing: border-box;
+		}
+		.wpbc_a_col__action{
+			margin-left:auto;
+			min-height:30px;
+		}
+	.wpbc_a_col__details_lables {
+		padding: 10px 0;
+		overflow: auto;
+		scrollbar-width: thin;
+		border-top: 1px dashed #ccc;
+		margin: 5px 0;
+	}
+	.wpbc_row_wrap.max_height_a .wpbc_a_col__details_lables .wpbc_col_booking_labels .content_text{
+		flex-flow: row nowrap;
+	}
+	.wpbc_row_wrap.max_height_a .wpbc_a_col__details_lables .wpbc_col_booking_labels .content_text * {
+		white-space: nowrap;
+	}
+	/* -- Cost -- */
+	.wpbc_a_col__cost .wpbc_listing_col.wpbc_col_cost,
+	.wpbc_a_col__cost .wpbc_listing_col.wpbc_col_cost a {
+		justify-content: flex-start;
+		margin: 0 3px;
+	}
+	.wpbc_listing_col.wpbc_col_action {
+		justify-content: flex-end;
+	}
+	/* -- Notes and Sys Information -- */
+	.wpbc_row_wrap.max_height_a .wpbc_a_row__notes,
+	.wpbc_row_wrap.max_height_a .wpbc_a_row__system {
+		display:none;
+	}
+	.wpbc_a_row__system .wpbc_col_sys_info{
+		margin-left:10px;
+	}
+	.wpbc_a_row__notes {
+		order: 1;
+	}
+	.wpbc_a_row__notes .wpbc_col_note_readonly {
+		margin: 0 10px 5px 5px;
+	}
+	.wpbc_a_row__notes .ui_remark_section__note_readonly textarea {
+		height: 160px;
+	}
+}
+@media (max-width: 600px ) {
+
+}
+/* == Dates ========================================================================================================= */
+		/* Dates Labels */
+		.wpbc_label.wpbc_label_booking_dates {
+			background-color: transparent;
+			color: #41474e;
+			box-shadow: none;
+			border: 0;
+			font-size: 14px;
+			line-height: 1.7;
+			text-decoration: none;
+			padding: 0;
+			margin: 0 2px 2px;
+		}
+		/* -- Lables ------------------------------------------------------------------------------------------------ */
+		.wpbc__list__table .wpbc_selectable_body .wpbc_listing_col.wpbc_col_booking_labels .content_text {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: flex-start;
+			align-items: flex-start;
+		}
+		/* -- Data -------------------------------------------------------------------------------------------------- */
+		.wpbc_row_wrap.max_height_a .wpbc_col_data {
+			white-space: nowrap;
+		}
+		.fieldvalue {
+			margin: 0 1em 0 0;
+			padding: 1px 5px 3px;
+			vertical-align: baseline;
+			border-radius: 2px;
+			background: #fffcf5;
+			background: #f8f8fa;
+			background:transparent;
+			word-wrap: anywhere;
+		}
+		.fieldvalue.name.fieldsearchvalue {
+			font-weight: 600;
+			border-radius: 0;
+			padding: 1px 7px;
+
+			border-bottom: 2px solid #708700;
+			color: #6a8000;
+			background: #f3f6e7;
+
+			color: #904c03;
+			border-bottom: 2px solid #975500;
+			background: #fffaf3;
+		}
+		.wpbc_actions_sysinfo {
+			font-size: 0.7em;
+		}
+/* -- Specific COL Width -------------------------------------------------------------------------------------------- */
+.wpbc_col_all_data .wpbc_listing_usual_row{
+		border:0;
+		margin-bottom: 5px;
+	}
+.wpbc_listing_col.wpbc_col_cost{
+	flex: 0 0 100px;
+}
+.wpbc_listing_col.wpbc_col_action{
+	flex: 0 0 70px;
+}
+/* -- Stripe - Row --------------------------------------------------------------------------------------------- */
+.wpbc_ui_el__listing_row:nth-of-type(2n+1) {
+	background-color: var(--wpbc_ui_listing__back_alt_color);
+	border-left-color: var(--wpbc_ui_listing__back_alt_color);
+}
+.wpbc_ui_el__listing_row.wpbc_row.row_selected_color {
+	border-left-color: var(--wpbc_ui_listing__selected_row_color);
+}
+
+/* == Labels ======================================================================================================== */
+.wpbc_label {
+	display: inline;
+	flex: 0 1 auto;
+
+	font-size: 0.95em;
+	font-weight: 600;
+	line-height: 2.7;
+	white-space: pre-wrap;
+	text-align: center;
+	vertical-align: baseline;
+
+	padding: 5px 10px;
+	margin: 5px 15px 5px 0;
+
+	background: #6b96ce;
+	color: #fff;
+
+	border-radius: 4px;
+	border: 0;
+	box-shadow: none;
+}
+.wpbc_col_booking_labels .wpbc_label {
+	padding: 2px 10px;
+	line-height: 1.7;
+}
+.wpbc_label .menu_icon {
+	margin: 0 5px 0 0;
+}
+.wpbc_label .label_sup {
+	font-size: 10px;
+	padding: 0 5px 0 0;
+	line-height: 1em;
+}
+.wpbc_label_link {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	text-decoration: none;
+}
+/* -- Labels Colors ------------------------------------------------------------------------------------------------- */
+.wpbc__wrap__booking_listing a.wpbc_is_new_button,
+.wpbc__wrap__booking_listing a.wpbc_is_new_button:hover {
+	position: absolute;
+	margin: 0 0 0 -28px;
+	display:flex;   /* It Fix rotating icon, on clicking */
+}
+.wpbc_label.wpbc_label_booking_id {
+	box-shadow: none;
+	background-color: #fff;
+	border: 1px solid #0000001c;
+	color: #717171;
+}
+.wpbc_label.wpbc_label_resource {
+	background-color: #6b96ce;
+}
+.wpbc_label.wpbc_label_deleted_resource {
+	background-color: #ee6f48;
+}
+.wpbc_label.wpbc_label_pending {
+	background-color: #ed9f0a;
+	color: #fff;
+	box-shadow: 0 0 1px #fde4c9;
+}
+.wpbc_label.wpbc_label_approved {
+	background-color: #64AA45;
+	color: #f7fff4;
+	box-shadow: 0 0 1px #b8c6b1;
+}
+/* General  class for all  payment statuses:  .wpbc_label.wpbc_label_payment_status { ... }  */
+.wpbc_label.wpbc_label_payment_status_success {
+	background-color: #468847;
+}
+.wpbc_label.wpbc_label_payment_status_pending {
+	background-color: #992;
+}
+.wpbc_label.wpbc_label_payment_status_unknown {
+	background-color: #f7f7f7;
+	color: #7c7c7c;
+	border: 1px solid #e3e3e3;
+}
+.wpbc_label.wpbc_label_payment_status_error {
+	background-color: #FA773D;
+}
+.wpbc_label.wpbc_label_imported {
+	background-color: #517aba;
+}
+.wpbc_label.wpbc_label_trash {
+	background: #D94A48;
+	color: #fff;
+	text-shadow: 0 0 1px #E00;
+}
+
+/* == C O S T ======================================================================================================= */
+.wpbc_listing_col.wpbc_col_cost a,
+.wpbc_listing_col.wpbc_col_cost {
+	color: #41474e;
+	font-size: 16px;
+	line-height: 2.7;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+	flex: 0 0 110px;
+	align-self: stretch;
+	font-weight: 600;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+/* == A C T I O N S _ B U T T O N =================================================================================== */
+.wpbc_listing_col.wpbc_col_action {
+	color: #41474e;
+	font-size: 14px;
+	line-height: 1.7;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+	flex: 0 0 50px;
+	align-self: stretch;
+}
+.wpbc_listing_col.wpbc_col_action a.ul_dropdown_menu_toggle,
+.wpbc_listing_col.wpbc_col_action a.ul_dropdown_menu_toggle:hover,
+.wpbc_listing_col.wpbc_col_action a.ul_dropdown_menu_toggle:focus{
+	background: #00000012;
+	border-radius: 50%;
+	width: 33px;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: 1/1;
+	color: #555;
+	display: flex;
+}
+/* Options for actions in Dropdown Actions Menu*/
+.wpbc__wrap__booking_listing .wpbc_ui_el__dropdown .ul_dropdown_menu > li > a.ul_dropdown_menu_li_action,
+.wpbc_col_action .wpbc_ui_el__dropdown .ul_dropdown_menu > li > a.ul_dropdown_menu_li_action {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+.wpbc_col_action .wpbc_ui_el__dropdown .ul_dropdown_menu > li > a.ul_dropdown_menu_li_action > *:last-child {
+	margin-left: auto;
+	padding-left: 1em;
+}
+/* if icon spinning then  no padding */
+.wpbc_col_action .wpbc_ui_el__dropdown .ul_dropdown_menu > li > a.ul_dropdown_menu_li_action > *:last-child.wpbc_spin {
+	padding-left:0;
+}
+/* Approved - left border line */
+.ul_dropdown_menu_li_action_set_booking_approved {
+	border-left: 2px solid var(--wpbc_ui_listing__approved_color);
+}
+/* Pending - left border line */
+.ul_dropdown_menu_li_action_set_booking_pending {
+	border-left: 2px solid var(--wpbc_ui_listing__pending_color);
+}
+/* Trash - left border line */
+.wpbc_ui_el__dropdown .ul_dropdown_menu > li > a.ul_dropdown_menu_li_action_move_booking_to_trash.hide_button_if_no_selection:not(:hover, :focus),
+.ul_dropdown_menu_li_action_move_booking_to_trash.hide_button_if_no_selection,
+.wpbc_ui_el__dropdown .ul_dropdown_menu > li > a.ul_dropdown_menu_li_action_move_booking_to_trash:not(:hover,:focus){
+	/*border-left: 2px solid var(--wpbc_ui_listing__trash_color);*/
+	/*color: var(--wpbc_ui_dropdown__a-color);*/
+  	color: #d79249;
+}
+.wpbc_ui_el__dropdown .ul_dropdown_menu > li > a.ul_dropdown_menu_li_trash_color:not(:hover,:focus),
+.wpbc_ui_el__dropdown .ul_dropdown_menu > li > a.ul_dropdown_menu_li_action_delete_booking_completely:not(:hover,:focus) {
+	color:var(--wpbc_ui_listing__trash_color);
+}
+.wpbc_ui_el__dropdown .ul_dropdown_menu > li > a.ul_dropdown_menu_li_action_restore_booking_from_trash:not(:hover,:focus) {
+	color:var(--wpbc_ui_listing__restore_color);
+}
+.ul_dropdown_menu_li_action .hint_value_instead_icon {
+	font-size: 0.85em;
+	font-weight: 600;
+	align-self: center;
+	line-height: 1;
+}
+
+/* ================================================================================================================== */
+/* --  M O D A L _ A C T I O N S  ----------------------------------------------------------------------------------- */
+/* ================================================================================================================== */
+/* Modal SIZE */
+@media (min-width: 768px) {
+	#wpbc_modal__set_booking_note__section .modal-dialog {
+		width: 80%;
+		margin: 5px auto;
+	}
+}
+/* -- Input Fields -------------------------------------------------------------------------------------------------- */
+.wpbc_page .wpbc_modal_in_listing input[type=text],
+.wpbc_page .wpbc_modal_in_listing select,
+.wpbc_page .wpbc_modal_in_listing textarea{
+	width: 100%;
+	max-width: 100%;
+	font-size: 15px;
+	line-height: 2.4;
+}
+.wpdevelop .modal-footer .button {
+	margin: 0 5px;
+}
+/* -- Modal Payment Request ----------------------------------------------------------------------------------------- */
+#wpbc_modal__send_payment_request__section p.help-block {
+	/*font-size: 13px;*/
+	/*line-height: 2;*/
+	/*margin: 15px 0 0;*/
+}
+#wpbc_modal__send_payment_request__section label.help-block {
+	/*font-size: 0.9em;*/
+}
+#wpbc_modal__send_payment_request__section #wpbc_modal__send_payment_request__url{
+	font-size: 13px;
+}
+#wpbc_modal__send_payment_request__section #wpbc_modal__send_payment_request__value {
+	margin-top: 15px;
+	line-height: 2;
+	height: 70px;
+	font-size: 14px;
+}
+.wpbc_modal__2_fields {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+.wpbc_modal__2_fields .wpbc_modal__2_fields_button {
+	flex: 0 1 1%;
+	align-self: stretch;
+	min-height: 35px;
+	margin-left: 10px;
+	display: flex;
+	align-items: center;
+	align-self: center;
+	font-weight: 600;
+}
+#wpbc_modal__send_payment_request__section .wpbc_modal__send_payment_request__cost {
+	font-size: 16px;
+	font-weight: 600;
+	padding: 0 10px;
+}
+/* -- Notes --------------------------------------------------------------------------------------------------------- */
+.ui_remark_section__note_readonly {
+	width:99%;
+	margin: 0;
+}
+.ui_remark_section__note_readonly label{
+	font-size: 0.9em;
+	font-weight: 600;
+}
+.ui_remark_section__note_readonly a {
+	font-size: 0.9em;
+	line-height: 2;
+	margin: 7px 3px 0;
+	float: right;
+	padding: 0;
+	text-decoration: none;
+	font-weight: 600;
+}
+.ui_remark_section__note_readonly a i::before{
+	font-size:11px;
+}
+.ui_remark_section__note_readonly textarea {
+	font-size: 12px;
+	width: 100%;
+	scrollbar-width: thin;
+	height: 70px;
+	line-height: 1.75;
+	color: #777;
+	box-shadow: none;
+	border: 1px solid #e8e8e8;
+}
+/* -- Modal Notes --------------------------------------------------------------------------------------------------- */
+#wpbc_modal__set_booking_note__section textarea {
+	margin-top: 5px;
+	line-height: 1.8;
+	height: 120px;
+	font-size: 13px;
+}
+.modal-header .wpbc_modal__booking_id__in_title {
+	font-size: 0.6em;
+	font-weight: 600;
+	margin-left: 5px;
+	top: -0.75em;
+}
+.modal-header .wpbc_modal__title__reason__booking_id {
+	font-size: 0.7em;
+	font-weight: 400;
+	margin-left: 5px;
+	top: -0.1em;
+	word-break: break-all;
+}
+/**********************************************************************************************************************/
+/** Hidden Templates 																							     **/
+/**********************************************************************************************************************/
+.wpbc_hidden_templates {
+	display: none;
+}
+/* ================================================================================================================== */
+/* ==  F I L T E R   E L E M E N T S  == */
+/* ================================================================================================================== */
+/* -- Dropdown Menu, where we show selected value in main toggle, sucn as in  -  SORT BY  -- */
+.wpbc_ui_el__dropdown .ul_dropdown_menu_toggle .selected_value {
+	margin: 0 0.2em;
+}
+.wpbc_ui_el__dropdown .ul_dropdown_menu_toggle .selected_value .menu_icon{
+	margin: 0 0 0 2px;
+}
+.wpbc_ui_el__dropdown .ul_dropdown_menu_toggle .selected_value [class*=" wpbc-bi-"]::before {
+	font-size: 1.08em;
+	/*font-weight: 600 !important;*/
+	vertical-align: -.18em;
+}
+/* ================================================================================================================== */
+/* ==  T O O L B A R   i n    Booking Listing  == */
+/* ================================================================================================================== */
+.wpbc_ui_toolbar.wpbc_ui_toolbar__bo_listing {
+	margin: var(--wpbc_ui_horis_top_nav__margin);
+}

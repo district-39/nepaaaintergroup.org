@@ -1,0 +1,11 @@
+repos:
+  -   repo: https://github.com/godaddy/tartufo
+      rev: v3.3.1 #Change tartufo version
+      hooks:
+        - id: tartufo
+          name: tartufo
+          entry: tartufo
+          args: [pre-commit]
+          language: python
+          pass_filenames: false
+

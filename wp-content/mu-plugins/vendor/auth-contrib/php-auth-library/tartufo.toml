@@ -1,0 +1,21 @@
+[tool.tartufo]
+repo-path = "."
+json = false
+regex = true
+entropy = true
+
+exclude-path-patterns = [
+    {path-pattern = 'tartufo.toml'},
+    {path-pattern = 'composer.lock'},
+]
+
+exclude-signatures = []
+
+exclude-entropy-patterns = [
+    {path-pattern = '', pattern = '300d06092a864886f70d0101010500*', reason = 'This is an Hexadecimal value: "300d06092a864886f70d0101010500"'},
+    {path-pattern = '', pattern = 'eyJhbGciOiAiUlMyNTYiLCAia2lkIjogIkNEc1FJMFVhU1EifQ*', reason = 'This is a test JWT Token for an SSL Certificate: "api-shopper.dev.client.int.godaddy.com"'},
+    {path-pattern = '', pattern = 'eyJhbGciOiAiUlMyNTYiLCAia2lkIjogIkhjWEx2X29scFEifQ*', reason = 'This is a test JWT Token with fake data'},
+    {path-pattern = '', pattern = 'eyJhbGciOiAiUlMyNTYiLCAia2lkIjogIllYZFg1eVE4OHcifQ*', reason = 'This is an invalid Test JWT Token with fake data'},
+    {path-pattern = '', pattern = 'ew0KICAiYWxnIjogIlJTMjU2IiwNCiAgImtpZCI6ICJiYWRpZCINCn0*', reason = 'Invalid Test Key Token'},
+    {path-pattern = '', pattern = 'TVejhA5B_*', reason = 'This is a test API Key'},
+]

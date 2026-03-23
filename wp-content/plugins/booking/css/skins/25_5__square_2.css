@@ -1,0 +1,35 @@
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Child calendar theme    of    "/css/skins/24_9__light.css"                          C O L O R    S K I N           */
+/* ------------------------------------------------------------------------------------------------------------------ */
+@import url("24_9__light.css");
+/* Color Scheme: - 25_5 Square 2 */
+:root {
+	--wpbc_cal-day-cell-border-radius: 11%;
+	--wpbc_cal-day-cell-border-width: 2px;
+	--wpbc_cal-day-bg-color-opacity: 7%;
+	--wpbc_cal-selected-day-bg-color-opacity: 80%;
+	--wpbc_cal-text-general-size: 15px;
+	--wpbc_cal-text-cost-size: 60%;
+	--wpbc_cal-text-header-size: 13px;
+	--wpbc_cal-text-weekdays-size: 10px;
+	--wpbc_cal-text-prev-next-links-size: 25px;
+	--wpbc_cal-main-background-color: #fff;
+	--wpbc_cal-header-text-color: #000;
+	--wpbc_cal-text-prev-next-links-color: #555;
+	--wpbc_cal-text-weekdays-color: #555;
+	--wpbc_cal-unavailable-day-color: var(--wpbc_cal-main-background-color);
+	--wpbc_cal-unavailable-text-color: #d4d4d4c7;
+	--wpbc_cal-available-day-color: #fdfffb;
+	--wpbc_cal-available-text-color: #463a3d;
+	--wpbc_cal-approved-day-color: #6a595e;
+	--wpbc_cal-approved-text-color: #716266;
+	--wpbc_cal-pending-day-color: #c7b8ae;
+	--wpbc_cal-pending-text-color: #a79c95;
+	--wpbc_cal-selected-day-color: #5b89c5;
+	--wpbc_cal-selected-text-color: #fff;
+	--wpbc_cal-hover-day-color: #7195c6;
+	--wpbc_cal-hover-text-color: #436593;
+	--wpbc_cal-timespartly-day-color: #879d56;
+	--wpbc_cal-timespartly-text-color: #879d56;
+	--wpbc_cal-day-cells-padding: 2px;
+}

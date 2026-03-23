@@ -1,0 +1,22 @@
+/*! = General Vars for Admin = */
+.wpbc_admin {
+	/* -- Responsive Sizes: < 600px (less top icons), < 782px (no wp left bar), < 960px (wp left bar colapse) ----------- */
+	--wpbc_ui__gen__screen_width_small: 960px;
+	--wpbc_ui__gen__screen_width_mini: 782px;
+	--wpbc_ui__gen__screen_width_micro: 600px;
+
+	/** Panels */
+	--wpbc_ui__gen__panel_background-color: #fff;
+	--wpbc_ui__gen__panel_box-shadow: 0 1px 3px rgba(17,24,39,.09);
+	/** Selected active items */
+	/*--wpbc_ui__gen__active-background-color: #2280c3;*/
+	--wpbc_ui__gen__active-background-color: #465160;
+	/*--wpbc_ui__gen__active-background-color: #1874bf;*/
+	--wpbc_ui__gen__active-text-color: #fff;
+	--wpbc_ui__gen__hover-color: #d63638;
+	/** Common text */
+	--wpbc_ui__gen__text-color: #555;
+	--wpbc_ui__gen__font-size: 13px;
+	/** Common border radiuses */
+	--wpbc_ui__gen__border-radius: 4px;
+}

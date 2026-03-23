@@ -1,0 +1,322 @@
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Hide Top Menu bar  for Submenu items,  if we do not use the left navigation  menu */
+.wpbc_top_tabs_sub_menu {
+  display: none;
+}
+/* Hide Top Right Banner for purchase with  discount in Setup  page */
+.wpbc_header_news {
+    display: none !important;
+}
+/* Loader Spinner and Text for Main Container (including calendar) */
+.wpbc_calendar_loading {
+    width:95%;
+    text-align: center;
+    margin:2em 0;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+.wpbc_calendar_loading .wpbc_icn_autorenew::before{
+    font-size: 1.2em;
+}
+/* ------------------------------------------------------------------------------------------------------------------ */
+/*  ==  Page Sections Structure  ==     */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.wpbc_ajx_page__container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 5px 0 0;
+}
+  .wpbc_ajx_page__container .wpbc_ajx_page__section_left {
+    flex: 0 1 200px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0 30px 10px 0;
+  }
+  .wpbc_ajx_page__container .wpbc_ajx_page__section_main {
+    flex: 1 1 50%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0 0 10px;
+  }
+  .wpbc_ajx_page__container .wpbc_ajx_page__section_right {
+    flex: 0 0 280px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin: 0 0 10px 30px;
+  }
+  .wpbc_ajx_page__container .wpbc_ajx_page__section_footer{
+    flex: 1 1 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 10px 0;
+  }
+/* ------------------------------------------------------------------------------------------------------------------ */
+/*  ==  Ordering and Size on Mobile  ==     */
+/* ------------------------------------------------------------------------------------------------------------------ */
+@media screen and (max-width: 960px) {
+    .wpbc_ajx_page__container .wpbc_setup_wizard_page__section_left {
+        flex: 1 1 100%;
+        margin: 20px 0;
+        order: 3
+    }
+}
+@media (max-width: 782px) {
+    .wpbc_ajx_page__container .wpbc_ajx_page__section {
+        flex: 1 1 100%;
+        margin: 0 0 20px 0;
+    }
+    .wpbc_ajx_page__container .wpbc_setup_wizard_page__section_right {
+        order: 1
+    }
+    .wpbc_ajx_page__container .wpbc_setup_wizard_page__section_main {
+        order: 2
+    }
+    .wpbc_ajx_page__container .wpbc_setup_wizard_page__section_left {
+        order: 3
+    }
+    .wpbc_ajx_page__container .wpbc_setup_wizard_page__section_footer{
+        order: 99;
+    }
+}
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* == Main Section Div == */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.wpbc__container_place__footer_buttons,
+.wpbc_page_main_section.wpbc_container_booking_form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 0 1 85%;
+
+  margin: 0 auto;
+  margin-top:-15px;
+
+  font-size: 15px;
+  line-height: 175%;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* == Footer Section Div == */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.wpbc__container_place__footer_buttons{
+    margin-top:10px;
+}
+.wpbc__container_place__footer_buttons .wpbc__form__div {
+    width:100%;
+}
+/* Fix buttons position text*/
+.wpbc_setup_wizard_page__section_footer .wpbc_container.wpbc_container_booking_form .wpbc_button_light,
+.wpbc_setup_wizard_page__section_footer .wpbc_container .wpbc_button_light{
+    padding: 0 1em;
+    line-height: 2.21;
+    align-items: first baseline;
+}
+/* required for rotating around center dot */
+.wpbc_setup_wizard_page__section_footer .wpbc_container .wpbc_button_light .wpbc_spin{
+    line-height: 50%;
+    align-self: center;
+}
+@media screen and (max-width: 782px) {
+    .wpbc__container_place__footer_buttons.wpbc_container.wpbc_container_booking_form {
+      flex: 1 1 100%;
+    }
+}
+
+/* Small  links at  the bottom  of the wizard */
+.wpbc_exit_link_small {
+    width:100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+.wpbc_exit_link_small a {
+  font-size:14px;
+  color:#888;
+  text-decoration:underline;
+}
+.wpbc_exit_link_small a:active,
+.wpbc_exit_link_small a:hover {
+  color:#555;
+  text-decoration:underline;
+}
+.wpbc_exit_link_small a.wpbc_button_danger {
+  color: #c18e8e;
+}
+.wpbc_exit_link_small a.wpbc_button_danger:active,
+.wpbc_exit_link_small a.wpbc_button_danger:hover {
+  color:#e65d59;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Timeline Steps: moved  -> ../includes/__css/client/form__steps_timeline.css */
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Sections Content: */
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+.wpbc_swp_section h1.wpbc_swp_section_header {
+    font-weight: 600;
+    font-size: 26px;
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+.wpbc_swp_section p.wpbc_swp_section_header_description {
+    font-size: 12px;
+    margin-top: 0;
+}
+
+.wpbc_swp_section__welcome h1.wpbc_swp_section_header {
+    text-align: center;
+    margin: 0 auto 10px;
+}
+div.wpbc_container.wpbc_form .wpbc_swp_section label {
+    margin: 15px 0 8px;
+}
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* TODO: delete this */
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* ==  Section  Windows  ==  */
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+.wpbc_widgets {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.wpbc_widgets .wpbc_widget {
+    margin: 0 0 20px;
+    width: 100%;
+    flex: 1 1 100%;
+    border: 1px solid #ccc;
+    border-radius: 0 0 2px 2px;
+}
+.wpbc_widget .wpbc_widget_header {
+  width: 100%;
+  height: 44px;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+  font-weight: 600;
+  text-shadow: none;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.wpbc_widget .wpbc_widget_header .wpbc_widget_header_text {
+  flex: 1 1 auto;
+  padding: 0 15px;
+}
+.wpbc_widget .wpbc_widget_header .wpbc_widget_header_settings_link {
+  flex: 0 0 auto;
+  margin-left: auto;
+  border-left: 1px solid #ccc;
+  padding: 5px 10px;
+  color: #0e70b7;
+}
+.wpbc_widget .wpbc_widget_content {
+  padding: 10px 15px;
+}
+.wpbc_widget_preview_booking_form.wpbc_widget .wpbc_widget_content {
+  padding-bottom: 70px;
+}
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* ==  Container for shortcodes      ==     e.g.:   [booking resource_id=1]     */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.wpbc_shortcode_container {
+    width: 100%;
+    max-width: 880px;
+    min-width: 341px;
+    margin: auto;
+    /*margin-top: calc(-1.7em - calc(0.25em + 8px));*/
+}
+/* Stripes Background */
+.wpbc_widget_preview_booking_form .wpbc_widget_content {
+    /*background: repeating-linear-gradient(135deg, #fff, #fff 4px, #eaeaeb 4px, #eaeaeb 8px);*/
+    /*background: repeating-linear-gradient(135deg, #fff, #fff 4px, #f5f5ef 4px, #f5f5cf 8px);*/
+    /*background: repeating-linear-gradient(-45deg, #eee 0 3px, var(--wpbc_cal-main-background-color,#fff) 3px 8px);*/
+    /*background: repeating-linear-gradient(-45deg, #f9f8f7 0 7px, var(--wpbc_cal-main-background-color,#fff) 7px 12px);*/
+    /*background: repeating-linear-gradient(-45deg, #f9f9f8 0 3px, var(--wpbc_cal-main-background-color,#fff) 3px 5px);*/
+    background: repeating-linear-gradient(-45deg,#f9f9f8 0 3px, #fff 3px 5px);
+}
+/* Mobile Buttons */
+.wpbc_section_preview_mobile_btn_bar .wpbc_preview_a{
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+    margin: 0 5px;
+    color: #6b96ce;
+}
+.wpbc_section_preview_mobile_btn_bar .wpbc_preview_a.active,
+.wpbc_section_preview_mobile_btn_bar .wpbc_preview_a.active:focus{
+    color: #52595f;
+}
+.wpbc_section_preview_mobile_btn_bar .wpbc_preview_a:hover,
+.wpbc_section_preview_mobile_btn_bar .wpbc_preview_a:focus {
+    color: #2f76d3;
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+}
+.wpbc_section_preview_mobile_btn_bar .wpbc_preview_icon::before{
+    font-size: 20px;
+}
+.wpbc_section_preview_mobile_btn_bar .wpbc_preview_icon.wpbc-bi-display::before,
+.wpbc_section_preview_mobile_btn_bar .wpbc_preview_icon.wpbc_icn_computer::before{
+    font-size: 21px;
+}
+.wpbc_message_wrapper.wpbc__version__free {
+  /*display: none;*/
+}
+/* Dark  theme */
+.wpbc_center_preview.wpbc_theme_dark_1,
+.wpbc_widget_preview_booking_form .wpbc_widget_content.wpbc_theme_dark_1     {
+    /*Black Color*/
+    background: #272727;
+    background: repeating-linear-gradient(-45deg, #383838 0 3px,#2f2f2f 3px 5px);
+    color:#fff;
+}
+
+.wpbc_widget_preview_booking_form .wpbc_widget_content.wpbc_theme_dark_1 .wpbc-settings-notice {
+    color: #d7d7ca;
+    background: #595959;
+    box-shadow: 0 1px 3px #313131;
+    border: 0;
+    border-left: 4px solid #9580aa;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* ==  Section  for Appointment type selection  at Step #4 ==  */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.wpbc_container_booking_form .wpbc__field .wpbc_ui_booking_timeslot_picker__get_on_off__div {
+	padding-left: 15px;
+}
+
+.wpbc_container_booking_form .wpbc__field .booking_appointments_type__get_on_off label.wpbc-form-radio,
+.wpbc_container_booking_form .wpbc__field .booking_appointments_type__get_on_off label.wpbc-form-radio:hover{
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 10px 0;
+	font-weight: 400;
+}
+.wpbc_container_booking_form .wpbc__field .booking_appointments_type__get_on_off .wpbc-form-radio input {
+	margin: 0 10px 0 5px;
+}

@@ -1,0 +1,142 @@
+/*! = Left Horisontal Navigation Bar = */
+.wpbc_admin {
+	--wpbc_ui_horis_top_nav__font-size: 16px;
+	--wpbc_ui_horis_top_nav__margin: 10px 0 20px;
+	--wpbc_ui_horis_top_nav__background-color: transparent;
+
+	--wpbc_ui_horis_top_nav__a_color: var(--wpbc_ui__gen__text-color);
+	--wpbc_ui_horis_top_nav__border-width: 2px;
+	/* Default */
+	--wpbc_ui_horis_top_nav__normal_color: #ccc;
+	/* Hover */
+	--wpbc_ui_horis_top_nav__hover_color: #d54e21;
+	/* Active */
+	--wpbc_ui_horis_top_nav__active_color: #64aa45;
+}
+.wpbc_ui_el__horis_top_bar__wrapper {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: baseline;
+
+	width: 100%;
+	max-width: 100%;
+
+	background: var(--wpbc_ui_horis_top_nav__background-color);
+	border: 0;
+	box-shadow: none;
+	transition: all .25s ease-in-out;
+	font-size: var(--wpbc_ui_horis_top_nav__font-size);
+	line-height: 1.2;
+	border-radius: 0;
+	padding: 0;
+	margin: var(--wpbc_ui_horis_top_nav__margin);
+	box-sizing: border-box;
+
+	overflow: visible;
+	/*box-shadow: var(--wpbc_ui__gen__panel_box-shadow);*/
+}
+.wpbc_ui_el__horis_top_bar__content {
+	flex: 1 1 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: center;
+	border-bottom: 1px solid var(--wpbc_ui_horis_top_nav__normal_color);
+}
+/* -- Responsive Sizes: < 600px (less top icons), < 782px (no wp left bar), < 960px (wp left bar colapse) ----------- */
+/* More than > 782px -- Left Bar Expanded */
+@media screen and (max-width: 782px) {
+	.wpbc_ui_el__horis_top_bar__wrapper .wpbc_ui_el__horis_nav_title {
+		display:none;
+	}
+	div.wpbc_settings_page_wrapper .wpbc_ui_el__horis_top_bar__wrapper .wpbc_ui_el__horis_nav_item a .wpbc_ui_el__horis_nav_icon {
+		margin: 0 8px;
+	}
+}
+/* -- End Responsive Sizes ------------------------------------------------------------------------------------------ */
+
+/* A */
+.wpbc_ui_el__horis_nav_item a {
+	flex: 1 1 100%;
+	margin: 0 5px -1px 0;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 0;
+	text-shadow: none;
+	font-size: var(--wpbc_ui_horis_top_nav__font-size);
+	font-weight: 600;
+	text-transform: capitalize;
+	text-decoration: none;
+	outline: none;
+	color: var(--wpbc_ui_horis_top_nav__a_color);
+
+	display: flex;
+	flex-flow: row;
+	justify-content: flex-start;
+	align-items: center;
+
+	border-bottom: var(--wpbc_ui_horis_top_nav__border-width) solid transparent;
+	box-shadow: none;
+}
+/*Hover,  focus*/
+.wpbc_ui_el__horis_nav_item a:hover,
+.wpbc_ui_el__horis_nav_item a:focus,
+.wpbc_ui_el__horis_nav_item.active a:hover,
+.wpbc_ui_el__horis_nav_item.active a:focus {
+	color: var(--wpbc_ui_horis_top_nav__hover_color);
+	border-bottom-color: var(--wpbc_ui_horis_top_nav__hover_color);
+	box-shadow: none;
+	outline:0;
+}
+/* Active */
+.wpbc_ui_el__horis_nav_item a[aria-selected="true"],
+.wpbc_ui_el__horis_nav_item.active a{
+	border-bottom-color: var(--wpbc_ui_horis_top_nav__active_color);
+	box-shadow: none;
+	outline:0;
+}
+/* Right side */
+.wpbc_ui_el__horis_nav_item.align_right {
+	margin-left: auto;
+}
+/* Icons */
+.wpbc_ui_el__horis_nav_item a .wpbc_ui_el__horis_nav_icon{
+	margin:0;
+}
+.wpbc_settings_page_wrapper .wpbc_ui_el__horis_top_bar__wrapper .wpbc_ui_el__horis_nav_item a .wpbc_ui_el__horis_nav_icon{
+	margin: 0 8px  0 0;
+}
+.wpbc_ui_el__horis_nav_item a .wpbc_ui_el__horis_nav_icon::before {
+	font-size: 16px;
+	line-height: 17px;
+}
+/* Icons in Sub elements */
+.wpbc_ui_el__horis_nav_item.wpbc_ui_el__horis_nav_item_sub a .wpbc_ui_el__horis_nav_icon::before {
+  font-size: 14px;
+}
+/* Text */
+.wpbc_ui_el__horis_nav_item a span {
+}
+
+/* -- Horisontal  Menu  items  ---------------------------------------------------------------------------------------- */
+/* -- Items  -------------------------------------------------------------------------------------------------------- */
+.wpbc_ui_el__horis_nav_item__a {
+
+}
+.wpbc_ui_el__horis_nav_item__a *{
+	flex: 0 1 auto;
+}
+	/* Left Icon */
+	.wpbc_ui_el__horis_nav_item__a .wpbc_ui_el__horis_nav_icon{
+
+	}
+	/* title */
+	.wpbc_ui_el__horis_nav_item__a .wpbc_ui_el__horis_nav_title{
+
+	}
+	/* Right Icon */
+	.wpbc_ui_el__horis_nav_item__a .wpbc_ui_el__horis_nav_icon_right{
+		margin-left:auto;
+	}
+/* -- End Items  ---------------------------------------------------------------------------------------------------- */

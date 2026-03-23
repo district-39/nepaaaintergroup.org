@@ -1,0 +1,133 @@
+/* ==  V A R s  == */
+.wpbc_admin {
+	--wpbc_ui_toolbar__font-size: 14px;
+}
+/* ==  T O O L B A R  == */
+.wpbc_ui_toolbar {
+	flex: 1 1 100%;
+	width: 100%;
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: stretch;
+
+	box-shadow: none;
+	border: 0;
+	background: transparent;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: var(--wpbc_ui_toolbar__font-size);
+}
+.wpbc_ui_toolbar .wpbc_ui_group {
+	flex: 0 1 auto;
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: baseline;
+	border: none;
+
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.wpbc_ui_toolbar .wpbc_ui_group .wpbc_ui_el {
+	align-self: stretch;
+	flex: 0 1 auto;
+
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+
+	position: relative;
+	margin: 5px 15px 5px 0;
+	box-sizing: border-box;
+}
+	.wpbc_ui_toolbar .wpbc_ui_group .wpbc_ui_el:last-child{
+		margin-right:0
+	}
+/* -- H e i g h t --------------------------------------------------------------------------------------------------- */
+.wpbc_ui__height_lg.wpbc_ui_group .wpbc_ui_el {
+	min-height: 38px;
+}
+.wpbc_ui__height_small.wpbc_ui_group .wpbc_ui_el {
+	min-height: 32px;
+}
+.wpbc_ui__height_mini.wpbc_ui_group .wpbc_ui_el,
+.wpbc_ui__height_mini.wpbc_ui_group .wpbc_ui_el input,
+.wpbc_ui__height_mini.wpbc_ui_group .wpbc_ui_el select {
+	min-height: 26px;
+}
+
+.wpbc_ui__height_micro.wpbc_ui_group .wpbc_ui_el,
+.wpbc_ui__height_micro.wpbc_ui_group .wpbc_ui_el input,
+.wpbc_ui__height_micro.wpbc_ui_group .wpbc_ui_el select {
+	min-height: 24px;
+	font-size: 12px;
+	line-height: 1;
+}
+
+/* ==  S U P P O R T  == */
+.wpbc_ui__bg_white {
+	background-color: var(--wpbc_ui__gen__panel_background-color);
+}
+.wpbc_ui__bg_transparent {
+	background-color: transparent;
+}
+.wpbc_ui__hidden {
+	display: none !important;
+}
+.wpbc_ui__width_100 {
+	width: 100%;
+	max-width: 100%;
+	min-width: 100%;
+	flex: 1 1 100%;
+}
+/* -- Elements ------------------------------------------------------------------------------------------------------ */
+.wpbc_ui_toolbar a {
+	color: var(--wpbc_ui__gen__text-color);
+}
+/* -- Specific sections ------------------------------------------------------------------------------------------------------ */
+.wpbc_ui_toolbar .wpbc_ui_group.wpbc_ui_group_filter_row_1 {
+
+}
+.wpbc_ui_toolbar .wpbc_ui_group.wpbc_ui_group_filter_row_2 {
+	padding: 10px 14px;
+	margin: 10px 0 35px;
+	border: 2px solid #97a0ac;
+	border-radius: 5px;
+}
+/* -- TODO:Input Fields --------------------------------------------------------------------------------------------- */
+.wpbc_ui_group .wpbc_ui_el input {
+	align-self: stretch;
+	border: 1px solid #00000030;
+	margin:0;
+}
+.ul_dropdown_menu__reload_listing i::before,
+.ul_dropdown_menu__other_filters i::before{
+	font-size:24px;
+}
+
+/* TODO: Tempoarary fix to  use old Filter  ------------------------------------------------------------------------- */
+.wpbc_ajx_toolbar .wpbc_ui_el__choosen {
+	align-items: center;
+	margin-right: 20px;
+}
+.wpbc_ajx_toolbar .wpbc_ui_el__choosen .chzn-container {
+	align-self: initial;
+	min-width: 180px;
+}
+/* Toolbars at  Booking Listing */
+div.wpbc_ajx_toolbar {
+	margin: 0 0 20px 0px;
+}
+#wpbc_booking_listing_reload_button {
+	background: transparent;
+	border: 0;
+}
+#wpbc_booking_listing_reload_button i.menu_icon::before{
+	font-size: 22px;
+}

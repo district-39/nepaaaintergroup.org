@@ -1,0 +1,26 @@
+/*! = Drop Down Menu = */
+.wpbc_admin {
+	--wpbc_ui_a__a-color: var(--wpbc_ui__gen__text-color);
+	--wpbc_ui_a__a-font-size: var(--wpbc_ui_a__ul-font-size);
+	--wpbc_ui_a__a-padding: 5px 15px;
+
+	--wpbc_ui_a__active-a-border-radius: var(--wpbc_ui__gen__border-radius);
+	--wpbc_ui_a__active-a-background: var(--wpbc_ui__gen__active-background-color);
+	--wpbc_ui_a__active-a-color: var(--wpbc_ui__gen__active-text-color);
+}
+.wpbc_ui_el__a {
+	position: relative;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: flex-start;
+}
+/* Icon plus Text padding */
+.wpbc_ui_el__a .menu_icon + .nav-tab-text {
+	padding: 0 0 0 0.7em;
+}
+@media (max-width: 782px) {
+	.wpbc_ui_el__a .menu_icon + .nav-tab-text {
+		display: none;
+	}
+}

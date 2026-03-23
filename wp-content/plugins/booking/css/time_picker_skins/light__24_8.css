@@ -1,0 +1,64 @@
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Light   -   24-08   -   T i m e     P i c k e r     C O L O R    S K I N           */
+/* ------------------------------------------------------------------------------------------------------------------ */
+/*  For best compatibility, please change parameters only in :root { ... } section  */
+:root {
+	--wpbc_timepicker-font-size: 15px;
+
+	--wpbc_timepicker-bg-color-opacity: 100%;
+
+	--wpbc_timepicker-bg-color: #FFF;
+	--wpbc_timepicker-text-color: #000;
+	--wpbc_timepicker-border-color: #d6d6d6;
+
+	--wpbc_timepicker-hover-bg-color: #fff;
+	--wpbc_timepicker-hover-text-color: #000;
+	--wpbc_timepicker-hover-border-color: #ffe7c7;
+	--wpbc_timepicker-hover-bg-color-opacity: var(--wpbc_timepicker-bg-color-opacity, 100%);
+
+	--wpbc_timepicker-selected-bg-color: #6b96ce;
+	--wpbc_timepicker-selected-text-color: #fff;
+	--wpbc_timepicker-selected-border-color: #7092bf;
+	--wpbc_timepicker-selected-bg-color-opacity: var(--wpbc_timepicker-bg-color-opacity, 100%);
+
+	--wpbc_timepicker-border-width: 1px;
+	--wpbc_timepicker-border-radius: 5px;
+
+	--wpbc_timepicker-padding: 0.25em 1em;
+	--wpbc_timepicker-margin:  0.1em 0;
+}
+/* Button */
+.wpbc_times_selector div {
+	padding: var(--wpbc_timepicker-padding);
+	margin: var(--wpbc_timepicker-margin);
+	box-shadow: none;
+
+	font-size: var(--wpbc_timepicker-font-size);
+	font-weight: 400;
+	text-align: center;
+
+	border-radius: var(--wpbc_timepicker-border-radius);
+
+	border: var(--wpbc_timepicker-border-width) solid var(--wpbc_timepicker-border-color);
+	color: var(--wpbc_timepicker-text-color);
+	background: rgb(from var(--wpbc_timepicker-bg-color) r g b / var(--wpbc_timepicker-bg-color-opacity));
+}
+/* Button - Mouse Over */
+.wpbc_times_selector div:hover {
+	border: var(--wpbc_timepicker-border-width) solid var(--wpbc_timepicker-hover-border-color);
+	color: var(--wpbc_timepicker-hover-text-color);
+	background: rgb(from var(--wpbc_timepicker-hover-bg-color) r g b / var(--wpbc_timepicker-hover-bg-color-opacity));
+}
+/* Button - Selected */
+.wpbc_times_selector div.wpbc_time_selected {
+	border: var(--wpbc_timepicker-border-width) solid var(--wpbc_timepicker-selected-border-color);
+	color: var(--wpbc_timepicker-selected-text-color);
+	background: rgb(from var(--wpbc_timepicker-selected-bg-color) r g b / var(--wpbc_timepicker-selected-bg-color-opacity));
+}
+/* FixIn: EAA - Highlight on Focus*/
+.wpbc_times_selector div:not(.wpbc_time_selected):focus {
+	/*border: var(--wpbc_timepicker-border-width) solid var(--wpbc_timepicker-hover-border-color);*/
+	border: var(--wpbc_timepicker-border-width) solid var(--wpbc_timepicker-selected-bg-color);
+	color: var(--wpbc_timepicker-hover-text-color);
+	background: rgb(from var(--wpbc_timepicker-hover-bg-color) r g b / var(--wpbc_timepicker-hover-bg-color-opacity));
+}

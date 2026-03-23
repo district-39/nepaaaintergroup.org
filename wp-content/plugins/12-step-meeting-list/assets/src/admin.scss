@@ -1,0 +1,32 @@
+@import 'tsml-jquery-ui.css';
+
+body {
+	//import & settings
+	.wrap.tsml_admin_settings {
+		@import 'admin-import-settings.scss';
+	}
+
+	//region list page
+	&.taxonomy-tsml_region {
+		.row-actions {
+			display: none;
+		}
+	}
+	//meeting add/edit
+	&.post-type-tsml_meeting {
+		@import 'admin-meeting.scss';
+	}
+
+	.logo {
+		display: block;
+		float: right;
+		margin-left: 10px;
+		img {
+			display: block;
+			height: auto;
+			width: 85px;
+		}
+	}
+
+
+}

@@ -1,0 +1,7 @@
+<?php
+
+// To use composer's autoload
+require_once '../vendor/autoload.php';
+
+// $argv contains command line arguments
+print "From packed application: " . $argv[1] . "\n";

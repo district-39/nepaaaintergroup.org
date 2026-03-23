@@ -1,0 +1,223 @@
+
+/* == L O A D E R ===================================================================================================   //FixIn: 10.0.0.25 */
+
+/* == Blur calendar == */
+.wpbc_calendar_blur_small{
+    filter: blur(0.7px);
+    pointer-events: none;
+    user-select: none;
+}
+.wpbc_calendar_blur{
+    filter: blur(1.2px);
+    pointer-events: none;
+    user-select: none;
+}
+.wpbc_spins_loader_wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    height: 1px;
+    z-index: 1000;
+}
+
+/* == Loader Standard == */
+.wpbc_spins_loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 70px;
+    height: 70px;
+    margin: -35px 0 0 -35px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: #2d6281;
+    -webkit-animation: wpbc_spin_r 2s linear infinite;      /* Chrome, Opera 15+, Safari 5+ */
+    animation: wpbc_spin_r 2s linear infinite;              /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+.wpbc_spins_loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: #73983c;
+    -webkit-animation: wpbc_spin_r 3s linear infinite;      /* Chrome, Opera 15+, Safari 5+ */
+      animation: wpbc_spin_r 3s linear infinite;            /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+.wpbc_spins_loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: #af2e2e;
+    -webkit-animation: wpbc_spin_r 1.5s linear infinite;    /* Chrome, Opera 15+, Safari 5+ */
+      animation: wpbc_spin_r 1.5s linear infinite;          /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+/* == Loader mini == */
+.wpbc_spins_loader_mini {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    margin: -15px 0 0 -15px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: #2d6281;
+    -webkit-animation: wpbc_spin_r 1.1s linear infinite;    /* Chrome, Opera 15+, Safari 5+ */
+    animation: wpbc_spin_r 1.1s linear infinite;            /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+.wpbc_spins_loader_mini:before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: #73983c;
+    -webkit-animation: wpbc_spin_r 1.75s linear infinite;   /* Chrome, Opera 15+, Safari 5+ */
+    animation: wpbc_spin_r 1.75s linear infinite;           /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+.wpbc_spins_loader_mini:after {
+     content: "";
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: #af2e2e;
+    -webkit-animation: wpbc_spin_r 1.85s linear infinite;   /* Chrome, Opera 15+, Safari 5+ */
+    animation: wpbc_spin_r 1.85s linear infinite;           /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+.wpbc_one_spin_loader_mini {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    margin: -15px 0 0 -15px;
+    border-radius: 50%;
+    border: 2px solid #2d6281;
+    border-top-color: transparent !important;
+    -webkit-animation: wpbc_spin_r 1.1s linear infinite;    /* Chrome, Opera 15+, Safari 5+ */
+    animation: wpbc_spin_r 1.1s linear infinite;            /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+.wpbc_one_spin_loader_micro {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    margin: -6px 0 0 -6px;
+    border-radius: 50%;
+    border: 2px solid #2d6281;
+    border-top-color: transparent !important;
+    -webkit-animation: wpbc_spin_r 0.8s linear infinite;    /* Chrome, Opera 15+, Safari 5+ */
+    animation: wpbc_spin_r 0.8s linear infinite;            /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+/* == Spin animation (clockwise and apposite) == */
+@-webkit-keyframes wpbc_spin_r {
+    0%   {
+        -webkit-transform: rotate(0deg);         /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);            /* IE 9 */
+        transform: rotate(0deg);                /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        -webkit-transform: rotate(360deg);      /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);          /* IE 9 */
+        transform: rotate(360deg);              /* Firefox 16+, IE 10+, Opera */
+    }
+}
+@keyframes wpbc_spin_r {
+    0%   {
+        -webkit-transform: rotate(0deg);         /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);            /* IE 9 */
+        transform: rotate(0deg);                /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        -webkit-transform: rotate(360deg);      /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);          /* IE 9 */
+        transform: rotate(360deg);              /* Firefox 16+, IE 10+, Opera */
+    }
+}
+
+@-webkit-keyframes wpbc_spin_l {
+    100%   {
+        -webkit-transform: rotate(0deg);        /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);            /* IE 9 */
+        transform: rotate(0deg);                /* Firefox 16+, IE 10+, Opera */
+    }
+    0% {
+        -webkit-transform: rotate(-360deg);     /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(-360deg);         /* IE 9 */
+        transform: rotate(-360deg);             /* Firefox 16+, IE 10+, Opera */
+    }
+}
+@keyframes wpbc_spin_l {
+    0%   {
+        -webkit-transform: rotate(0deg);        /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);            /* IE 9 */
+        transform: rotate(0deg);                /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        -webkit-transform: rotate(-360deg);     /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(-360deg);         /* IE 9 */
+        transform: rotate(-360deg);             /* Firefox 16+, IE 10+, Opera */
+    }
+}
+
+
+/* Loading message 	//FixIn: 10.0.0.25 */
+.wpbc_spins_loading_container{
+	text-align: center;
+	font-size: 14px;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	height: 90px;
+	text-shadow: none;
+}
+.wpbc_spins_loading_container .wpbc_booking_form_spin_loader{
+	position: relative;
+}
+.wpbc_spins_loading_container span {
+	padding: 0;
+	margin: 0 0 0 35px;
+    font-size: 15px;
+}
+
+/* HTML: <div class="wpbc_spins_loader_other"></div> */
+.wpbc_spins_loader_other {
+	width: 50px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background: radial-gradient(farthest-side, #8ECE01 94%, #0000) top/2px 2px no-repeat,
+	conic-gradient(#0000 30%, #8ECE01);
+	-webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 2px), #000 0);
+	animation: wpbc_spins_loader_other_anim 0.75s infinite linear;
+}
+@keyframes wpbc_spins_loader_other_anim {
+	100% {
+		transform: rotate(1turn)
+	}
+}

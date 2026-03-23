@@ -1,0 +1,11 @@
+ /**
+ * Popover functionality.
+ * Popover based on Tippy.js ( https://atomiks.github.io/tippyjs/v6/all-props/#allowhtml ), which  is based on  popper.js ( https://popper.js.org/docs/v2/tutorial/ )
+ * Install Alt + F12 run
+ * npm i @popperjs/core
+ * npm i tippy.js
+ * Copy ..\node_modules\@popperjs\core\dist\umd     to  ..\wp-content/plugins/booking/assets/libs/popper
+ * Copy ..\node_modules\tippy.js\{dist && themes}   to  ..\wp-content/plugins/booking/assets/libs/tippy.js
+ * In popper.js  edit global.Popper  to global.wpbc_Popper
+ * In tippy-bundle.umd.js  edit global.Popper  to global.wpbc_Popper   and      global.tippy   to  global.wpbc_tippy
+ */

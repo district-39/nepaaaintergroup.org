@@ -1,0 +1,59 @@
+/*! ------------------------------------------------------------------------------------------------------------------ !*/
+/*!  ==  Full Screen Setup  ==     !*/
+/*! ------------------------------------------------------------------------------------------------------------------ !*/
+.wpbc_admin_full_screen {
+	background: #f6f7f7;
+	color: #50575e;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+}
+.wpbc_admin_full_screen #wpwrap {
+	top: 0;
+}
+.wpbc_admin_full_screen #wpbody-content {
+	min-height: 100vh !important;
+	padding: 0 0 0 0 !important;
+}
+.wpbc_admin_full_screen #adminmenumain,
+.wpbc_admin_full_screen #wpcontent>*,
+.wpbc_admin_full_screen .error:not(.wpbc-settings-notice, .wpbc_inner_message),
+.wpbc_admin_full_screen .notice:not(.wpbc-settings-notice, .wpbc_inner_message),
+.wpbc_admin_full_screen .update-nag:not(.wpbc-settings-notice, .wpbc_inner_message),
+.wpbc_admin_full_screen .updated:not(.wpbc-settings-notice, .wpbc_inner_message)  {
+	display: none;
+}
+.wpbc_admin_full_screen #wpcontent {
+	margin-left: 0 !important;
+}
+.wpbc_admin_full_screen #wpcontent>#wpbody {
+	display: block;
+	margin-top: 0 !important;
+}
+.wpbc_admin_full_screen #wpadminbar,
+.wpbc_admin_full_screen #wpfooter,
+.wpbc_admin_full_screen .components-modal__screen-overlay {
+	display: none;
+}
+.wpbc_admin_full_screen .wpbc_header_news {
+	display: none !important;
+}
+/* Booking Calendar Top Messages */
+.wpbc_admin_full_screen #ajax_working > [id^="wpbc_notice_"] {
+	/*right: 90px;*/
+	top: 0;
+}
+.wpbc_admin_full_screen .wpbc_page div.wpbc_inner_message {
+	top: 0;
+	margin-top: 4px;
+}
+@media (max-width: 782px) {
+	.wpbc_admin_full_screen .wpbc_page div.wpbc_inner_message {
+		margin: 5px 0 25px 10px;
+		top: 0;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.wpbc_admin_full_screen #wpbody {
+		padding-top: 0;
+	}
+}

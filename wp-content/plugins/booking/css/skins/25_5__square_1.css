@@ -1,0 +1,58 @@
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Child calendar theme    of    "/css/skins/24_9__light.css"                          C O L O R    S K I N           */
+/* ------------------------------------------------------------------------------------------------------------------ */
+@import url("24_9__light.css");
+/* Color Scheme: - 25_5 Square 1 */
+:root {
+	--wpbc_cal-day-cell-border-radius: 0;
+	--wpbc_cal-day-cell-border-width: 0;
+	--wpbc_cal-day-bg-color-opacity: 80%;
+	--wpbc_cal-selected-day-bg-color-opacity: 80%;
+	--wpbc_cal-text-general-size: 15px;
+	--wpbc_cal-text-cost-size: 60%;
+	--wpbc_cal-text-header-size: 13px;
+	--wpbc_cal-text-weekdays-size: 10px;
+	--wpbc_cal-text-prev-next-links-size: 25px;
+	--wpbc_cal-main-background-color: #fff;
+	--wpbc_cal-header-text-color: #000;
+	--wpbc_cal-text-prev-next-links-color: #555;
+	--wpbc_cal-text-weekdays-color: #555;
+	--wpbc_cal-unavailable-day-color: var(--wpbc_cal-main-background-color);
+	--wpbc_cal-unavailable-text-color: #d4d4d4c7;
+	--wpbc_cal-available-day-color: #37750c;
+	--wpbc_cal-available-text-color: #fff;
+	--wpbc_cal-approved-day-color: #A60D0D;
+	--wpbc_cal-approved-text-color: #fbf8f8;
+	--wpbc_cal-pending-day-color: #FFF3B4;
+	--wpbc_cal-pending-text-color: #BD963B;
+	--wpbc_cal-selected-day-color: #2a5fa3;
+	--wpbc_cal-selected-text-color: #fff;
+	--wpbc_cal-hover-day-color: #7195c6;
+	--wpbc_cal-hover-text-color: #436593;
+	--wpbc_cal-timespartly-day-color: #a89469;
+	--wpbc_cal-timespartly-text-color: #81742e;
+	--wpbc_cal-day-cells-padding: 2px;
+}
+/* Exception  for change/over days */
+.datepick-inline td.datepick-days-cell.check_in_time.check_in_time_date2approve,
+.datepick-inline td.datepick-days-cell.check_out_time.check_out_time_date2approve,
+.datepick-inline td.datepick-days-cell.check_in_time.check_in_time_date_approved,
+.datepick-inline td.datepick-days-cell.check_out_time.check_out_time_date_approved {
+	--wpbc_cal-day-bg-color-opacity: 75%;
+	--wpbc_cal-approved-day-color: #B73D3D;
+	--wpbc_cal-pending-day-color: #FFF5C3;
+}
+/* Pending */
+div.datepick-inline td.datepick-days-cell.check_in_time.check_in_time_date2approve .wpbc-cell-box .wpbc-co-in svg polygon, /* Check In  */
+div.datepick-inline td.datepick-days-cell.check_out_time.check_out_time_date2approve .wpbc-cell-box .wpbc-co-out svg polygon, /* Check Out */
+/* Approved */
+div.datepick-inline td.datepick-days-cell.check_in_time.check_in_time_date_approved .wpbc-cell-box .wpbc-co-in svg polygon, /* Check In  */
+div.datepick-inline td.datepick-days-cell.check_out_time.check_out_time_date_approved .wpbc-cell-box .wpbc-co-out svg polygon /* Check Out */
+{
+	fill-opacity: 100%;
+}
+/* Set more clear showing cost in days */
+.datepick-inline .datepick-days-cell div.date-content-bottom,
+.datepick-inline .datepick-days-cell div.date-content-top {
+	color: rgb(from var(--wpbc_cal-available-text-color) r g b / 85%);
+}

@@ -1,0 +1,80 @@
+.wpbc_ui__collapsible_group .group__header {
+	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: 12px 10px;
+	text-align: left;
+	font-weight: 600;
+	cursor: pointer;
+	background: transparent;
+	border:0;
+	border-bottom: 1px solid #eee;
+	border-radius: 0;
+	border-left: 2px solid transparent;
+}
+.wpbc_ui__collapsible_group.is-open {
+	padding-bottom: 25px;
+}
+.wpbc_ui__collapsible_group.is-open .group__header {
+	border-left-color: #1e7bc7;
+	background: #1e7bc70a;
+	border-radius: 0 5px 5px 0;
+	border-bottom-color: #1e7bc71f;
+}
+.wpbc_ui__collapsible_group:not(.is-open) .group__header:hover {
+	border-left-color: #707980;
+}
+.wpbc_ui__collapsible_group.is-open .group__header:hover .wpbc-bi-chevron-right,
+.wpbc_ui__collapsible_group         .group__header:hover .wpbc-bi-chevron-right{
+	transition: 0.4s ease-in-out;
+	transform: rotateZ(2deg);
+}
+.wpbc_ui__collapsible_group.is-open .group__header:hover .wpbc-bi-chevron-right{
+	transform: rotateZ(88deg);
+}
+.wpbc_ui__collapsible_group.is-open .group__header .wpbc-bi-chevron-right{
+	transform: rotate(90deg);
+}
+.wpbc_ui__collapsible_group .group__header h3{
+	margin:0;
+	padding:0;
+	font-size: 14px;
+}
+.wpbc_ui__collapsible_group .group__fields {
+	display: none;
+	padding: 15px 5px 5px 15px;
+}
+.wpbc_ui__collapsible_group.is-open .group__fields {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	gap: 20px;
+}
+
+/* Shows Toggles here */
+.wpbc_ui__collapsible_group .wpbc_ui__toggle {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	line-height: 1.75;
+}
+.wpbc_ui__collapsible_group .wpbc_ui__toggle span,
+.wpbc_ui__collapsible_group .wpbc_ui__toggle label {
+	display: inline;
+	line-height: 2.2;
+	margin: 0;
+	padding: 0;
+}
+.wpbc_ui__collapsible_group .wpbc_ui__toggle input[type="checkbox"] + label.wpbc_ui__toggle_icon {
+	display: inline-block;
+	vertical-align: text-top;
+	margin-inline-end: 0.5em;
+	margin-block-start: 2px;
+}
+
+/* Hide panels by default when [hidden] is present */
+.wpbc_tab__panel[hidden] { display: none !important; }

@@ -1,0 +1,10 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+.apvc-view-icon{
+    width: 20px;
+    vertical-align: middle;
+    margin: 0px 5px 3px 0px;
+}
