@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       deployment_dest:
-        description: 'Target server directory, leave blank for root directory'
+        description: 'Target server directory (alphanumeric, hyphens, underscores, slashes only)'
         required: false
         default: ''
 
@@ -12,13 +12,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Validate deployment destination
+        if: github.event.inputs.deployment_dest != ''
+        env:
+          DEPLOY_DEST: ${{ github.event.inputs.deployment_dest }}
+        run: |
+          if [[ ! "$DEPLOY_DEST" =~ ^[a-zA-Z0-9/_-]+$ ]]; then
+            echo "::error::Invalid deployment_dest: must contain only alphanumeric characters, hyphens, underscores, and forward slashes"
+            exit 1
+          fi
+
       - name: Checkout Repository Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Synchronize Files with GoDaddy WordPress Hosting Server
-        uses: godaddy-wordpress/gd-wordpress-deployer@v1
+        uses: godaddy-wordpress/gd-wordpress-deployer@201e88ca53d5c0a5395259e94fb1ecded143678b # v1
         with:
-          remote_host: "e3j.c04.myftpupload.com"
-          ssh_user: "git_deployer_3c7996f45c_1073805"
-          ssh_private_key: ${{secrets.PRIVATE_KEY}}
+          remote_host: ${{ secrets.REMOTE_HOST }}
+          ssh_user: ${{ secrets.SSH_USER }}
+          ssh_private_key: ${{ secrets.PRIVATE_KEY }}
           deployment_dest: ${{ github.event.inputs.deployment_dest }}
