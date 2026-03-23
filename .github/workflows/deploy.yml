@@ -23,7 +23,7 @@ jobs:
           fi
 
       - name: Checkout Repository Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Synchronize Files with GoDaddy WordPress Hosting Server
         uses: godaddy-wordpress/gd-wordpress-deployer@201e88ca53d5c0a5395259e94fb1ecded143678b # v1
